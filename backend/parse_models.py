@@ -1,0 +1,249 @@
+import json
+
+raw_text = """
+E160A CNC T/C E160 Series
+E160C CNC T/C E160 Series
+HD2200 CNC T/C HD2200 Series
+HD2200C CNC T/C HD2200 Series
+HD2200M CNC T/C HD2200 Series
+HD2200MC CNC T/C HD2200 Series
+HD2600 CNC T/C HD2600/3100 Series
+HD2600L CNC T/C HD2600/3100 Series
+HD2600LM CNC T/C HD2600/3100 Series
+HD2600M CNC T/C HD2600/3100 Series
+HD3100 CNC T/C HD2600/3100 Series
+HD3100A CNC T/C HD2600/3100 Series
+HD3100L CNC T/C HD2600/3100 Series
+HD3100LM CNC T/C HD2600/3100 Series
+HD3100M CNC T/C HD2600/3100 Series
+HD3100MA CNC T/C HD2600/3100 Series
+KIT250 CNC T/C KIT Series
+KIT4500 CNC T/C KIT Series
+KIT60G CNC T/C KIT Series
+L300A CNC T/C L300 Series
+L300C CNC T/C L300 Series
+L300LA CNC T/C L300 Series
+L300LC CNC T/C L300 Series
+L300LMA CNC T/C L300 Series
+L300LMC CNC T/C L300 Series
+L300LMSA CNC T/C L300 Series
+L300MA CNC T/C L300 Series
+L300MC CNC T/C L300 Series
+L300MSA CNC T/C L300 Series
+L300MSC CNC T/C L300 Series
+L4000 CNC T/C L4000 Series
+L4000C CNC T/C L4000 Series
+L4000L CNC T/C L4000 Series
+L4000LC CNC T/C L4000 Series
+L4000LM CNC T/C L4000 Series
+L4000LMC CNC T/C L4000 Series
+L4000M CNC T/C L4000 Series
+L4000MC CNC T/C L4000 Series
+L5100L CNC T/C L5100L Series
+L5100LC CNC T/C L5100L Series
+L5100LM CNC T/C L5100L Series
+L5100LMC CNC T/C L5100L Series
+L600A CNC T/C L600/700/800 Series
+L600LA CNC T/C L600/700/800 Series
+L600LMA CNC T/C L600/700/800 Series
+L600MA CNC T/C L600/700/800 Series
+L700A CNC T/C L600/700/800 Series
+L700LA CNC T/C L600/700/800 Series
+L700LMA CNC T/C L600/700/800 Series
+L700MA CNC T/C L600/700/800 Series
+L800A CNC T/C L600/700/800 Series
+L800D CNC T/C L600/700/800 Series
+L800LA CNC T/C L600/700/800 Series
+L800LD CNC T/C L600/700/800 Series
+L800LMA CNC T/C L600/700/800 Series
+L800LMD CNC T/C L600/700/800 Series
+L800MA CNC T/C L600/700/800 Series
+L800MD CNC T/C L600/700/800 Series
+SE2200 CNC T/C SE2200 Series
+SE2200A CNC T/C SE2200 Series
+SE2200L CNC T/C SE2200 Series
+SE2200LA CNC T/C SE2200 Series
+SE2200LC CNC T/C SE2200 Series
+SE2200LM CNC T/C SE2200 Series
+SE2200LMA CNC T/C SE2200 Series
+SE2200LMC CNC T/C SE2200 Series
+SE2200LMS CNC T/C SE2200 Series
+SE2200LMSA CNC T/C SE2200 Series
+SE2200LMSC CNC T/C SE2200 Series
+SE2200M CNC T/C SE2200 Series
+SE2200MA CNC T/C SE2200 Series
+SE2600 CNC T/C SE2600 Series
+SE2600L CNC T/C SE2600 Series
+SE2600LM CNC T/C SE2600 Series
+SE2600M CNC T/C SE2600 Series
+HD2200SY CNC T/C HD-SY Series
+HD2200Y CNC T/C HD-SY Series
+HD2600LSY CNC T/C HD-SY Series
+HD2600LY CNC T/C HD-SY Series
+HD2600SY CNC T/C HD-SY Series
+HD2600Y CNC T/C HD-SY Series
+HD3100LY CNC T/C HD-SY Series
+HD3100LYA CNC T/C HD-SY Series
+HD3100SY CNC T/C HD-SY Series
+HD3100SYA CNC T/C HD-SY Series
+HD3100Y CNC T/C HD-SY Series
+HD3100YA CNC T/C HD-SY Series
+KL7000LY CNC T/C KL-Y Series
+KL8000LY CNC T/C KL-Y Series
+L5100LY CNC T/C L5100LY
+L2000LSY CNC T/C L-Y Series
+L2000LY CNC T/C L-Y Series
+L2000SY CNC T/C L-Y Series
+L2000Y CNC T/C L-Y Series
+L2600LY CNC T/C L-Y Series
+L2600SY CNC T/C L-Y Series
+L2600Y CNC T/C L-Y Series
+L3000LY CNC T/C L-Y Series
+L3000SY CNC T/C L-Y Series
+L3000Y CNC T/C L-Y Series
+SE2200LSY CNC T/C SE2200Y Series
+SE2200LSYA CNC T/C SE2200Y Series
+SE2200LY CNC T/C SE2200Y Series
+SE2200LYA CNC T/C SE2200Y Series
+SE2200Y CNC T/C SE2200Y Series
+SE2200YA CNC T/C SE2200Y Series
+SE2600LSY CNC T/C SE2600Y Series
+SE2600LY CNC T/C SE2600Y Series
+SE2600SY CNC T/C SE2600Y Series
+SE2600Y CNC T/C SE2600Y Series
+LV1100R CNC T/C LV1100 Series
+LV1100RM CNC T/C LV1100 Series
+LV4500L CNC T/C LV4500 Series
+LV4500LM CNC T/C LV4500 Series
+LV4500R CNC T/C LV4500 Series
+LV4500RM CNC T/C LV4500 Series
+LV500L CNC T/C LV500 Series
+LV500LM CNC T/C LV500 Series
+LV500R CNC T/C LV500 Series
+LV500RM CNC T/C LV500 Series
+LV8500L CNC T/C LV8500 Series
+LV8500LM CNC T/C LV8500 Series
+LV8500R CNC T/C LV8500 Series
+LV8500RM CNC T/C LV8500 Series
+LV1400 CNC T/C LV1400/2000
+LV2000MM CNC T/C LV1400/2000
+LF2200 Ⅱ CNC T/C LF-Ⅱ Series
+LF2200M Ⅱ CNC T/C LF-Ⅱ Series
+LF2200MQUICK Ⅱ CNC T/C LF-Ⅱ Series
+LF2200QUICK Ⅱ CNC T/C LF-Ⅱ Series
+LF2600 Ⅱ CNC T/C LF-Ⅱ Series
+LF2600M Ⅱ CNC T/C LF-Ⅱ Series
+LF2600MQUICK Ⅱ CNC T/C LF-Ⅱ Series
+LF2600QUICK Ⅱ CNC T/C LF-Ⅱ Series
+LM1600TTMS CNC T/C LM1600TT Series
+LM1600TTS CNC T/C LM1600TT Series
+LM1600TTSY CNC T/C LM1600TT Series
+LM1800TTMS CNC T/C LM1800TT Series
+LM1800TTS CNC T/C LM1800TT Series
+LM1800TTSY CNC T/C LM1800TT Series
+LM2200TTSYY CNC T/C LM2200TT Series
+LM2200TTSYYC CNC T/C LM2200TT Series
+LM2500TT Ⅱ CNC T/C LM2500TT II Series
+LM2500TTM Ⅱ CNC T/C LM2500TT II Series
+LM2500TTMS Ⅱ CNC T/C LM2500TT II Series
+LM2500TTS Ⅱ CNC T/C LM2500TT II Series
+LM2500TTSY II CNC T/C LM2500TT II Series
+KL6500AW CNC T/C AL WHEEL Series
+LV800AW-TT CNC T/C AL WHEEL Series
+LV8500RAW CNC T/C AL WHEEL Series
+KIT600G CNC T/C KIT600G/800G
+KIT800G CNC T/C KIT600G/800G
+LV600G CNC T/C LV600G
+i-CUT4000 Vertical M/C i-CUT Series
+i-CUT400TD Vertical M/C i-CUT Series
+i-CUT4500 Vertical M/C i-CUT Series
+F960B Vertical M/C F960B
+KF4 Vertical M/C KF4/5/6 Series
+KF4L Vertical M/C KF4/5/6 Series
+KF5 Vertical M/C KF4/5/6 Series
+KF5/50 Vertical M/C KF4/5/6 Series
+KF5L Vertical M/C KF4/5/6 Series
+KF6 Vertical M/C KF4/5/6 Series
+KF6/50 Vertical M/C KF4/5/6 Series
+KF6L Vertical M/C KF4/5/6 Series
+KF7600L Vertical M/C KF7600L
+KF5700B/50 II Vertical M/C KF-B II Series
+KF5700B II Vertical M/C KF-B II Series
+KF6700B/50 II Vertical M/C KF-B II Series
+KF6700B II Vertical M/C KF-B II Series
+KF7700B/50 II Vertical M/C KF-B II Series
+KF7700B II Vertical M/C KF-B II Series
+KF1000B Vertical M/C KF-B Series
+KF1100B Vertical M/C KF-B Series
+KF4300D Vertical M/C KF-D Series
+KF5200D Vertical M/C KF-D Series
+KF6000D Vertical M/C KF-D Series
+KF4000/2SP Vertical M/C KF-2SP Series
+KF4000I/2SP Vertical M/C KF-2SP Series
+KF4300/2SP Vertical M/C KF-2SP Series
+KF4300G/2SP Vertical M/C KF-2SP Series
+KF4300P/2SP Vertical M/C KF-2SP Series
+KF5200/2SP Vertical M/C KF-2SP Series
+KF5200G/2SP Vertical M/C KF-2SP Series
+KF5200P/2SP Vertical M/C KF-2SP Series
+KF5700/2SP Vertical M/C KF-2SP Series
+KF5700G/2SP Vertical M/C KF-2SP Series
+KF6700/2SP Vertical M/C KF-2SP Series
+KF6700G/2SP Vertical M/C KF-2SP Series
+KF6750/2SP Vertical M/C KF-2SP Series
+KF8200/2SP Vertical M/C KF-2SP Series
+KF8250/2SP Vertical M/C KF-2SP Series
+HS10000 Horizontal M/C HS10000
+HS4000 II Horizontal M/C HS4000/5000 II Series
+HS5000/50 II Horizontal M/C HS4000/5000 II Series
+HS5000 II Horizontal M/C HS4000/5000 II Series
+HS6300 II Horizontal M/C HS6300/8000 II
+HS8000 II Horizontal M/C HS6300/8000 II
+KH1000 Horizontal M/C KH1000
+KH50G Horizontal M/C KH50G
+KH6300 Horizontal M/C KH6300/8000
+KH8000 Horizontal M/C KH6300/8000
+KBN1300C Horizontal M/C KBN Series
+KBN1600C Horizontal M/C KBN Series
+KBR1300C Horizontal M/C KBR Series
+KBR1600C Horizontal M/C KBR Series
+XM2600 Multi-Tasking XM Series
+XM2600S Multi-Tasking XM Series
+XM2600ST Multi-Tasking XM Series
+XM3100 Multi-Tasking XM Series
+XM3100S Multi-Tasking XM Series
+XM3100ST Multi-Tasking XM Series
+KF3500/5A 5-Axis M/C KF-5A Series
+KF6500/5A 5-Axis M/C KF-5A Series
+KF7300/5A 5-Axis M/C KF-5A Series
+XF6300 5-Axis M/C XF Series
+XF8500 5-Axis M/C XF Series
+XF2000i 5-Axis M/C XF2000i
+"""
+
+models = []
+for line in raw_text.strip().split('\n'):
+    if not line: continue
+    parts = line.split()
+    
+    # find category which is either CNC T/C, Vertical M/C, Horizontal M/C, Multi-Tasking, 5-Axis M/C
+    category = ''
+    if 'CNC T/C' in line:
+        category = 'CNC T/C'
+    elif 'Vertical M/C' in line:
+        category = 'Vertical M/C'
+    elif 'Horizontal M/C' in line:
+        category = 'Horizontal M/C'
+    elif 'Multi-Tasking' in line:
+        category = 'Multi-Tasking'
+    elif '5-Axis M/C' in line:
+        category = '5-Axis M/C'
+    
+    if category:
+        parts_line = line.split(category)
+        model_code = parts_line[0].strip()
+        models.append({'code': model_code, 'type': category})
+    
+print(f'Parsed {len(models)} models')
+with open('new_models.json', 'w', encoding='utf-8') as f:
+    json.dump(models, f, ensure_ascii=False, indent=4)

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: scm_erp_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      # 로컬의 SQLite DB 파일이 컨테이너 재시작 시 날아가지 않도록 볼륨 마운트
+      # 현재 호스트의 backend 폴더의 데이터를 컨테이너와 동기화
+      - ./backend/scm_erp.db:/app/scm_erp.db
+    # environment:
+      # - TZ=Asia/Seoul
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: scm_erp_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend

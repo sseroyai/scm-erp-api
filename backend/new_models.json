@@ -1,0 +1,874 @@
+[
+    {
+        "code": "E160A",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "E160C",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD2200",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD2200C",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD2200M",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD2200MC",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD2600",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD2600L",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD2600LM",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD2600M",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD3100",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD3100A",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD3100L",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD3100LM",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD3100M",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD3100MA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "KIT250",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "KIT4500",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "KIT60G",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L300A",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L300C",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L300LA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L300LC",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L300LMA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L300LMC",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L300LMSA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L300MA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L300MC",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L300MSA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L300MSC",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L4000",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L4000C",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L4000L",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L4000LC",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L4000LM",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L4000LMC",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L4000M",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L4000MC",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L5100L",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L5100LC",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L5100LM",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L5100LMC",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L600A",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L600LA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L600LMA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L600MA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L700A",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L700LA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L700LMA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L700MA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L800A",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L800D",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L800LA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L800LD",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L800LMA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L800LMD",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L800MA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L800MD",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200A",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200L",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200LA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200LC",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200LM",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200LMA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200LMC",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200LMS",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200LMSA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200LMSC",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200M",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200MA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2600",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2600L",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2600LM",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2600M",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD2200SY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD2200Y",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD2600LSY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD2600LY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD2600SY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD2600Y",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD3100LY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD3100LYA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD3100SY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD3100SYA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD3100Y",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "HD3100YA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "KL7000LY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "KL8000LY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L5100LY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L2000LSY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L2000LY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L2000SY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L2000Y",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L2600LY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L2600SY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L2600Y",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L3000LY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L3000SY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "L3000Y",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200LSY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200LSYA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200LY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200LYA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200Y",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2200YA",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2600LSY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2600LY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2600SY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "SE2600Y",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV1100R",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV1100RM",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV4500L",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV4500LM",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV4500R",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV4500RM",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV500L",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV500LM",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV500R",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV500RM",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV8500L",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV8500LM",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV8500R",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV8500RM",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV1400",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV2000MM",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LF2200 Ⅱ",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LF2200M Ⅱ",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LF2200MQUICK Ⅱ",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LF2200QUICK Ⅱ",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LF2600 Ⅱ",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LF2600M Ⅱ",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LF2600MQUICK Ⅱ",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LF2600QUICK Ⅱ",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LM1600TTMS",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LM1600TTS",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LM1600TTSY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LM1800TTMS",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LM1800TTS",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LM1800TTSY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LM2200TTSYY",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LM2200TTSYYC",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LM2500TT Ⅱ",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LM2500TTM Ⅱ",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LM2500TTMS Ⅱ",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LM2500TTS Ⅱ",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LM2500TTSY II",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "KL6500AW",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV800AW-TT",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV8500RAW",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "KIT600G",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "KIT800G",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "LV600G",
+        "type": "CNC T/C"
+    },
+    {
+        "code": "i-CUT4000",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "i-CUT400TD",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "i-CUT4500",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "F960B",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF4",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF4L",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF5",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF5/50",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF5L",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF6",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF6/50",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF6L",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF7600L",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF5700B/50 II",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF5700B II",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF6700B/50 II",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF6700B II",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF7700B/50 II",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF7700B II",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF1000B",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF1100B",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF4300D",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF5200D",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF6000D",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF4000/2SP",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF4000I/2SP",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF4300/2SP",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF4300G/2SP",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF4300P/2SP",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF5200/2SP",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF5200G/2SP",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF5200P/2SP",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF5700/2SP",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF5700G/2SP",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF6700/2SP",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF6700G/2SP",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF6750/2SP",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF8200/2SP",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "KF8250/2SP",
+        "type": "Vertical M/C"
+    },
+    {
+        "code": "HS10000",
+        "type": "Horizontal M/C"
+    },
+    {
+        "code": "HS4000 II",
+        "type": "Horizontal M/C"
+    },
+    {
+        "code": "HS5000/50 II",
+        "type": "Horizontal M/C"
+    },
+    {
+        "code": "HS5000 II",
+        "type": "Horizontal M/C"
+    },
+    {
+        "code": "HS6300 II",
+        "type": "Horizontal M/C"
+    },
+    {
+        "code": "HS8000 II",
+        "type": "Horizontal M/C"
+    },
+    {
+        "code": "KH1000",
+        "type": "Horizontal M/C"
+    },
+    {
+        "code": "KH50G",
+        "type": "Horizontal M/C"
+    },
+    {
+        "code": "KH6300",
+        "type": "Horizontal M/C"
+    },
+    {
+        "code": "KH8000",
+        "type": "Horizontal M/C"
+    },
+    {
+        "code": "KBN1300C",
+        "type": "Horizontal M/C"
+    },
+    {
+        "code": "KBN1600C",
+        "type": "Horizontal M/C"
+    },
+    {
+        "code": "KBR1300C",
+        "type": "Horizontal M/C"
+    },
+    {
+        "code": "KBR1600C",
+        "type": "Horizontal M/C"
+    },
+    {
+        "code": "XM2600",
+        "type": "Multi-Tasking"
+    },
+    {
+        "code": "XM2600S",
+        "type": "Multi-Tasking"
+    },
+    {
+        "code": "XM2600ST",
+        "type": "Multi-Tasking"
+    },
+    {
+        "code": "XM3100",
+        "type": "Multi-Tasking"
+    },
+    {
+        "code": "XM3100S",
+        "type": "Multi-Tasking"
+    },
+    {
+        "code": "XM3100ST",
+        "type": "Multi-Tasking"
+    },
+    {
+        "code": "KF3500/5A",
+        "type": "5-Axis M/C"
+    },
+    {
+        "code": "KF6500/5A",
+        "type": "5-Axis M/C"
+    },
+    {
+        "code": "KF7300/5A",
+        "type": "5-Axis M/C"
+    },
+    {
+        "code": "XF6300",
+        "type": "5-Axis M/C"
+    },
+    {
+        "code": "XF8500",
+        "type": "5-Axis M/C"
+    },
+    {
+        "code": "XF2000i",
+        "type": "5-Axis M/C"
+    }
+]

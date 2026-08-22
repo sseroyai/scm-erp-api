@@ -1,0 +1,211 @@
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Search, Filter, Book, FileText, Settings, Download, X, Upload, ShieldAlert, FolderOpen } from 'lucide-react';
+import { productLibraryModels } from '../data/productLibraryModels';
+
+export default function ProductLibrary({ currentRole, isMobileView }) {
+  const { t } = useTranslation();
+  const [selectedCategory, setSelectedCategory] = useState('ALL');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedModel, setSelectedModel] = useState(null); // For Quick View Modal
+
+  // Categories
+  const categories = ['ALL', 'CNC T/C', 'Vertical M/C', 'Horizontal M/C', 'Multi-Tasking', '5-Axis M/C'];
+
+  // Mock Data: Models
+  const mockModels = productLibraryModels;
+
+  const filteredModels = mockModels.filter(model => {
+    const matchesCategory = selectedCategory === 'ALL' || model.category === selectedCategory;
+    
+    // 검색어 및 모델명에서 띄어쓰기, 하이픈, 슬래시 등을 제거하고 비교 (강력한 검색 지원)
+    const normalizedSearch = searchQuery.toLowerCase().replace(/[\s\-\/]/g, '');
+    const normalizedName = (model.name || '').toLowerCase().replace(/[\s\-\/]/g, '');
+    const matchesSearch = normalizedName.includes(normalizedSearch);
+    
+    return matchesCategory && matchesSearch;
+  });
+
+  const getDocIcon = (type) => {
+    switch(type) {
+      case 'BROCHURE': return <Book size={18} color="var(--wia-blue)" />;
+      case 'MANUAL': return <FileText size={18} color="var(--wia-gold)" />;
+      case 'DRAWING': return <FolderOpen size={18} color="var(--wia-light-gold)" />;
+      case 'COST': return <ShieldAlert size={18} color="var(--wia-red)" />;
+      case 'SERVICE': return <Settings size={18} color="var(--text-muted)" />;
+      default: return <FileText size={18} />;
+    }
+  };
+
+  return (
+    <div style={{ padding: isMobileView ? '16px' : '32px', animation: 'fadeIn 0.4s ease-out' }}>
+      
+      {/* Header */}
+      <div style={{ display: 'flex', flexDirection: isMobileView ? 'column' : 'row', justifyContent: 'space-between', alignItems: isMobileView ? 'stretch' : 'center', gap: '16px', marginBottom: '24px' }}>
+        <div>
+          <h1 style={{ fontSize: '1.75rem', color: 'var(--wia-blue)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <FolderOpen size={28} />
+            {t('menu7.page_title')}
+          </h1>
+        </div>
+        
+        {/* Write Access for SCM_ADMIN */}
+        {currentRole === 'SCM_ADMIN' && (
+          <button style={{
+            background: 'var(--wia-blue)', color: 'white', border: 'none', padding: '10px 20px', 
+            borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontWeight: 600,
+            boxShadow: 'var(--glass-shadow)', alignSelf: isMobileView ? 'stretch' : 'auto', justifyContent: 'center'
+          }}>
+            <Upload size={18} />
+            <span>신규 자료 업로드</span>
+          </button>
+        )}
+      </div>
+
+      {/* Filter and Search Bar */}
+      <div className="clean-card" style={{ padding: '16px', marginBottom: '24px', display: 'flex', flexDirection: isMobileView ? 'column' : 'row', gap: '16px', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', width: isMobileView ? '100%' : 'auto' }}>
+          {categories.map(cat => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`category-btn ${selectedCategory === cat ? 'active' : ''}`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        <div style={{ position: 'relative', width: isMobileView ? '100%' : '300px' }}>
+          <Search size={18} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
+          <input 
+            type="text" 
+            placeholder={t('menu7.search_placeholder')} 
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            style={{ width: '100%', padding: '10px 12px 10px 40px', borderRadius: '8px', border: '1px solid var(--border-color)', outline: 'none' }}
+          />
+        </div>
+      </div>
+
+      {/* Master List View (Grid) */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
+        {filteredModels.map(model => (
+          <div 
+            key={model.id} 
+            className="clean-card" 
+            style={{ overflow: 'hidden', cursor: 'pointer', display: 'flex', flexDirection: 'column' }}
+            onClick={() => setSelectedModel(model)}
+          >
+            <div style={{ height: '160px', background: 'var(--bg-secondary)', position: 'relative' }}>
+              {/* Dummy Image logic, in real life use actual images */}
+              <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', fontWeight: 700, fontSize: '1.2rem', background: '#e0e4eb' }}>
+                {model.id} 썸네일
+              </div>
+              <span style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(0,0,0,0.6)', color: 'white', padding: '4px 8px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600 }}>
+                {model.category}
+              </span>
+            </div>
+            <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '8px' }}>{model.name}</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '16px' }}>문서 {model.documents.length}개 보유</p>
+              
+              <div style={{ marginTop: 'auto', background: 'var(--bg-secondary)', padding: '12px', borderRadius: '8px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', marginBottom: '4px' }}>
+                  <span style={{ color: 'var(--text-muted)' }}>스핀들:</span>
+                  <span style={{ fontWeight: 600 }}>{model.specs['주축 회전수 (r/min)']}</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem' }}>
+                  <span style={{ color: 'var(--text-muted)' }}>이송거리:</span>
+                  <span style={{ fontWeight: 600 }}>{model.specs['최대이송거리 (X/Z) (mm)']}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Quick View Modal */}
+      {selectedModel && (
+        <div style={{
+          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, 
+          backgroundColor: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000,
+          padding: isMobileView ? '16px' : '40px', backdropFilter: 'blur(4px)'
+        }}>
+          <div className="clean-card" style={{ 
+            background: 'var(--bg-primary)', width: '100%', maxWidth: '800px', maxHeight: '90vh', 
+            overflowY: 'auto', borderRadius: '16px', display: 'flex', flexDirection: 'column' 
+          }}>
+            <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: 'var(--bg-primary)', zIndex: 10 }}>
+              <h2 style={{ fontSize: '1.5rem', margin: 0 }}>{selectedModel.name} <span style={{fontSize: '1rem', color: 'var(--text-muted)', fontWeight: 'normal'}}>{selectedModel.category}</span></h2>
+              <button onClick={() => setSelectedModel(null)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)' }}>
+                <X size={24} />
+              </button>
+            </div>
+            
+            <div style={{ padding: '24px', display: 'flex', flexDirection: isMobileView ? 'column' : 'row', gap: '32px' }}>
+              {/* Left Column: Specs */}
+              <div style={{ flex: '1' }}>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '16px', color: 'var(--text-primary)' }}>핵심 스펙</h3>
+                <div style={{ background: 'var(--bg-secondary)', borderRadius: '8px', overflow: 'hidden' }}>
+                  {Object.entries(selectedModel.specs).map(([key, value], idx) => (
+                    <div key={key} style={{ display: 'flex', padding: '8px', borderBottom: idx !== Object.entries(selectedModel.specs).length - 1 ? '1px solid var(--border-color)' : 'none' }}>
+                      <span style={{ flex: '0 0 60%', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                        {key}
+                      </span>
+                      <span style={{ flex: '0 0 40%', fontWeight: 600, fontSize: '0.9rem', textAlign: 'right' }}>{value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Column: Digital File Download Hub */}
+              <div style={{ flex: '1.5' }}>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '16px', color: 'var(--text-primary)' }}>디지털 자산 (문서)</h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  {selectedModel.documents
+                    // RBAC Logic: Filter INTERNAL documents if user is DEALER
+                    .filter(doc => currentRole !== 'DEALER' || doc.securityLevel !== 'INTERNAL')
+                    .map(doc => (
+                      <div key={doc.id} className="clean-card no-hover-bg" style={{ 
+                        padding: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                        borderLeft: doc.securityLevel === 'INTERNAL' ? '4px solid var(--wia-red)' : '4px solid var(--wia-blue)'
+                      }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                          <div style={{ background: 'var(--bg-secondary)', padding: '8px', borderRadius: '8px' }}>
+                            {getDocIcon(doc.type)}
+                          </div>
+                          <div>
+                            <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{doc.title}</div>
+                            <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', gap: '8px', marginTop: '4px' }}>
+                              <span>{doc.size}</span>
+                              {doc.securityLevel === 'INTERNAL' && (
+                                <span style={{ color: 'var(--wia-red)', fontWeight: 600 }}><ShieldAlert size={10} style={{display:'inline'}}/> 보안 등급: 대외비</span>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                        <button style={{ 
+                          background: 'none', border: '1px solid var(--border-color)', borderRadius: '8px', padding: '8px',
+                          cursor: 'pointer', color: 'var(--wia-blue)', transition: 'all 0.2s',
+                          display: 'flex', alignItems: 'center', justifyContent: 'center'
+                        }} title="다운로드 / 열람">
+                          <Download size={18} />
+                        </button>
+                      </div>
+                    ))}
+                    
+                    {selectedModel.documents.filter(doc => currentRole !== 'DEALER' || doc.securityLevel !== 'INTERNAL').length === 0 && (
+                      <div style={{ padding: '32px', textAlign: 'center', color: 'var(--text-muted)', background: 'var(--bg-secondary)', borderRadius: '8px' }}>
+                        이용 가능한 문서가 없습니다.
+                      </div>
+                    )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
