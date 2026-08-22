@@ -115,6 +115,11 @@ export default function Sidebar({ activeTab, setActiveTab, currentRole, isMobile
       icon: <Truck size={20} />
     },
     {
+      id: 'dealer-sales-archive',
+      label: t('sidebar.dealer_menu.sales_archive'),
+      icon: <FileSpreadsheet size={20} />
+    },
+    {
       id: 'dealer-inventory',
       label: t('sidebar.dealer_menu.inventory'),
       icon: <Package size={20} />

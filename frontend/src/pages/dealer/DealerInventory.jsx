@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Search, Package, CheckCircle2 } from 'lucide-react';
 
 export default function DealerInventory({ isMobileView }) {
+  const { t } = useTranslation();
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
@@ -54,9 +56,9 @@ export default function DealerInventory({ isMobileView }) {
   return (
     <div className="page-body">
       <div style={{ marginBottom: '24px' }}>
-        <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>유럽 재고 상태</h1>
+        <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>{t('menu2.page_title')}</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-          SCM-ADMIN이 관리하는 유럽 법인의 가용 재고(Stock) 전체 목록을 열람합니다. (읽기 전용)
+          {t('menu2.page_desc')}
         </p>
       </div>
 
@@ -65,7 +67,7 @@ export default function DealerInventory({ isMobileView }) {
           <div>
             <h2 style={{ fontSize: '1.3rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <Package size={20} color="var(--status-stock)" />
-              <span>법인 가용 재고 목록</span>
+              <span>{t('menu2.inventory_list_title')}</span>
             </h2>
           </div>
 
@@ -74,7 +76,7 @@ export default function DealerInventory({ isMobileView }) {
               <Search size={16} color="var(--text-muted)" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)' }} />
               <input
                 type="text"
-                placeholder="모델명, NC, P/O, S/N 검색..."
+                placeholder={t('menu2.search_placeholder')}
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
                 style={{
@@ -89,9 +91,9 @@ export default function DealerInventory({ isMobileView }) {
         {isMobileView ? (
           <div className="mobile-cards-grid">
             {loading ? (
-              <div style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>데이터를 불러오는 중입니다...</div>
+              <div style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>{t('navbar.init_seed_loading')}</div>
             ) : filteredOrders.length === 0 ? (
-              <div style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>가용 재고 내역이 없습니다.</div>
+              <div style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>{t('dealer_dashboard.no_atp')}</div>
             ) : (
               filteredOrders.map((order, index) => {
                 const sType = order.stock_type || 'AVAILABLE';
@@ -117,21 +119,23 @@ export default function DealerInventory({ isMobileView }) {
 
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '4px' }}>
                       <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>용도</span>
-                      {sType === 'AVAILABLE' && <span className="status-badge" style={{ background: 'hsla(142, 76%, 46%, 0.2)', color: 'var(--status-stock)', width: '80px', justifyContent: 'center', fontSize: '11px' }}>판매가능</span>}
-                      {sType === 'DEALER_ORDER' && <span className="status-badge" style={{ background: 'hsla(200, 76%, 46%, 0.2)', color: 'var(--accent-cyan)', width: '80px', justifyContent: 'center', fontSize: '11px' }}>딜러주문</span>}
-                      {sType === 'RENTAL' && <span className="status-badge" style={{ background: 'hsla(45, 93%, 58%, 0.2)', color: 'var(--status-production)', width: '80px', justifyContent: 'center', fontSize: '11px' }}>임대</span>}
-                      {sType === 'SHOWROOM' && <span className="status-badge" style={{ background: 'hsla(280, 80%, 60%, 0.2)', color: 'var(--accent-purple)', width: '80px', justifyContent: 'center', fontSize: '11px' }}>전시</span>}
-                      {sType === 'PROMOTION' && <span className="status-badge" style={{ background: 'hsla(340, 82%, 52%, 0.2)', color: 'var(--accent-pink)', width: '80px', justifyContent: 'center', fontSize: '11px' }}>프로모션</span>}
+                      {sType === 'AVAILABLE' && <span className="status-badge" style={{ background: 'hsla(142, 76%, 46%, 0.2)', color: 'var(--status-stock)', width: '80px', justifyContent: 'center', fontSize: '11px' }}>{t('menu2.type_available')}</span>}
+                      {sType === 'DEALER_ORDER' && <span className="status-badge" style={{ background: 'hsla(200, 76%, 46%, 0.2)', color: 'var(--accent-cyan)', width: '80px', justifyContent: 'center', fontSize: '11px' }}>{t('menu2.type_dealer_order')}</span>}
+                      {sType === 'RENTAL' && <span className="status-badge" style={{ background: 'hsla(45, 93%, 58%, 0.2)', color: 'var(--status-production)', width: '80px', justifyContent: 'center', fontSize: '11px' }}>{t('menu2.type_rental')}</span>}
+                      {sType === 'SHOWROOM' && <span className="status-badge" style={{ background: 'hsla(280, 80%, 60%, 0.2)', color: 'var(--accent-purple)', width: '80px', justifyContent: 'center', fontSize: '11px' }}>{t('menu2.type_showroom')}</span>}
+                      {sType === 'PROMOTION' && <span className="status-badge" style={{ background: 'hsla(340, 82%, 52%, 0.2)', color: 'var(--accent-pink)', width: '80px', justifyContent: 'center', fontSize: '11px' }}>{t('menu2.type_promotion')}</span>}
                     </div>
 
                     {expandedRows.has(order.id) && (
                       <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: '1px dashed var(--border-color)', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>진행상태:</strong> <span>{order.current_status}</span></div>
-                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>S/N:</strong> <span>{order.serial_number || '-'}</span></div>
-                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>S/O:</strong> <span>{order.so_no || '-'}</span></div>
-                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>ETD / ETA:</strong> <span>{order.etd ? new Date(order.etd).toLocaleDateString() : '-'} / {order.eta ? new Date(order.eta).toLocaleDateString() : '-'}</span></div>
-                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>VESSEL:</strong> <span>{order.vessel || '-'}</span></div>
-                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>위치:</strong> <span>{order.physical_location || '유럽 물류센터'}</span></div>
+                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_status', '진행상태')}:</strong> <span>{order.current_status ? t(`stepbar.${order.current_status.toLowerCase()}`, order.current_status) : '-'}</span></div>
+                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_sn', 'S/N')}:</strong> <span>{order.serial_number || '-'}</span></div>
+                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_so', 'S/O')}:</strong> <span>{order.so_no || '-'}</span></div>
+                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_remark', 'REMARK')}:</strong> <span>{order.remark || '-'}</span></div>
+                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_etd_eta', 'ETD / ETA')}:</strong> <span>{order.etd ? new Date(order.etd).toLocaleDateString() : '-'} / {order.eta ? new Date(order.eta).toLocaleDateString() : '-'}</span></div>
+                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_port', 'PORT')}:</strong> <span>{order.destination_port || '-'}</span></div>
+                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_incoterms', 'INCOTERMS')}:</strong> <span>{order.incoterms || '-'}</span></div>
+                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_vessel', 'VESSEL')}:</strong> <span>{order.vessel || '-'}</span></div>
                       </div>
                     )}
                   </div>
@@ -144,20 +148,20 @@ export default function DealerInventory({ isMobileView }) {
           <table className="data-table">
             <thead>
               <tr>
-                <th style={{ width: '5%' }}>No.</th>
-                <th style={{ width: '15%' }}>모델</th>
-                <th style={{ width: '10%' }}>NC</th>
-                <th style={{ width: '15%' }}>P/O</th>
-                <th style={{ width: '25%' }}>DETAIL SPEC</th>
-                <th style={{ width: '15%' }}>ETA</th>
-                <th style={{ width: '15%' }}>용도</th>
+                <th style={{ width: '5%' }}>{t('menu2.header_no')}</th>
+                <th style={{ width: '15%' }}>{t('menu2.header_model')}</th>
+                <th style={{ width: '10%' }}>{t('menu2.header_nc')}</th>
+                <th style={{ width: '15%' }}>{t('menu2.header_po')}</th>
+                <th style={{ width: '25%' }}>{t('menu2.header_detailspec')}</th>
+                <th style={{ width: '15%' }}>{t('menu2.header_eta')}</th>
+                <th style={{ width: '15%' }}>{t('menu2.type_available')}</th>
               </tr>
             </thead>
             <tbody>
               {loading ? (
-                <tr><td colSpan={7} style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>데이터를 불러오는 중입니다...</td></tr>
+                <tr><td colSpan={7} style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>{t('navbar.init_seed_loading')}</td></tr>
               ) : filteredOrders.length === 0 ? (
-                <tr><td colSpan={7} style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>가용 재고 내역이 없습니다.</td></tr>
+                <tr><td colSpan={7} style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>{t('dealer_dashboard.no_atp')}</td></tr>
               ) : (
                 filteredOrders.map((order, index) => {
                   const sType = order.stock_type || 'AVAILABLE';
@@ -188,27 +192,44 @@ export default function DealerInventory({ isMobileView }) {
                           <div style={{ fontSize: '10px' }}>{order.eta ? new Date(order.eta).toLocaleDateString() : '-'}</div>
                         </td>
                         <td style={{ borderBottom: expandedRows.has(order.id) ? 'none' : '1px solid var(--border-color)', paddingBottom: '4px', paddingTop: '4px' }}>
-                          {sType === 'AVAILABLE' && <span className="status-badge" style={{ background: 'hsla(142, 76%, 46%, 0.2)', color: 'var(--status-stock)', width: '72px', justifyContent: 'center', fontSize: '11px' }}>판매가능</span>}
-                          {sType === 'DEALER_ORDER' && <span className="status-badge" style={{ background: 'hsla(200, 76%, 46%, 0.2)', color: 'var(--accent-cyan)', width: '72px', justifyContent: 'center', fontSize: '11px' }}>딜러주문</span>}
-                          {sType === 'RENTAL' && <span className="status-badge" style={{ background: 'hsla(45, 93%, 58%, 0.2)', color: 'var(--status-production)', width: '72px', justifyContent: 'center', fontSize: '11px' }}>임대</span>}
-                          {sType === 'SHOWROOM' && <span className="status-badge" style={{ background: 'hsla(280, 80%, 60%, 0.2)', color: 'var(--accent-purple)', width: '72px', justifyContent: 'center', fontSize: '11px' }}>전시</span>}
-                          {sType === 'PROMOTION' && <span className="status-badge" style={{ background: 'hsla(340, 82%, 52%, 0.2)', color: 'var(--accent-pink)', width: '72px', justifyContent: 'center', fontSize: '11px' }}>프로모션</span>}
+                          {sType === 'AVAILABLE' && <span className="status-badge" style={{ background: 'hsla(142, 76%, 46%, 0.2)', color: 'var(--status-stock)', width: '72px', justifyContent: 'center', fontSize: '11px' }}>{t('menu2.type_available')}</span>}
+                          {sType === 'DEALER_ORDER' && <span className="status-badge" style={{ background: 'hsla(200, 76%, 46%, 0.2)', color: 'var(--accent-cyan)', width: '72px', justifyContent: 'center', fontSize: '11px' }}>{t('menu2.type_dealer_order')}</span>}
+                          {sType === 'RENTAL' && <span className="status-badge" style={{ background: 'hsla(45, 93%, 58%, 0.2)', color: 'var(--status-production)', width: '72px', justifyContent: 'center', fontSize: '11px' }}>{t('menu2.type_rental')}</span>}
+                          {sType === 'SHOWROOM' && <span className="status-badge" style={{ background: 'hsla(280, 80%, 60%, 0.2)', color: 'var(--accent-purple)', width: '72px', justifyContent: 'center', fontSize: '11px' }}>{t('menu2.type_showroom')}</span>}
+                          {sType === 'PROMOTION' && <span className="status-badge" style={{ background: 'hsla(340, 82%, 52%, 0.2)', color: 'var(--accent-pink)', width: '72px', justifyContent: 'center', fontSize: '11px' }}>{t('menu2.type_promotion')}</span>}
                         </td>
                       </tr>
                       {expandedRows.has(order.id) && (
                         <tr>
-                          <td colSpan={3} style={{ backgroundColor: 'var(--bg-card)', padding: '16px', borderTop: '1px dashed var(--border-color)', borderBottom: '1px solid var(--border-color)', verticalAlign: 'top' }}>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '12px', paddingLeft: '8px' }}>
-                              <div><span style={{ fontWeight: 600, color: 'var(--text-secondary)', display: 'inline-block', width: '80px' }}>진행상태:</span> {order.current_status}</div>
-                              <div><span style={{ fontWeight: 600, color: 'var(--text-secondary)', display: 'inline-block', width: '80px' }}>S/N:</span> {order.serial_number || '-'}</div>
-                              <div><span style={{ fontWeight: 600, color: 'var(--text-secondary)', display: 'inline-block', width: '80px' }}>S/O:</span> {order.so_no || '-'}</div>
-                            </div>
-                          </td>
-                          <td colSpan={4} style={{ backgroundColor: 'var(--bg-card)', padding: '16px', borderTop: '1px dashed var(--border-color)', borderBottom: '1px solid var(--border-color)', verticalAlign: 'top' }}>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '12px', paddingLeft: '8px' }}>
-                              <div><span style={{ fontWeight: 600, color: 'var(--text-secondary)', display: 'inline-block', width: '100px' }}>ETD / ETA :</span> {order.etd ? new Date(order.etd).toLocaleDateString() : '-'} / {order.eta ? new Date(order.eta).toLocaleDateString() : '-'}</div>
-                              <div><span style={{ fontWeight: 600, color: 'var(--text-secondary)', display: 'inline-block', width: '100px' }}>VESSEL:</span> {order.vessel || '-'}</div>
-                              <div><span style={{ fontWeight: 600, color: 'var(--text-secondary)', display: 'inline-block', width: '100px' }}>위치:</span> {order.physical_location || '유럽 물류센터'}</div>
+                          <td colSpan={7} style={{ backgroundColor: 'var(--bg-card)', paddingTop: '12px', borderTop: '1px dashed var(--border-color)', paddingBottom: '16px', borderBottom: '1px solid var(--border-color)' }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', paddingLeft: '8px' }}>
+                              <div style={{
+                                fontSize: '12px',
+                                color: 'var(--text-secondary)',
+                                lineHeight: '1.8',
+                                textAlign: 'left',
+                                paddingLeft: '16px',
+                                borderLeft: '3px solid var(--wia-blue)',
+                              }}>
+                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>{t('menu2.detail_status', '진행상태')}:</span> {order.current_status ? t(`stepbar.${order.current_status.toLowerCase()}`, order.current_status) : '-'}</div>
+                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>{t('menu2.detail_sn', 'S/N')}:</span> {order.serial_number || '-'}</div>
+                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>{t('menu2.detail_so', 'S/O')}:</span> {order.so_no || '-'}</div>
+                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>{t('menu2.detail_remark', 'REMARK')}:</span> {order.remark || '-'}</div>
+                              </div>
+
+                              <div style={{
+                                fontSize: '12px',
+                                color: 'var(--text-secondary)',
+                                lineHeight: '1.8',
+                                textAlign: 'left',
+                                paddingLeft: '16px',
+                                borderLeft: '3px solid var(--wia-blue)',
+                              }}>
+                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>{t('menu2.detail_etd_eta', 'ETD / ETA')}:</span> {order.etd ? new Date(order.etd).toLocaleDateString() : '-'} / {order.eta ? new Date(order.eta).toLocaleDateString() : '-'}</div>
+                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>{t('menu2.detail_port', 'PORT')}:</span> {order.destination_port || '-'}</div>
+                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>{t('menu2.detail_incoterms', 'INCOTERMS')}:</span> {order.incoterms || '-'}</div>
+                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>{t('menu2.detail_vessel', 'VESSEL')}:</span> {order.vessel || '-'}</div>
+                              </div>
                             </div>
                           </td>
                         </tr>

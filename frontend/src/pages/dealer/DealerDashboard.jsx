@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 import { Ship, Calendar, Package } from 'lucide-react';
 
 const COLORS = ['#06b6d4', '#3b82f6', '#8b5cf6', '#10b981', '#f59e0b', '#ec4899'];
 
 export default function DealerDashboard({ isMobileView }) {
+  const { t } = useTranslation();
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -32,14 +34,9 @@ export default function DealerDashboard({ isMobileView }) {
     fetchOrders();
   }, []);
 
+  const activeCount = orders.filter(o => !['SOLD', 'DISPATCHED'].includes(o.current_status)).length;
   const shippingCount = orders.filter(o => o.current_status === 'SHIPPING').length;
-  
-  const now = new Date();
-  const currentMonthCount = orders.filter(o => {
-    if (!o.eta) return false;
-    const etaDate = new Date(o.eta);
-    return etaDate.getMonth() === now.getMonth() && etaDate.getFullYear() === now.getFullYear();
-  }).length;
+  const readyCount = orders.filter(o => o.current_status === 'IN_STOCK').length;
 
   const [atpOrders, setAtpOrders] = useState([]);
   
@@ -82,55 +79,55 @@ export default function DealerDashboard({ isMobileView }) {
   return (
     <div className="page-body">
       <div style={{ marginBottom: '24px' }}>
-        <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>딜러 포털 현황판</h1>
+        <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>{t('dealer_dashboard.title')}</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-          AK MAKINA 님의 내 주문 현황 요약 및 유럽 법인 전체 가용 재고 현황입니다.
+          {t('dealer_dashboard.subtitle', { dealerName: 'AK MAKINA' })}
         </p>
       </div>
 
       {loading ? (
-        <div style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>로딩 중...</div>
+        <div style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>{t('navbar.init_seed_loading')}</div>
       ) : (
         <>
           <div className="kpi-grid">
             <div className="glass-card kpi-card">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span className="kpi-title">운송 중 내 장비 (SHIPPING)</span>
-                <Ship color="var(--accent-cyan)" size={24} />
+                <span className="kpi-title">{t('dealer_dashboard.active_orders')}</span>
+                <Package color="var(--accent-cyan)" size={24} />
               </div>
-              <div className="kpi-value">{shippingCount} <span style={{ fontSize: '1rem', fontWeight: 500, color: 'var(--text-muted)' }}>대</span></div>
-              <div className="kpi-desc">해상 운송 중인 내 주문</div>
+              <div className="kpi-value">{activeCount} <span style={{ fontSize: '1rem', fontWeight: 500, color: 'var(--text-muted)' }}>{t('dealer_dashboard.unit')}</span></div>
+              <div className="kpi-desc">{t('dealer_dashboard.active_desc')}</div>
             </div>
 
             <div className="glass-card kpi-card">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span className="kpi-title">이번 달 입고 예정 (ETA)</span>
-                <Calendar color="var(--accent-blue)" size={24} />
+                <span className="kpi-title">{t('dealer_dashboard.shipping_orders')}</span>
+                <Ship color="var(--accent-blue)" size={24} />
               </div>
-              <div className="kpi-value">{currentMonthCount} <span style={{ fontSize: '1rem', fontWeight: 500, color: 'var(--text-muted)' }}>대</span></div>
-              <div className="kpi-desc">유럽 항구 도착 및 통관 진행 대상</div>
+              <div className="kpi-value">{shippingCount} <span style={{ fontSize: '1rem', fontWeight: 500, color: 'var(--text-muted)' }}>{t('dealer_dashboard.unit')}</span></div>
+              <div className="kpi-desc">{t('dealer_dashboard.shipping_desc')}</div>
             </div>
 
             <div className="glass-card kpi-card">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span className="kpi-title">유럽 창고 가용 재고 (ATP)</span>
+                <span className="kpi-title">{t('dealer_dashboard.ready_orders')}</span>
                 <Package color="var(--status-stock)" size={24} />
               </div>
-              <div className="kpi-value" style={{ color: 'var(--status-stock)' }}>{atpOrders.length} <span style={{ fontSize: '1rem', fontWeight: 500, color: 'var(--text-muted)' }}>대</span></div>
-              <div className="kpi-desc">전체 딜러망 가용 즉시 출고 가능 대수</div>
+              <div className="kpi-value" style={{ color: 'var(--status-stock)' }}>{readyCount} <span style={{ fontSize: '1rem', fontWeight: 500, color: 'var(--text-muted)' }}>{t('dealer_dashboard.unit')}</span></div>
+              <div className="kpi-desc">{t('dealer_dashboard.ready_desc')}</div>
             </div>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: isMobileView ? '1fr' : 'repeat(auto-fit, minmax(450px, 1fr))', gap: '24px' }}>
             <div className="glass-card" style={{ padding: '28px', display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>기종별 가용 재고 분포 (Pie Chart)</h3>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>{t('dealer_dashboard.pie_title')}</h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '20px' }}>
-                유럽 현지 창고에 보관되어 즉시 할당 신청이 가능한 기계 모델 분포입니다.
+                {t('dealer_dashboard.pie_desc')}
               </p>
               
               <div style={{ flex: 1, minHeight: '280px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {pieData.length === 0 ? (
-                  <div style={{ color: 'var(--text-muted)' }}>현재 가용(AVAILABLE) 상태인 장비가 없습니다.</div>
+                  <div style={{ color: 'var(--text-muted)' }}>{t('dealer_dashboard.no_atp')}</div>
                 ) : (
                   <ResponsiveContainer width="100%" height={280}>
                     <PieChart>
@@ -159,15 +156,15 @@ export default function DealerDashboard({ isMobileView }) {
             </div>
 
             <div className="glass-card" style={{ padding: '28px', display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>즉시 할당 가능 장비 목록 (ATP List)</h3>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>{t('dealer_dashboard.atp_list_title')}</h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '20px' }}>
-                원하는 모델을 선택하여 즉시 출고(소프트 할당)를 관리자에게 요청할 수 있습니다.
+                {t('dealer_dashboard.atp_list_desc')}
               </p>
 
               {isMobileView ? (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', flex: 1 }}>
                   {atpOrders.length === 0 ? (
-                    <div style={{ textAlign: 'center', padding: '24px', color: 'var(--text-muted)' }}>즉시 할당 가능한 재고가 없습니다.</div>
+                    <div style={{ textAlign: 'center', padding: '24px', color: 'var(--text-muted)' }}>{t('dealer_dashboard.no_atp')}</div>
                   ) : (
                     atpOrders.map(o => (
                       <div key={o.id} style={{ background: 'var(--bg-secondary)', padding: '14px', borderRadius: '12px', border: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
@@ -183,7 +180,7 @@ export default function DealerDashboard({ isMobileView }) {
                           className="btn btn-primary"
                           style={{ padding: '6px 14px', fontSize: '0.8rem' }}
                         >
-                          즉시 할당 신청
+                          {t('dealer_dashboard.btn_allocation')}
                         </button>
                       </div>
                     ))
@@ -194,15 +191,15 @@ export default function DealerDashboard({ isMobileView }) {
                   <table className="data-table">
                     <thead>
                       <tr>
-                        <th>모델명</th>
-                        <th>시리얼 번호 (S/N)</th>
-                        <th>보관 구역</th>
-                        <th>액션</th>
+                        <th>{t('menu1.header_model')}</th>
+                        <th>{t('menu2.detail_sn')}</th>
+                        <th>{t('profile.department')} / {t('menu2.detail_port')}</th>
+                        <th>{t('menu6.header_action')}</th>
                       </tr>
                     </thead>
                     <tbody>
                       {atpOrders.length === 0 ? (
-                        <tr><td colSpan={4} style={{ textAlign: 'center', padding: '24px', color: 'var(--text-muted)' }}>즉시 할당 가능한 재고가 없습니다.</td></tr>
+                        <tr><td colSpan={4} style={{ textAlign: 'center', padding: '24px', color: 'var(--text-muted)' }}>{t('dealer_dashboard.no_atp')}</td></tr>
                       ) : (
                         atpOrders.map(o => (
                           <tr key={o.id}>
@@ -217,7 +214,7 @@ export default function DealerDashboard({ isMobileView }) {
                                 className="btn btn-primary"
                                 style={{ padding: '4px 12px', fontSize: '0.75rem' }}
                               >
-                                즉시 할당 신청
+                                {t('dealer_dashboard.btn_allocation')}
                               </button>
                             </td>
                           </tr>

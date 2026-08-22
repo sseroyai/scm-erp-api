@@ -36,11 +36,12 @@
       "users": "메뉴9. 유저 및 보안관리"
     },
     "dealer_menu": {
-      "dashboard": "메뉴 1. 포털 대시보드 (딜러 전용)",
-      "orders": "메뉴 2. 발주 및 배송상태",
-      "inventory": "메뉴 3. 유럽 재고 상태",
-      "promotion": "메뉴 4. 프로모션",
-      "library": "메뉴 5. 제품 라이브러리"
+      "dashboard": "메뉴1. 포털 대시보드",
+      "orders": "메뉴2. 발주 및 배송상태",
+      "sales_archive": "메뉴3. 내 구매 내역",
+      "inventory": "메뉴4. WIA 재고 리스트",
+      "promotion": "메뉴5. WIA 프로모션",
+      "library": "메뉴6. 제품 라이브러리"
     }
   },
   "dashboard": {
@@ -93,7 +94,7 @@
   },
   "menu2": {
     "page_title": "유럽 재고 상태",
-    "page_desc": "유럽 현지 법인(WME)으로 업로드된 가용 재고(ATP) 현황을 파악하고 용도/딜러를 수정합니다.",
+    "page_desc": "WIA 유럽법인의 가용 재고(ATP) 현황을 파악 할 수 있습니다.",
     "header_no": "*",
     "header_model": "모델",
     "header_nc": "NC",
@@ -203,5 +204,48 @@
   "menu7": {
     "page_title": "라인업 제품 라이브러리",
     "search_placeholder": "모델명 검색..."
+  },
+  "dealer_dashboard": {
+    "title": "딜러 포털 현황판",
+    "subtitle": "내 주문 현황 요약 및 유럽 법인 전체 가용 재고 현황입니다.",
+    "active_orders": "진행중인 주문",
+    "active_desc": "현재 처리 중인 발주 총계",
+    "shipping_orders": "운송 중 장비",
+    "shipping_desc": "해상 운송 중인 내 주문",
+    "ready_orders": "출고 대기 장비",
+    "ready_desc": "유럽 물류센터 출고대기 장비",
+    "pie_title": "기종별 가용 재고 분포 (Pie Chart)",
+    "pie_desc": "유럽 현지 창고에 보관되어 즉시 할당 신청이 가능한 기계 모델 분포입니다.",
+    "no_atp": "현재 가용(AVAILABLE) 상태인 장비가 없습니다.",
+    "atp_list_title": "즉시 할당 가능 장비 목록 (ATP List)",
+    "atp_list_desc": "원하는 모델을 선택하여 즉시 출고(소프트 할당)를 관리자에게 요청할 수 있습니다.",
+    "btn_allocation": "즉시 할당 신청",
+    "unit": "대"
+  },
+  "dealer_orders": {
+    "title": "내 발주 및 배송상태",
+    "subtitle": "PO 번호, S/N 정보로 내 발주 건의 배송상태를 조회합니다.",
+    "search_placeholder": "검색..",
+    "pipeline_title": "배송 추적 타임라인",
+    "mobile_alert": "현장 접근성 강화를 위한 모바일 대응 페이지",
+    "btn_desktop_view": "🖥️ 데스크탑 뷰로 복귀",
+    "btn_mobile_view": "📱 모바일 리스트 뷰 시뮬레이션",
+    "no_orders": "발주 내역이 없습니다.",
+    "current_location": "현재 위치:",
+    "eta": "도착 예정(ETA):",
+    "header_model": "Model",
+    "header_po_sn": "P/O & / S/N",
+    "header_dealer": "Dealer",
+    "header_status": "Status",
+    "header_port": "Port"
+  },
+  "dealer_promotion": {
+    "page_title": "법인 주관 프로모션 안내",
+    "page_desc": "유럽 법인에서 특별 조건으로 제공하는 프로모션 장비 리스트를 확인하고 예약을 요청할 수 있습니다.",
+    "current_promo": "현재 진행 중인 프로모션 장비 현황",
+    "no_promo": "진행 중인 프로모션이 없습니다.",
+    "btn_inquiry": "예약 및 구매 문의",
+    "no_apply": "신청 불가",
+    "alert_msg": "[{{modelName}}] 프로모션 기계에 대한 예약/구매 요청이 유럽 법인 영업팀으로 발송되었습니다. 담당자가 확인 후 회신드릴 예정입니다."
   }
 }

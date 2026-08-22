@@ -20,6 +20,7 @@ import ProductLibrary from './pages/ProductLibrary';
 // Dealer Pages
 import DealerDashboard from './pages/dealer/DealerDashboard';
 import DealerOrders from './pages/dealer/DealerOrders';
+import DealerSalesArchive from './pages/dealer/DealerSalesArchive';
 import DealerInventory from './pages/dealer/DealerInventory';
 import DealerPromotion from './pages/dealer/DealerPromotion';
 
@@ -219,6 +220,7 @@ export default function App() {
           {/* Dealer Routing */}
           {activeTab === 'dealer-dashboard' && <DealerDashboard isMobileView={isMobileView} />}
           {activeTab === 'dealer-orders' && <DealerOrders isMobileView={isMobileView} />}
+          {activeTab === 'dealer-sales-archive' && <DealerSalesArchive isMobileView={isMobileView} />}
           {activeTab === 'dealer-inventory' && <DealerInventory isMobileView={isMobileView} />}
           {activeTab === 'dealer-promotion' && <DealerPromotion isMobileView={isMobileView} />}
           {activeTab === 'dealer-library' && <ProductLibrary currentRole={currentRole} isMobileView={isMobileView} />}

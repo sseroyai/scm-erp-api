@@ -36,11 +36,12 @@
       "users": "Menu9. User & Security"
     },
     "dealer_menu": {
-      "dashboard": "Menu 1. Portal Dashboard (Dealer)",
-      "orders": "Menu 2. Orders & Shipping",
-      "inventory": "Menu 3. Europe Inventory",
-      "promotion": "Menu 4. Promotions",
-      "library": "Menu 5. Product Library"
+      "dashboard": "Menu1. Portal Dashboard",
+      "orders": "Menu2. Order & Shipping Status",
+      "sales_archive": "Menu3. My Ordered",
+      "inventory": "Menu4. WIA Stock List",
+      "promotion": "Menu5. WIA Promotion",
+      "library": "Menu6. Product Library"
     }
   },
   "dashboard": {
@@ -93,7 +94,7 @@
   },
   "menu2": {
     "page_title": "WIA Stock Status",
-    "page_desc": "On this page, you can check the available stock of the  WIA Europe and manage its status.",
+    "page_desc": "On this page, you can find the available stock of WIA Machine Tools.",
     "header_no": "*",
     "header_model": "MODEL",
     "header_nc": "NC",
@@ -203,5 +204,48 @@
   "menu7": {
     "page_title": "Line-UP Product Library",
     "search_placeholder": "search"
+  },
+  "dealer_dashboard": {
+    "title": "Dealer Portal Dashboard",
+    "subtitle": "Order summary and ATP stock overview.",
+    "active_orders": "Order in Progress",
+    "active_desc": "Total active orders in timeline",
+    "shipping_orders": "Shipping Machine",
+    "shipping_desc": "Orders currently in transit",
+    "ready_orders": "Ready for Pickup",
+    "ready_desc": "Machine in stock ready for the pickup",
+    "pie_title": "ATP Stock Distribution by Model",
+    "pie_desc": "Models currently in local EU warehouses ready for allocation requests.",
+    "no_atp": "No equipment is currently in AVAILABLE status.",
+    "atp_list_title": "Equipment Available for Immediate Allocation (ATP List)",
+    "atp_list_desc": "Select a desired model to request immediate dispatch (soft allocation) from the admin.",
+    "btn_allocation": "Request Allocation",
+    "unit": "Units"
+  },
+  "dealer_orders": {
+    "title": "My Orders & Shipping Status",
+    "subtitle": "Track your orders through a detailed timeline using P/O or S/N.",
+    "search_placeholder": "Search",
+    "pipeline_title": "Delivery Tracking Timeline",
+    "mobile_alert": "Mobile-responsive page for enhanced field access",
+    "btn_desktop_view": "🖥️ Return to Desktop View",
+    "btn_mobile_view": "📱 Simulate Mobile List View",
+    "no_orders": "No order history available.",
+    "current_location": "Current Location:",
+    "eta": "Expected Arrival (ETA):",
+    "header_model": "Model",
+    "header_po_sn": "P/O & / S/N",
+    "header_dealer": "Dealer",
+    "header_status": "Status",
+    "header_port": "Port"
+  },
+  "dealer_promotion": {
+    "page_title": "Promotion List",
+    "page_desc": "Check out the special promotion equipment offered by the EU office and request reservations.",
+    "current_promo": "Currently Active Promotion Equipment",
+    "no_promo": "No active promotions at the moment.",
+    "btn_inquiry": "Reserve",
+    "no_apply": "Unavailable",
+    "alert_msg": "Your reservation/purchase request for [{{modelName}}] has been sent to the EU Sales Team. A representative will contact you shortly."
   }
 }
