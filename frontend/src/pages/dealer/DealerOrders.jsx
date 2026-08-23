@@ -6,6 +6,7 @@ import StepBar from '../../components/StepBar';
 export default function DealerOrders({ isMobileView }) {
   const { t } = useTranslation();
   const [orders, setOrders] = useState([]);
+  const [portCodes, setPortCodes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedStatusFilter, setSelectedStatusFilter] = useState('ALL');
@@ -29,10 +30,15 @@ export default function DealerOrders({ isMobileView }) {
   const fetchOrders = async () => {
     setLoading(true);
     try {
-      const dealersRes = await fetch('/api/dealers');
+      const [dealersRes, portsRes] = await Promise.all([
+        fetch('/api/dealers'),
+        fetch('/api/master-data/port-codes')
+      ]);
       const dealers = await dealersRes.json();
       const akMakina = dealers.find(d => d.name === 'AK MAKINA');
       const dealerId = akMakina ? akMakina.id : '';
+
+      setPortCodes(await portsRes.json());
 
       const res = await fetch(`/api/orders?dealer_id=${dealerId}&exclude_completed=true`);
       const data = await res.json();
@@ -49,6 +55,17 @@ export default function DealerOrders({ isMobileView }) {
   useEffect(() => {
     fetchOrders();
   }, []);
+
+  const getStandardPort = (rawPort) => {
+    if (!rawPort) return '-';
+    if (!portCodes || portCodes.length === 0) return rawPort;
+    const lowerRaw = rawPort.toLowerCase().trim();
+    const exactMatch = portCodes.find(p => p.port_code.toLowerCase() === lowerRaw);
+    if (exactMatch) return exactMatch.port_code;
+    const startsMatch = portCodes.find(p => p.port_code.toLowerCase().startsWith(lowerRaw));
+    if (startsMatch) return startsMatch.port_code;
+    return rawPort;
+  };
 
   const filteredOrders = orders.filter(o => {
     const matchesQuery = o.reference_no.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -206,7 +223,7 @@ export default function DealerOrders({ isMobileView }) {
                             <StepBar currentStatus={order.current_status} />
                           </td>
                           <td style={{ borderBottom: expandedRows.has(order.id) ? 'none' : '1px solid var(--border-color)', paddingBottom: '12px', paddingTop: '12px' }}>
-                            <div style={{ fontSize: '0.85rem', fontWeight: 500 }}>{order.destination_port || 'HAMBURG'}</div>
+                            <div style={{ fontSize: '0.85rem', fontWeight: 500 }}>{getStandardPort(order.destination_port)}</div>
                             {showSchedule && (
                               <>
                                 <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '4px' }}>

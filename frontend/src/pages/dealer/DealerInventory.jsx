@@ -5,6 +5,7 @@ import { Search, Package, CheckCircle2 } from 'lucide-react';
 export default function DealerInventory({ isMobileView }) {
   const { t } = useTranslation();
   const [orders, setOrders] = useState([]);
+  const [portCodes, setPortCodes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -25,13 +26,17 @@ export default function DealerInventory({ isMobileView }) {
   const fetchInventory = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/orders?is_corporate_stock=true');
-      const data = await res.json();
+      const [ordersRes, portsRes] = await Promise.all([
+        fetch('/api/orders?is_corporate_stock=true'),
+        fetch('/api/master-data/port-codes')
+      ]);
+      const data = await ordersRes.json();
       if (Array.isArray(data)) {
         // 딜러는 '일반 판매용(AVAILABLE)' 또는 임대/전시 목적의 재고를 볼 수 있음
         // V7 요구사항: "SCM-ADMIN이 관리하는 유럽법인 가용 재고(Stock) 리스트를 딜러들이 열람. 검색창, 재고 스펙 확인."
         setOrders(data);
       }
+      setPortCodes(await portsRes.json());
     } catch (err) {
       console.error("Failed to fetch inventory:", err);
     } finally {
@@ -42,6 +47,17 @@ export default function DealerInventory({ isMobileView }) {
   useEffect(() => {
     fetchInventory();
   }, []);
+
+  const getStandardPort = (rawPort) => {
+    if (!rawPort) return '-';
+    if (!portCodes || portCodes.length === 0) return rawPort;
+    const lowerRaw = rawPort.toLowerCase().trim();
+    const exactMatch = portCodes.find(p => p.port_code.toLowerCase() === lowerRaw);
+    if (exactMatch) return exactMatch.port_code;
+    const startsMatch = portCodes.find(p => p.port_code.toLowerCase().startsWith(lowerRaw));
+    if (startsMatch) return startsMatch.port_code;
+    return rawPort;
+  };
 
   const filteredOrders = orders.filter(o => {
     const query = searchQuery.toLowerCase();
@@ -133,7 +149,7 @@ export default function DealerInventory({ isMobileView }) {
                         <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_so', 'S/O')}:</strong> <span>{order.so_no || '-'}</span></div>
                         <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_remark', 'REMARK')}:</strong> <span>{order.remark || '-'}</span></div>
                         <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_etd_eta', 'ETD / ETA')}:</strong> <span>{order.etd ? new Date(order.etd).toLocaleDateString() : '-'} / {order.eta ? new Date(order.eta).toLocaleDateString() : '-'}</span></div>
-                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_port', 'PORT')}:</strong> <span>{order.destination_port || '-'}</span></div>
+                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_port', 'PORT')}:</strong> <span>{getStandardPort(order.destination_port)}</span></div>
                         <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_incoterms', 'INCOTERMS')}:</strong> <span>{order.incoterms || '-'}</span></div>
                         <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_vessel', 'VESSEL')}:</strong> <span>{order.vessel || '-'}</span></div>
                       </div>
@@ -226,7 +242,7 @@ export default function DealerInventory({ isMobileView }) {
                                 borderLeft: '3px solid var(--wia-blue)',
                               }}>
                                 <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>{t('menu2.detail_etd_eta', 'ETD / ETA')}:</span> {order.etd ? new Date(order.etd).toLocaleDateString() : '-'} / {order.eta ? new Date(order.eta).toLocaleDateString() : '-'}</div>
-                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>{t('menu2.detail_port', 'PORT')}:</span> {order.destination_port || '-'}</div>
+                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>{t('menu2.detail_port', 'PORT')}:</span> {getStandardPort(order.destination_port)}</div>
                                 <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>{t('menu2.detail_incoterms', 'INCOTERMS')}:</span> {order.incoterms || '-'}</div>
                                 <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>{t('menu2.detail_vessel', 'VESSEL')}:</span> {order.vessel || '-'}</div>
                               </div>

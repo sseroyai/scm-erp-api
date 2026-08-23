@@ -218,7 +218,7 @@ export default function App() {
           {activeTab === 'admin-library' && <ProductLibrary currentRole={currentRole} isMobileView={isMobileView} />}
 
           {/* Dealer Routing */}
-          {activeTab === 'dealer-dashboard' && <DealerDashboard isMobileView={isMobileView} />}
+          {activeTab === 'dealer-dashboard' && <DealerDashboard isMobileView={isMobileView} setActiveTab={setActiveTab} />}
           {activeTab === 'dealer-orders' && <DealerOrders isMobileView={isMobileView} />}
           {activeTab === 'dealer-sales-archive' && <DealerSalesArchive isMobileView={isMobileView} />}
           {activeTab === 'dealer-inventory' && <DealerInventory isMobileView={isMobileView} />}

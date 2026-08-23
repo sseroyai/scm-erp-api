@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 import { Ship, Calendar, Package } from 'lucide-react';
 
-const COLORS = ['#06b6d4', '#3b82f6', '#8b5cf6', '#10b981', '#f59e0b', '#ec4899'];
-
-export default function DealerDashboard({ isMobileView }) {
+export default function DealerDashboard({ isMobileView, setActiveTab }) {
   const { t } = useTranslation();
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -54,15 +51,26 @@ export default function DealerDashboard({ isMobileView }) {
     fetchATP();
   }, []);
 
-  const stockByModel = {};
-  atpOrders.forEach(o => {
-    const mName = o.product_model ? o.product_model.model_name : 'Unknown';
-    stockByModel[mName] = (stockByModel[mName] || 0) + 1;
-  });
-  const pieData = Object.keys(stockByModel).map(model => ({
-    name: model,
-    value: stockByModel[model]
-  }));
+  const [corpStock, setCorpStock] = useState([]);
+  
+  const fetchCorpStock = async () => {
+    try {
+      const res = await fetch('/api/orders?is_corporate_stock=true');
+      const data = await res.json();
+      if (Array.isArray(data)) {
+        setCorpStock(data);
+      }
+    } catch (e) {}
+  };
+
+  useEffect(() => {
+    fetchCorpStock();
+  }, []);
+
+  const availableCount = corpStock.filter(o => (o.stock_type || 'AVAILABLE') === 'AVAILABLE').length;
+  const rentalCount = corpStock.filter(o => (o.stock_type || 'AVAILABLE') === 'RENTAL').length;
+  const showroomCount = corpStock.filter(o => (o.stock_type || 'AVAILABLE') === 'SHOWROOM').length;
+  const promotionCount = corpStock.filter(o => (o.stock_type || 'AVAILABLE') === 'PROMOTION').length;
 
   const handleRequestAllocation = (order) => {
     const modelName = order.product_model ? order.product_model.model_name : order.reference_no;
@@ -120,46 +128,65 @@ export default function DealerDashboard({ isMobileView }) {
 
           <div style={{ display: 'grid', gridTemplateColumns: isMobileView ? '1fr' : 'repeat(auto-fit, minmax(450px, 1fr))', gap: '24px' }}>
             <div className="glass-card" style={{ padding: '28px', display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>{t('dealer_dashboard.pie_title')}</h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '20px' }}>
-                {t('dealer_dashboard.pie_desc')}
-              </p>
+              <div style={{ minHeight: '100px' }}>
+                <h3 style={{ fontSize: '1.2rem', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <Package size={20} color="var(--status-stock)" />
+                  {t('menu2.inventory_list_title', 'WIA available Stock List')}
+                </h3>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '20px' }}>
+                  {t('menu2.page_desc', 'WIA 유럽법인의 가용 재고(ATP) 현황을 파악 할 수 있습니다.')}
+                </p>
+              </div>
               
-              <div style={{ flex: 1, minHeight: '280px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                {pieData.length === 0 ? (
-                  <div style={{ color: 'var(--text-muted)' }}>{t('dealer_dashboard.no_atp')}</div>
-                ) : (
-                  <ResponsiveContainer width="100%" height={280}>
-                    <PieChart>
-                      <Pie
-                        data={pieData}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={65}
-                        outerRadius={100}
-                        paddingAngle={5}
-                        dataKey="value"
-                        label={({ name, percent }) => `${name} (${(percent * 100).toFixed(0)}%)`}
-                      >
-                        {pieData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                        ))}
-                      </Pie>
-                      <Tooltip
-                        contentStyle={{ background: 'hsl(222, 47%, 13%)', border: '1px solid var(--border-color)', borderRadius: '10px' }}
-                      />
-                      <Legend verticalAlign="bottom" height={36} />
-                    </PieChart>
-                  </ResponsiveContainer>
-                )}
+              {/* Summary Banner */}
+              <div style={{
+                marginBottom: '16px', padding: '0 16px', minHeight: '50px', backgroundColor: 'var(--bg-card)',
+                border: '1px solid var(--border-color)', borderRadius: '12px',
+                display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap',
+                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)', fontSize: '0.85rem'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span style={{ color: 'var(--text-secondary)' }}>All:</span>
+                  <span style={{ fontWeight: 'bold', color: 'var(--text-primary)' }}>{corpStock.length}</span>
+                </div>
+                <div style={{ height: '16px', width: '1px', backgroundColor: 'var(--border-color)' }}></div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span style={{ color: 'var(--text-secondary)' }}>Available:</span>
+                  <span style={{ fontWeight: 'bold', color: 'var(--status-stock)' }}>{availableCount}</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span style={{ color: 'var(--text-secondary)' }}>Rental:</span>
+                  <span style={{ fontWeight: 'bold', color: 'var(--status-production)' }}>{rentalCount}</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span style={{ color: 'var(--text-secondary)' }}>Showroom:</span>
+                  <span style={{ fontWeight: 'bold', color: '#4da6ff' }}>{showroomCount}</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span style={{ color: 'var(--text-secondary)' }}>Promotion:</span>
+                  <span style={{ fontWeight: 'bold', color: 'var(--accent-pink)' }}>{promotionCount}</span>
+                </div>
+              </div>
+
+              {/* Navigation Button */}
+              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '4px' }}>
+                <button
+                  className="btn btn-outline"
+                  onClick={() => setActiveTab && setActiveTab('dealer-inventory')}
+                  style={{ padding: '8px 24px', fontWeight: 600, fontSize: '0.9rem', color: 'var(--accent-cyan)', borderColor: 'var(--accent-cyan)', borderRadius: '20px' }}
+                >
+                  GO stock list
+                </button>
               </div>
             </div>
 
             <div className="glass-card" style={{ padding: '28px', display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>{t('dealer_dashboard.atp_list_title')}</h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '20px' }}>
-                {t('dealer_dashboard.atp_list_desc')}
-              </p>
+              <div style={{ minHeight: '100px' }}>
+                <h3 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>{t('dealer_dashboard.atp_list_title')}</h3>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '20px' }}>
+                  {t('dealer_dashboard.atp_list_desc')}
+                </p>
+              </div>
 
               {isMobileView ? (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', flex: 1 }}>
@@ -177,8 +204,8 @@ export default function DealerDashboard({ isMobileView }) {
                         </div>
                         <button
                           onClick={() => handleRequestAllocation(o)}
-                          className="btn btn-primary"
-                          style={{ padding: '6px 14px', fontSize: '0.8rem' }}
+                          className="btn btn-primary btn-request"
+                          style={{ padding: '6px 14px', fontSize: '0.8rem', borderRadius: '20px' }}
                         >
                           {t('dealer_dashboard.btn_allocation')}
                         </button>
@@ -190,11 +217,11 @@ export default function DealerDashboard({ isMobileView }) {
                 <div className="data-table-container" style={{ flex: 1 }}>
                   <table className="data-table">
                     <thead>
-                      <tr>
-                        <th>{t('menu1.header_model')}</th>
-                        <th>{t('menu2.detail_sn')}</th>
-                        <th>{t('profile.department')} / {t('menu2.detail_port')}</th>
-                        <th>{t('menu6.header_action')}</th>
+                      <tr style={{ height: '50px' }}>
+                        <th>{t('dealer_dashboard.header_model')}</th>
+                        <th>{t('dealer_dashboard.header_sn')}</th>
+                        <th>{t('dealer_dashboard.header_location')}</th>
+                        <th style={{ textAlign: 'center' }}>{t('dealer_dashboard.header_request')}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -208,11 +235,11 @@ export default function DealerDashboard({ isMobileView }) {
                             </td>
                             <td style={{ fontSize: '0.8rem', color: 'var(--accent-cyan)' }}>{o.serial_number}</td>
                             <td style={{ fontSize: '0.8rem' }}>{o.physical_location || '물류창고'}</td>
-                            <td>
+                            <td style={{ textAlign: 'center' }}>
                               <button
                                 onClick={() => handleRequestAllocation(o)}
-                                className="btn btn-primary"
-                                style={{ padding: '4px 12px', fontSize: '0.75rem' }}
+                                className="btn btn-primary btn-request"
+                                style={{ padding: '4px 12px', fontSize: '0.75rem', borderRadius: '20px' }}
                               >
                                 {t('dealer_dashboard.btn_allocation')}
                               </button>

@@ -217,10 +217,14 @@
     "pie_title": "ATP Stock Distribution by Model",
     "pie_desc": "Models currently in local EU warehouses ready for allocation requests.",
     "no_atp": "No equipment is currently in AVAILABLE status.",
-    "atp_list_title": "Equipment Available for Immediate Allocation (ATP List)",
-    "atp_list_desc": "Select a desired model to request immediate dispatch (soft allocation) from the admin.",
-    "btn_allocation": "Request Allocation",
-    "unit": "Units"
+    "atp_list_title": "Ready for Release / Request Pickup",
+    "atp_list_desc": "You can request customs clearance and pickup preparation for machines available for pickup at the warehouse.",
+    "btn_allocation": "Customs Clearance",
+    "unit": "Units",
+    "header_model": "Model",
+    "header_sn": "S/N",
+    "header_location": "Location",
+    "header_request": "Request"
   },
   "dealer_orders": {
     "title": "My Orders & Shipping Status",
@@ -244,8 +248,9 @@
     "page_desc": "Check out the special promotion equipment offered by the EU office and request reservations.",
     "current_promo": "Currently Active Promotion Equipment",
     "no_promo": "No active promotions at the moment.",
-    "btn_inquiry": "Reserve",
+    "btn_inquiry": "Reserve & Order",
     "no_apply": "Unavailable",
+    "header_request": "REQUEST",
     "alert_msg": "Your reservation/purchase request for [{{modelName}}] has been sent to the EU Sales Team. A representative will contact you shortly."
   }
 }

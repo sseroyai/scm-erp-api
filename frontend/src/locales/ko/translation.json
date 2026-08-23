@@ -114,7 +114,7 @@
     "convert_to_order": "발주로 전환",
     "btn_confirm": "확정",
     "search_placeholder": "검색",
-    "inventory_list_title": "법인 가용재고 목록",
+    "inventory_list_title": "WIA 가용재고 목록",
     "detail_status": "진행 상황",
     "detail_sn": "시리얼 번호",
     "detail_so": "S/O 번호",
@@ -217,10 +217,14 @@
     "pie_title": "기종별 가용 재고 분포 (Pie Chart)",
     "pie_desc": "유럽 현지 창고에 보관되어 즉시 할당 신청이 가능한 기계 모델 분포입니다.",
     "no_atp": "현재 가용(AVAILABLE) 상태인 장비가 없습니다.",
-    "atp_list_title": "즉시 할당 가능 장비 목록 (ATP List)",
-    "atp_list_desc": "원하는 모델을 선택하여 즉시 출고(소프트 할당)를 관리자에게 요청할 수 있습니다.",
-    "btn_allocation": "즉시 할당 신청",
-    "unit": "대"
+    "atp_list_title": "통관 및 픽업준비 요청",
+    "atp_list_desc": "픽업 가능한 기계의 통관과 출고를 관리자에게 요청할 수 있습니다.",
+    "btn_allocation": "출고진행 요청",
+    "unit": "대",
+    "header_model": "모델",
+    "header_sn": "시리얼 번호",
+    "header_location": "위치",
+    "header_request": "요청"
   },
   "dealer_orders": {
     "title": "내 발주 및 배송상태",
@@ -245,7 +249,8 @@
     "current_promo": "현재 진행 중인 프로모션 장비 현황",
     "no_promo": "진행 중인 프로모션이 없습니다.",
     "btn_inquiry": "예약 및 구매 문의",
-    "no_apply": "신청 불가",
-    "alert_msg": "[{{modelName}}] 프로모션 기계에 대한 예약/구매 요청이 유럽 법인 영업팀으로 발송되었습니다. 담당자가 확인 후 회신드릴 예정입니다."
+    "no_apply": "해당없음",
+    "header_request": "요청",
+    "alert_msg": "[{{modelName}}] 예약/구매 요청이 유럽법인 영업팀으로 전달되었습니다. 곧 담당자가 연락드릴 예정입니다."
   }
 }

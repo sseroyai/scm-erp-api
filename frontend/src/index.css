@@ -356,6 +356,11 @@ h6 {
   border-color: var(--wia-blue-vibrant);
 }
 
+.btn-request:hover {
+  background-color: rgb(205, 170, 125) !important;
+  border-color: rgb(205, 170, 125) !important;
+}
+
 .btn-outline {
   background: transparent;
   color: var(--text-primary);

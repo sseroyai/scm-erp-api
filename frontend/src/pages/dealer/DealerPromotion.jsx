@@ -24,8 +24,15 @@ export default function DealerPromotion({ isMobileView }) {
     loadData();
   }, []);
 
-  const handleRequestReserve = (promoId, modelName) => {
-    alert(t('dealer_promotion.alert_msg', { modelName }));
+  const handleEmailRequest = (promo, requestType) => {
+    const modelName = promo.order && promo.order.product_model ? promo.order.product_model.model_name : 'Unknown';
+    const nc = promo.order && promo.order.nc ? promo.order.nc : 'F0iP';
+    const email = "jypark@hyundai-wia.de";
+    
+    const subject = `[Promotion ${requestType} Request] Model: ${modelName}`;
+    const body = `Hello,\n\nI would like to request a ${requestType} for the following promotion machine:\n\n- Model: ${modelName}\n- NC: ${nc}\n\nPlease let me know the next steps.\n\nThank you.`;
+    
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -80,13 +87,22 @@ export default function DealerPromotion({ isMobileView }) {
 
                     <div>
                       {promo.status === 'AVAILABLE' && (
-                        <button
-                          onClick={() => handleRequestReserve(promo.id, modelName)}
-                          className="btn btn-outline"
-                          style={{ padding: '8px', fontSize: '0.85rem', width: '100%', borderColor: 'var(--accent-cyan)', color: 'var(--accent-cyan)', fontWeight: 600 }}
-                        >
-                          {t('dealer_promotion.btn_inquiry')}
-                        </button>
+                        <div style={{ display: 'flex', gap: '8px' }}>
+                          <button
+                            onClick={() => handleEmailRequest(promo, 'Reserve')}
+                            className="btn btn-outline"
+                            style={{ padding: '8px', fontSize: '0.85rem', flex: 1, borderColor: 'var(--accent-cyan)', color: 'var(--accent-cyan)', fontWeight: 600, textAlign: 'center', justifyContent: 'center' }}
+                          >
+                            Reserve
+                          </button>
+                          <button
+                            onClick={() => handleEmailRequest(promo, 'Order')}
+                            className="btn btn-primary btn-request"
+                            style={{ padding: '8px', fontSize: '0.85rem', flex: 1, fontWeight: 600, textAlign: 'center', justifyContent: 'center', background: 'rgb(10, 28, 143)', borderColor: 'rgb(10, 28, 143)', color: '#fff' }}
+                          >
+                            Order
+                          </button>
+                        </div>
                       )}
                       {promo.status === 'RESERVED' && (
                         <div style={{ fontSize: '0.85rem', color: 'var(--status-production)', fontWeight: 500, textAlign: 'center', padding: '8px', background: 'var(--bg-secondary)', borderRadius: '8px' }}>
@@ -114,9 +130,9 @@ export default function DealerPromotion({ isMobileView }) {
                   <th style={{ width: '5%' }}>{t('menu3.header_nc')}</th>
                   <th style={{ width: '10%' }}>{t('menu3.header_po')}</th>
                   <th style={{ width: '40%' }}>{t('menu3.header_detailspec')}</th>
-                  <th style={{ width: '8%' }}>{t('menu3.header_eta')}</th>
-                  <th style={{ width: '10%' }}>{t('menu3.header_promotion_status')}</th>
-                  <th style={{ width: '14%' }}>{t('dealer_promotion.btn_inquiry')}</th>
+                  <th style={{ width: '8%', textAlign: 'center' }}>{t('menu3.header_eta')}</th>
+                  <th style={{ width: '10%', textAlign: 'center' }}>{t('menu3.header_promotion_status')}</th>
+                  <th style={{ width: '14%', textAlign: 'center' }}>{t('dealer_promotion.header_request', 'REQUEST')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -150,25 +166,34 @@ export default function DealerPromotion({ isMobileView }) {
                             {(promo.order && promo.order.detail_spec) || 'T/F, CC(S-H)+B, 20BAR, B/I, P/C, Q(A)'}
                           </div>
                         </td>
-                        <td>
+                        <td style={{ textAlign: 'center' }}>
                           <div style={{ fontSize: '11px' }}>
                             {promo.order && promo.order.eta ? new Date(promo.order.eta).toLocaleDateString() : '-'}
                           </div>
                         </td>
-                        <td>
-                          {promo.status === 'AVAILABLE' && <span className="status-badge" style={{ background: 'hsla(190, 95%, 49%, 0.2)', color: 'var(--accent-cyan)', width: '85px', justifyContent: 'center', fontSize: '11px' }}>{t('menu3.status_available')}</span>}
-                          {promo.status === 'RESERVED' && <span className="status-badge" style={{ background: 'hsla(45, 93%, 58%, 0.2)', color: 'var(--status-production)', width: '85px', justifyContent: 'center', fontSize: '11px' }}>{t('menu3.status_reserved')}</span>}
-                          {promo.status === 'SOLD' && <span className="status-badge" style={{ background: 'hsla(142, 76%, 46%, 0.2)', color: 'var(--status-stock)', width: '85px', justifyContent: 'center', fontSize: '11px' }}>{t('menu3.status_sold')}</span>}
+                        <td style={{ textAlign: 'center' }}>
+                          {promo.status === 'AVAILABLE' && <span className="status-badge" style={{ margin: '0 auto', background: 'hsla(190, 95%, 49%, 0.2)', color: 'var(--accent-cyan)', width: '85px', justifyContent: 'center', fontSize: '11px' }}>{t('menu3.status_available')}</span>}
+                          {promo.status === 'RESERVED' && <span className="status-badge" style={{ margin: '0 auto', background: 'hsla(45, 93%, 58%, 0.2)', color: 'var(--status-production)', width: '85px', justifyContent: 'center', fontSize: '11px' }}>{t('menu3.status_reserved')}</span>}
+                          {promo.status === 'SOLD' && <span className="status-badge" style={{ margin: '0 auto', background: 'hsla(142, 76%, 46%, 0.2)', color: 'var(--status-stock)', width: '85px', justifyContent: 'center', fontSize: '11px' }}>{t('menu3.status_sold')}</span>}
                         </td>
-                        <td style={{ fontSize: '11px' }}>
+                        <td style={{ fontSize: '11px', textAlign: 'center' }}>
                           {promo.status === 'AVAILABLE' && (
-                            <button
-                              onClick={() => handleRequestReserve(promo.id, modelName)}
-                              className="btn btn-outline"
-                              style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-cyan)', color: 'var(--accent-cyan)' }}
-                            >
-                              {t('dealer_promotion.btn_inquiry')}
-                            </button>
+                            <div style={{ display: 'flex', gap: '4px', justifyContent: 'center' }}>
+                              <button
+                                onClick={() => handleEmailRequest(promo, 'Reserve')}
+                                className="btn btn-outline"
+                                style={{ padding: '6px 0', fontSize: '11px', width: '70px', borderColor: 'var(--accent-cyan)', color: 'var(--accent-cyan)', textAlign: 'center', justifyContent: 'center', borderRadius: '20px' }}
+                              >
+                                Reserve
+                              </button>
+                              <button
+                                onClick={() => handleEmailRequest(promo, 'Order')}
+                                className="btn btn-primary btn-request"
+                                style={{ padding: '6px 0', fontSize: '11px', width: '70px', textAlign: 'center', justifyContent: 'center', borderRadius: '20px', background: 'rgb(10, 28, 143)', borderColor: 'rgb(10, 28, 143)', color: '#fff' }}
+                              >
+                                Order
+                              </button>
+                            </div>
                           )}
                           {promo.status === 'RESERVED' && (
                             <div style={{ fontSize: '11px', color: 'var(--status-production)', fontWeight: 500 }}>
