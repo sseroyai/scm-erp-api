@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "title": "WIA 공작기계 유럽 SCM ERP",
+    "title": "WIA 공작기계 유럽 SCM",
     "version": "v6.0 Final (WIA CI)",
     "init_seed_btn": "시드 데이터 초기화",
     "init_seed_loading": "데이터 생성 중...",
@@ -19,6 +19,7 @@
   },
   "sidebar": {
     "admin_portal": "관리자 포털",
+    "rsm_portal": "RSM 포털",
     "dealer_portal": "딜러 포털",
     "navigation_title": "SCM NAVIGATION",
     "close_sidebar": "사이드바 닫기",
@@ -26,8 +27,8 @@
     "data_isolation_desc": "현재 접속하신 <1>{{role}}</1> 권한에 맞춰 데이터가 안전하게 격리 조회됩니다. (V7 격리 모드 활성화)",
     "admin_menu": {
       "dashboard": "메뉴1. 포털 대시보드",
-      "inventory": "메뉴2. 유럽 재고 상태",
-      "promotion": "메뉴3. 프로모션",
+      "inventory": "메뉴2. WIA 재고리스트",
+      "promotion": "메뉴3. WIA 프로모션",
       "management": "메뉴4. 업로드 / 설정관리",
       "dispatch": "메뉴5. 출고완료 리스트",
       "sales_archive": "메뉴6. 판매완료 내역",
@@ -35,11 +36,18 @@
       "library": "메뉴8. 제품 라이브러리",
       "users": "메뉴9. 유저 및 보안관리"
     },
+    "rsm_menu": {
+      "admin_dashboard": "메뉴1. 포털 대시보드",
+      "inventory": "메뉴2. WIA 재고리스트",
+      "promotion": "메뉴3. WIA 프로모션",
+      "library": "메뉴4. 제품 라이브러리",
+      "dashboard": "메뉴5. RSM 영업통계"
+    },
     "dealer_menu": {
       "dashboard": "메뉴1. 포털 대시보드",
       "orders": "메뉴2. 발주 및 배송상태",
       "sales_archive": "메뉴3. 내 구매 내역",
-      "inventory": "메뉴4. WIA 재고 리스트",
+      "inventory": "메뉴4. WIA 재고리스트",
       "promotion": "메뉴5. WIA 프로모션",
       "library": "메뉴6. 제품 라이브러리"
     }
@@ -93,7 +101,7 @@
     "order_date": "딜러발주 일자"
   },
   "menu2": {
-    "page_title": "유럽 재고 상태",
+    "page_title": "WIA 재고리스트",
     "page_desc": "WIA 유럽법인의 가용 재고(ATP) 현황을 파악 할 수 있습니다.",
     "header_no": "*",
     "header_model": "모델",
@@ -125,7 +133,7 @@
     "detail_vessel": "선박정보"
   },
   "menu3": {
-    "page_title": "프로모션 관리",
+    "page_title": "WIA 프로모션",
     "page_desc": "프로모션 이벤트 기종의 예약/판매 상태를 관리합니다.",
     "list_title": "프로모션 리스트 및 실시간 예약 관리",
     "header_no": "*",
@@ -244,9 +252,9 @@
     "header_port": "Port"
   },
   "dealer_promotion": {
-    "page_title": "법인 주관 프로모션 안내",
+    "page_title": "WIA 프로모션",
     "page_desc": "유럽 법인에서 특별 조건으로 제공하는 프로모션 장비 리스트를 확인하고 예약을 요청할 수 있습니다.",
-    "current_promo": "현재 진행 중인 프로모션 장비 현황",
+    "current_promo": "진행 중인 프로모션 모델",
     "no_promo": "진행 중인 프로모션이 없습니다.",
     "btn_inquiry": "예약 및 구매 문의",
     "no_apply": "해당없음",

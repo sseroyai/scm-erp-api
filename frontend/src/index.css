@@ -246,6 +246,14 @@ h6 {
   z-index: 90;
 }
 
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .navbar-title {
   font-size: 1.25rem;
   color: var(--text-primary);
@@ -371,7 +379,18 @@ h6 {
   background: var(--bg-secondary);
   border-color: var(--wia-blue);
   color: var(--wia-blue);
-  box-shadow: inset 0 0 0 1px currentColor;
+  box-shadow: inset 0 0 0 2px currentColor;
+}
+
+.top-navbar .btn-outline {
+  border: 1px solid var(--wia-light-gold);
+}
+
+.top-navbar .btn-outline:hover {
+  background-color: var(--wia-light-gold);
+  border-color: var(--wia-light-gold);
+  color: #FFFFFF;
+  box-shadow: none;
 }
 
 /* Step Progress Bar styles - WIA CI compliant */
@@ -737,8 +756,15 @@ h6 {
     height: auto;
     min-height: var(--header-height);
     padding: 12px 16px;
-    flex-wrap: wrap;
-    gap: 12px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+  }
+
+  .navbar-actions {
+    width: auto;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
   }
 
   .navbar-title {

@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 import io
 from typing import List, Optional
-from fastapi import FastAPI, Depends, HTTPException, status, UploadFile, File, Query
+from fastapi import FastAPI, Depends, HTTPException, status, UploadFile, File, Query, Header
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from sqlalchemy import text
@@ -97,6 +97,11 @@ def run_seed_data():
 # ==========================================
 # 1. 마스터 데이터 조회 API (Users, Dealers, Models)
 # ==========================================
+def get_current_role(x_user_role: Optional[str] = Header(None)):
+    if x_user_role:
+        return x_user_role.upper()
+    return None
+
 @app.get("/api/dealers", response_model=List[schemas.DealerCompanyOut])
 def get_dealers(db: Session = Depends(get_db)):
     dealers = db.query(models.DealerCompany).all()
@@ -104,14 +109,18 @@ def get_dealers(db: Session = Depends(get_db)):
     return sorted(dealers, key=lambda d: (0 if d.name == 'WME' else 1, d.name))
 
 @app.get("/api/users", response_model=List[schemas.CustomUserOut])
-def get_users(role: Optional[models.UserRole] = None, db: Session = Depends(get_db)):
+def get_users(role: Optional[models.UserRole] = None, db: Session = Depends(get_db), current_role: Optional[str] = Depends(get_current_role)):
+    if current_role == "RSM":
+        raise HTTPException(status_code=403, detail="접근 권한이 없습니다.")
     query = db.query(models.CustomUser)
     if role:
         query = query.filter(models.CustomUser.role == role)
     return query.all()
 
 @app.post("/api/users", response_model=schemas.CustomUserOut)
-def create_user(payload: schemas.CustomUserCreate, db: Session = Depends(get_db)):
+def create_user(payload: schemas.CustomUserCreate, db: Session = Depends(get_db), current_role: Optional[str] = Depends(get_current_role)):
+    if current_role == "RSM":
+        raise HTTPException(status_code=403, detail="접근 권한이 없습니다.")
     existing = db.query(models.CustomUser).filter(
         (models.CustomUser.username == payload.username) | 
         (models.CustomUser.email == payload.email)
@@ -132,7 +141,9 @@ def create_user(payload: schemas.CustomUserCreate, db: Session = Depends(get_db)
     return new_user
 
 @app.patch("/api/users/{user_id}", response_model=schemas.CustomUserOut)
-def update_user_admin(user_id: int, payload: schemas.AdminUserUpdate, db: Session = Depends(get_db)):
+def update_user_admin(user_id: int, payload: schemas.AdminUserUpdate, db: Session = Depends(get_db), current_role: Optional[str] = Depends(get_current_role)):
+    if current_role == "RSM":
+        raise HTTPException(status_code=403, detail="접근 권한이 없습니다.")
     user = db.query(models.CustomUser).filter(models.CustomUser.id == user_id).first()
     if not user:
         raise HTTPException(status_code=404, detail="사용자를 찾을 수 없습니다.")
@@ -446,7 +457,9 @@ def delete_order(order_id: int, db: Session = Depends(get_db)):
 # 3. 관리자 영업 통계 및 분석 API
 # ==========================================
 @app.get("/api/stats")
-def get_sales_analytics(db: Session = Depends(get_db)):
+def get_sales_analytics(db: Session = Depends(get_db), current_role: Optional[str] = Depends(get_current_role)):
+    if current_role == "RSM":
+        raise HTTPException(status_code=403, detail="접근 권한이 없습니다.")
     orders = db.query(models.Order).all()
     total_orders = len(orders)
     
@@ -572,7 +585,9 @@ def confirm_sold_promotion(
 # 5. Pandas 기반 엑셀 일괄 업로드 API
 # ==========================================
 @app.post("/api/upload/excel")
-async def upload_excel_bulk(file: UploadFile = File(...), db: Session = Depends(get_db)):
+async def upload_excel_bulk(file: UploadFile = File(...), db: Session = Depends(get_db), current_role: Optional[str] = Depends(get_current_role)):
+    if current_role == "RSM":
+        raise HTTPException(status_code=403, detail="접근 권한이 없습니다.")
     if not file.filename.endswith(('.xlsx', '.xls')):
         raise HTTPException(status_code=400, detail="엑셀 파일(.xlsx, .xls)만 업로드 가능합니다.")
     
@@ -680,11 +695,15 @@ async def upload_excel_bulk(file: UploadFile = File(...), db: Session = Depends(
 # 6. 주기 조절형 자동 ETA 알림 스케줄러 설정 API
 # ==========================================
 @app.get("/api/email-configs", response_model=List[schemas.EmailConfigOut])
-def get_email_configs(db: Session = Depends(get_db)):
+def get_email_configs(db: Session = Depends(get_db), current_role: Optional[str] = Depends(get_current_role)):
+    if current_role == "RSM":
+        raise HTTPException(status_code=403, detail="접근 권한이 없습니다.")
     return db.query(models.EmailNotificationConfig).all()
 
 @app.patch("/api/email-configs/{config_id}", response_model=schemas.EmailConfigOut)
-def toggle_email_config(config_id: int, is_active: bool, db: Session = Depends(get_db)):
+def toggle_email_config(config_id: int, is_active: bool, db: Session = Depends(get_db), current_role: Optional[str] = Depends(get_current_role)):
+    if current_role == "RSM":
+        raise HTTPException(status_code=403, detail="접근 권한이 없습니다.")
     config = db.query(models.EmailNotificationConfig).filter(models.EmailNotificationConfig.id == config_id).first()
     if not config:
         raise HTTPException(status_code=404, detail="이메일 설정 규칙을 찾을 수 없습니다.")
@@ -700,7 +719,9 @@ def toggle_email_config(config_id: int, is_active: bool, db: Session = Depends(g
 # 7. 사업계획(KGI) API
 # ==========================================
 @app.get("/api/business-plans", response_model=List[schemas.BusinessPlanOut])
-def get_business_plans(year: int = Query(...), db: Session = Depends(get_db)):
+def get_business_plans(year: int = Query(...), db: Session = Depends(get_db), current_role: Optional[str] = Depends(get_current_role)):
+    if current_role == "RSM":
+        raise HTTPException(status_code=403, detail="접근 권한이 없습니다.")
     plans = db.query(models.BusinessPlan).filter(models.BusinessPlan.year == year).all()
     # Sort by month (1월, 2월 ... 12월) correctly
     def month_sort_key(plan):
@@ -711,7 +732,9 @@ def get_business_plans(year: int = Query(...), db: Session = Depends(get_db)):
     return sorted(plans, key=month_sort_key)
 
 @app.put("/api/business-plans/{year}")
-def update_business_plans(year: int, plans_data: List[schemas.BusinessPlanCreate], db: Session = Depends(get_db)):
+def update_business_plans(year: int, plans_data: List[schemas.BusinessPlanCreate], db: Session = Depends(get_db), current_role: Optional[str] = Depends(get_current_role)):
+    if current_role == "RSM":
+        raise HTTPException(status_code=403, detail="접근 권한이 없습니다.")
     """
     해당 연도의 사업계획 12개월 데이터를 일괄 업데이트/생성
     """

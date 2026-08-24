@@ -24,6 +24,9 @@ import DealerSalesArchive from './pages/dealer/DealerSalesArchive';
 import DealerInventory from './pages/dealer/DealerInventory';
 import DealerPromotion from './pages/dealer/DealerPromotion';
 
+// RSM Pages
+import RsmDashboard from './pages/rsm/RsmDashboard';
+
 // Common Pages
 import UserProfile from './pages/UserProfile';
 
@@ -141,6 +144,10 @@ export default function App() {
 
     if (currentRole === 'DEALER') {
       if (!activeTab.startsWith('dealer-')) setActiveTab('dealer-dashboard');
+    } else if (currentRole === 'RSM') {
+      if (!['rsm-dashboard', 'admin-inventory', 'admin-promotion', 'admin-library', 'admin-dashboard'].includes(activeTab)) {
+        setActiveTab('admin-dashboard');
+      }
     } else {
       if (!activeTab.startsWith('admin-') && activeTab !== 'analytics' && activeTab !== 'management') {
         setActiveTab('admin-dashboard');
@@ -153,12 +160,6 @@ export default function App() {
   const isMobileView = isActualMobileView || simulateMobile;
   const isDesktopOptimized = windowWidth >= 1024;
 
-  const [refreshKey, setRefreshKey] = useState(0);
-
-  const handleSeedReload = () => {
-    setRefreshKey(prev => prev + 1);
-  };
-
   const handleLogin = (role, userId) => {
     setCurrentRole(role);
     setCurrentUserId(userId);
@@ -170,7 +171,8 @@ export default function App() {
   };
 
   const handleHomeClick = () => {
-    setActiveTab(currentRole === 'DEALER' ? 'dealer-dashboard' : 'admin-dashboard');
+    if (currentRole === 'DEALER') setActiveTab('dealer-dashboard');
+    else setActiveTab('admin-dashboard');
   };
 
   if (!isAuthenticated) {
@@ -188,34 +190,37 @@ export default function App() {
         isActualMobileView={isActualMobileView}
         simulateMobile={simulateMobile}
         setSimulateMobile={setSimulateMobile}
-        onSeedReload={handleSeedReload}
       />
 
       <div className="main-content">
         <Navbar 
-          currentRole={currentRole} 
+          currentRole={currentRole}
+          currentUserId={currentUserId}
+          isMobileView={isMobileView}
           setCurrentRole={setCurrentRole} 
-          onSeedReload={handleSeedReload}
           onOpenMobileSidebar={() => setIsMobileOpen(true)}
           onLogout={handleLogout}
           onHomeClick={handleHomeClick}
           onProfileClick={() => setActiveTab('profile')}
         />
 
-        <main key={refreshKey} style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
           {/* Common Routing */}
           {activeTab === 'profile' && <UserProfile currentUserId={currentUserId} isMobileView={isMobileView} onClose={handleHomeClick} />}
 
+          {/* RSM Routing */}
+          {activeTab === 'rsm-dashboard' && currentRole === 'RSM' && <RsmDashboard isMobileView={isMobileView} currentUserId={currentUserId} />}
+
           {/* Admin Routing */}
-          {activeTab === 'admin-dashboard' && <AdminDashboard isMobileView={isMobileView} />}
-          {activeTab === 'admin-inventory' && <AdminInventory isMobileView={isMobileView} />}
-          {activeTab === 'admin-dispatch' && <AdminDispatch isMobileView={isMobileView} />}
-          {activeTab === 'admin-sales-archive' && <AdminSalesArchive isMobileView={isMobileView} />}
-          {activeTab === 'admin-users' && <AdminUsers isMobileView={isMobileView} />}
-          {activeTab === 'analytics' && <SalesAnalytics isMobileView={isMobileView} isDesktopOptimized={isDesktopOptimized} />}
-          {activeTab === 'admin-promotion' && <AdminPromotion isMobileView={isMobileView} />}
-          {activeTab === 'management' && <UploadSettings />}
-          {activeTab === 'admin-library' && <ProductLibrary currentRole={currentRole} isMobileView={isMobileView} />}
+          {activeTab === 'admin-dashboard' && (currentRole === 'SCM_ADMIN' || currentRole === 'RSM') && <AdminDashboard isMobileView={isMobileView} currentRole={currentRole} />}
+          {activeTab === 'admin-inventory' && (currentRole === 'SCM_ADMIN' || currentRole === 'RSM') && <AdminInventory isMobileView={isMobileView} />}
+          {activeTab === 'admin-dispatch' && currentRole !== 'RSM' && <AdminDispatch isMobileView={isMobileView} />}
+          {activeTab === 'admin-sales-archive' && currentRole !== 'RSM' && <AdminSalesArchive isMobileView={isMobileView} />}
+          {activeTab === 'admin-users' && currentRole !== 'RSM' && <AdminUsers isMobileView={isMobileView} />}
+          {activeTab === 'analytics' && currentRole !== 'RSM' && <SalesAnalytics isMobileView={isMobileView} isDesktopOptimized={isDesktopOptimized} />}
+          {activeTab === 'admin-promotion' && (currentRole === 'SCM_ADMIN' || currentRole === 'RSM') && <AdminPromotion isMobileView={isMobileView} />}
+          {activeTab === 'management' && currentRole !== 'RSM' && <UploadSettings />}
+          {activeTab === 'admin-library' && (currentRole === 'SCM_ADMIN' || currentRole === 'RSM') && <ProductLibrary currentRole={currentRole} isMobileView={isMobileView} />}
 
           {/* Dealer Routing */}
           {activeTab === 'dealer-dashboard' && <DealerDashboard isMobileView={isMobileView} setActiveTab={setActiveTab} />}
@@ -225,7 +230,7 @@ export default function App() {
           {activeTab === 'dealer-promotion' && <DealerPromotion isMobileView={isMobileView} />}
           {activeTab === 'dealer-library' && <ProductLibrary currentRole={currentRole} isMobileView={isMobileView} />}
           
-          {['admin-dashboard', 'admin-inventory', 'admin-promotion', 'admin-users', 'dealer-inventory', 'admin-library', 'dealer-library'].includes(activeTab) && (
+          {['admin-dashboard', 'rsm-dashboard', 'admin-inventory', 'admin-promotion', 'admin-users', 'dealer-inventory', 'admin-library', 'dealer-library'].includes(activeTab) && (
             <ScrollButtons />
           )}
         </main>

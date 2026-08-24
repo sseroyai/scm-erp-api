@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "title": "WIA Machine Tools Europe SCM ERP",
+    "title": "WIA MachineTools Europe SCM",
     "version": "v6.0 Final (WIA CI)",
     "init_seed_btn": "Initialize Seed Data",
     "init_seed_loading": "Generating Data...",
@@ -19,6 +19,7 @@
   },
   "sidebar": {
     "admin_portal": "Admin Portal",
+    "rsm_portal": "RSM Portal",
     "dealer_portal": "Dealer Portal",
     "navigation_title": "SCM NAVIGATION",
     "close_sidebar": "Close Sidebar",
@@ -26,17 +27,24 @@
     "data_isolation_desc": "Data is securely isolated based on your current <1>{{role}}</1> access. (V7 Isolation Mode Active)",
     "admin_menu": {
       "dashboard": "Menu1. Portal Dashboard",
-      "inventory": "Menu2. WIA Stock",
-      "promotion": "Menu3. Promotion",
+      "inventory": "Menu2. WIA Stock List",
+      "promotion": "Menu3. WIA Promotion",
       "management": "Menu4. Upload / Setting",
       "dispatch": "Menu5. Dispatched List",
       "sales_archive": "Menu6. Sold List",
       "analytics": "Menu7. Sales Analytics",
       "library": "Menu8. Product Library",
-      "users": "Menu9. User & Security"
+      "users": "Menu 9. Security Mgmt"
+    },
+    "rsm_menu": {
+      "admin_dashboard": "Menu 1. Portal Dashboard",
+      "inventory": "Menu 2. WIA Stock List",
+      "promotion": "Menu 3. WIA Promotion",
+      "library": "Menu 4. Product Library",
+      "dashboard": "Menu 5. RSM Sales Stats"
     },
     "dealer_menu": {
-      "dashboard": "Menu1. Portal Dashboard",
+      "dashboard": "Menu 1. Dashboard",
       "orders": "Menu2. Order & Shipping Status",
       "sales_archive": "Menu3. My Ordered",
       "inventory": "Menu4. WIA Stock List",
@@ -93,7 +101,7 @@
     "order_date": "Order date"
   },
   "menu2": {
-    "page_title": "WIA Stock Status",
+    "page_title": "WIA Stock List",
     "page_desc": "On this page, you can find the available stock of WIA Machine Tools.",
     "header_no": "*",
     "header_model": "MODEL",
@@ -125,7 +133,7 @@
     "detail_vessel": "VESSEL"
   },
   "menu3": {
-    "page_title": "Promotion List",
+    "page_title": "WIA Promotion",
     "page_desc": "Manages the reservation and sales status of promotional event models.",
     "list_title": "Promotion List and Real-time Reservation Management",
     "header_no": "*",
@@ -244,9 +252,9 @@
     "header_port": "Port"
   },
   "dealer_promotion": {
-    "page_title": "Promotion List",
-    "page_desc": "Check out the special promotion equipment offered by the EU office and request reservations.",
-    "current_promo": "Currently Active Promotion Equipment",
+    "page_title": "WIA Promotion",
+    "page_desc": "Check out the special promotion machine offered by WIA and request reservations.",
+    "current_promo": "Currently active promotion model",
     "no_promo": "No active promotions at the moment.",
     "btn_inquiry": "Reserve & Order",
     "no_apply": "Unavailable",

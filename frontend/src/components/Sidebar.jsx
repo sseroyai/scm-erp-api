@@ -3,9 +3,8 @@ import { useTranslation, Trans } from 'react-i18next';
 import { LayoutDashboard, BarChart3, FileSpreadsheet, Tag, Package, Truck, ShieldAlert, X, FolderOpen, Smartphone, Monitor, RefreshCw } from 'lucide-react';
 import WiaLogo from './WiaLogo';
 
-export default function Sidebar({ activeTab, setActiveTab, currentRole, isMobileOpen, onClose, isActualMobileView, simulateMobile, setSimulateMobile, onSeedReload }) {
+export default function Sidebar({ activeTab, setActiveTab, currentRole, isMobileOpen, onClose, isActualMobileView, simulateMobile, setSimulateMobile }) {
   const { t } = useTranslation();
-  const [loadingSeed, setLoadingSeed] = useState(false);
   const touchStartX = useRef(null);
   const touchStartY = useRef(null);
 
@@ -34,23 +33,6 @@ export default function Sidebar({ activeTab, setActiveTab, currentRole, isMobile
   const handleTouchEnd = () => {
     touchStartX.current = null;
     touchStartY.current = null;
-  };
-
-  const handleTriggerSeed = async () => {
-    setLoadingSeed(true);
-    try {
-      const res = await fetch('/api/seed', { method: 'POST' });
-      if (res.ok) {
-        alert(t('navbar.seed_success_msg', '시드 데이터가 성공적으로 초기화되었습니다.'));
-        if (onSeedReload) onSeedReload();
-      } else {
-        alert(t('navbar.seed_fail_msg', '시드 데이터 초기화에 실패했습니다.'));
-      }
-    } catch (e) {
-      alert(t('navbar.server_error_msg', '서버 통신 중 오류가 발생했습니다.'));
-    } finally {
-      setLoadingSeed(false);
-    }
   };
 
   // SCM-ADMIN & RSM 용 메뉴 구조 (V7 기준)
@@ -136,7 +118,36 @@ export default function Sidebar({ activeTab, setActiveTab, currentRole, isMobile
     }
   ];
 
-  const menuItems = currentRole === 'DEALER' ? dealerMenuItems : adminMenuItems;
+  // RSM 용 메뉴 구조 (V7 기준)
+  const rsmMenuItems = [
+    {
+      id: 'admin-dashboard',
+      label: t('sidebar.rsm_menu.admin_dashboard'),
+      icon: <LayoutDashboard size={20} />
+    },
+    {
+      id: 'admin-inventory',
+      label: t('sidebar.rsm_menu.inventory'),
+      icon: <Package size={20} />
+    },
+    {
+      id: 'admin-promotion',
+      label: t('sidebar.rsm_menu.promotion'),
+      icon: <Tag size={20} />
+    },
+    {
+      id: 'admin-library',
+      label: t('sidebar.rsm_menu.library'),
+      icon: <FolderOpen size={20} />
+    },
+    {
+      id: 'rsm-dashboard',
+      label: t('sidebar.rsm_menu.dashboard'),
+      icon: <LayoutDashboard size={20} />
+    }
+  ];
+
+  const menuItems = currentRole === 'DEALER' ? dealerMenuItems : (currentRole === 'RSM' ? rsmMenuItems : adminMenuItems);
 
   const handleMenuClick = (id) => {
     setActiveTab(id);
@@ -164,7 +175,9 @@ export default function Sidebar({ activeTab, setActiveTab, currentRole, isMobile
               size="small"
               style={{ maxWidth: '100%' }}
               onClick={() => {
-                setActiveTab(currentRole === 'DEALER' ? 'dealer-dashboard' : 'admin-dashboard');
+                if (currentRole === 'DEALER') setActiveTab('dealer-dashboard');
+                else if (currentRole === 'RSM') setActiveTab('rsm-dashboard');
+                else setActiveTab('admin-dashboard');
                 if (onClose) onClose();
               }}
             />
@@ -176,7 +189,7 @@ export default function Sidebar({ activeTab, setActiveTab, currentRole, isMobile
         <div className="sidebar-menu">
           <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'rgb(205, 170, 125)', padding: '0 16px', marginBottom: '8px', letterSpacing: '0.05em', lineHeight: '1.4' }}>
             <div>{t('sidebar.navigation_title')}</div>
-            <div>({currentRole === 'DEALER' ? t('sidebar.dealer_portal') : t('sidebar.admin_portal')})</div>
+            <div>({currentRole === 'DEALER' ? t('sidebar.dealer_portal') : (currentRole === 'RSM' ? t('sidebar.rsm_portal', 'RSM 포털') : t('sidebar.admin_portal'))})</div>
           </div>
           {menuItems.map(item => (
             <button
@@ -193,20 +206,6 @@ export default function Sidebar({ activeTab, setActiveTab, currentRole, isMobile
 
             {/* Mobile Simulate Controls */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', padding: '0 8px', marginBottom: '8px' }}>
-
-              {/* 원클릭 시드 데이터 초기화 버튼 */}
-              {currentRole === 'SCM_ADMIN' && (
-                <button
-                  onClick={handleTriggerSeed}
-                  disabled={loadingSeed}
-                  className="btn btn-outline"
-                  style={{ padding: '6px 14px', fontSize: '0.8rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', marginBottom: '8px' }}
-                  title="샘플 딜러 및 장비 데이터를 초기화합니다."
-                >
-                  <RefreshCw size={14} className={loadingSeed ? 'spin' : ''} />
-                  <span>{loadingSeed ? t('navbar.init_seed_loading') : t('navbar.init_seed_btn')}</span>
-                </button>
-              )}
 
               <div className="strategy-badge mobile-responsive" style={{ justifyContent: 'center', margin: 0 }}>
                 <Smartphone size={16} />

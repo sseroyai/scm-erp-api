@@ -3,7 +3,7 @@ import { ChevronsRight, Search, CheckCircle2, Smartphone, Monitor, MapPin, Clock
 import StepBar from '../../components/StepBar';
 import { useTranslation } from 'react-i18next';
 
-export default function AdminDashboard({ isMobileView }) {
+export default function AdminDashboard({ isMobileView, currentRole }) {
   const { t } = useTranslation();
   const [orders, setOrders] = useState([]);
   const [models, setModels] = useState([]);
@@ -396,50 +396,52 @@ export default function AdminDashboard({ isMobileView }) {
                     </div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                    {order.current_status === 'IN_STOCK' ? (
-                      <button
-                        onClick={() => handleRollbackStatus(order.id, order.current_status)}
-                        className="btn btn-outline"
-                        style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--text-muted)', color: 'var(--text-muted)' }}
-                      >
-                        이전 단계 롤백
-                      </button>
-                    ) : (
-                      <>
+                  {currentRole !== 'RSM' && (
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                      {order.current_status === 'IN_STOCK' ? (
                         <button
-                          onClick={() => handleNextStatus(order.id, order.current_status)}
+                          onClick={() => handleRollbackStatus(order.id, order.current_status)}
                           className="btn btn-outline"
-                          style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-blue)', color: 'var(--accent-blue)' }}
+                          style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--text-muted)', color: 'var(--text-muted)' }}
                         >
-                          다음 단계
+                          이전 단계 롤백
                         </button>
-                        {order.current_status !== 'CONFIRMED' && (
+                      ) : (
+                        <>
                           <button
-                            onClick={() => handleRollbackStatus(order.id, order.current_status)}
+                            onClick={() => handleNextStatus(order.id, order.current_status)}
                             className="btn btn-outline"
-                            style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--text-muted)', color: 'var(--text-muted)' }}
+                            style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-blue)', color: 'var(--accent-blue)' }}
                           >
-                            이전 단계 롤백
+                            다음 단계
                           </button>
-                        )}
-                      </>
-                    )}
-                    <button
-                      onClick={() => handleEditClick(order)}
-                      className="btn btn-outline"
-                      style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-cyan)', color: 'var(--accent-cyan)' }}
-                    >
-                      정보 수정
-                    </button>
-                    <button
-                      onClick={() => handleDeleteOrder(order.id)}
-                      className="btn btn-outline"
-                      style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-red, #ef4444)', color: 'var(--accent-red, #ef4444)' }}
-                    >
-                      삭제
-                    </button>
-                  </div>
+                          {order.current_status !== 'CONFIRMED' && (
+                            <button
+                              onClick={() => handleRollbackStatus(order.id, order.current_status)}
+                              className="btn btn-outline"
+                              style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--text-muted)', color: 'var(--text-muted)' }}
+                            >
+                              이전 단계 롤백
+                            </button>
+                          )}
+                        </>
+                      )}
+                      <button
+                        onClick={() => handleEditClick(order)}
+                        className="btn btn-outline"
+                        style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-cyan)', color: 'var(--accent-cyan)' }}
+                      >
+                        정보 수정
+                      </button>
+                      <button
+                        onClick={() => handleDeleteOrder(order.id)}
+                        className="btn btn-outline"
+                        style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-red, #ef4444)', color: 'var(--accent-red, #ef4444)' }}
+                      >
+                        삭제
+                      </button>
+                    </div>
+                  )}
                 </div>
               ))
             )}
@@ -455,14 +457,16 @@ export default function AdminDashboard({ isMobileView }) {
                   <th style={{ width: '10%', textAlign: 'left', fontWeight: 'bold' }}>{t('menu1.header_dealer')}</th>
                   <th style={{ width: '35%', textAlign: 'center', fontWeight: 'bold' }}>{t('menu1.header_status')}</th>
                   <th style={{ width: '15%', textAlign: 'left', fontWeight: 'bold' }}>{t('menu1.header_port')}</th>
-                  <th style={{ width: '10%', textAlign: 'left', fontWeight: 'bold' }}>{t('menu1.header_management')}</th>
+                  {currentRole !== 'RSM' && (
+                    <th style={{ width: '10%', textAlign: 'left', fontWeight: 'bold' }}>{t('menu1.header_management')}</th>
+                  )}
                 </tr>
               </thead>
               <tbody>
                 {loading ? (
-                  <tr><td colSpan={7} style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>데이터를 불러오는 중입니다...</td></tr>
+                  <tr><td colSpan={currentRole === 'RSM' ? 6 : 7} style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>데이터를 불러오는 중입니다...</td></tr>
                 ) : filteredOrders.length === 0 ? (
-                  <tr><td colSpan={7} style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>조회된 주문 내역이 없습니다.</td></tr>
+                  <tr><td colSpan={currentRole === 'RSM' ? 6 : 7} style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>조회된 주문 내역이 없습니다.</td></tr>
                 ) : (
                   filteredOrders.map((order, index) => {
                     const showSchedule = !['CONFIRMED', 'IN_PRODUCTION'].includes(order.current_status);
@@ -513,44 +517,27 @@ export default function AdminDashboard({ isMobileView }) {
                               </>
                             )}
                           </td>
-                          <td style={{ verticalAlign: 'middle', borderBottom: expandedRows.has(order.id) ? 'none' : '1px solid var(--border-color)', paddingBottom: '5px', paddingTop: '5px' }}>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }} onClick={e => e.stopPropagation()}>
-                              {order.current_status === 'IN_STOCK' ? (
-                                <>
-                                  <div style={{ display: 'flex', gap: '4px', justifyContent: 'center' }}>
-                                    <button
-                                      onClick={() => handleCompleteStatus(order.id, 'DISPATCHED')}
-                                      className="btn btn-outline"
-                                      style={{ padding: '3px 4px', fontSize: '10px', flex: 1, borderColor: 'var(--status-stock)', color: 'var(--status-stock)' }}
-                                    >
-                                      출고완료
-                                    </button>
-                                    <button
-                                      onClick={() => handleCompleteStatus(order.id, 'SOLD')}
-                                      className="btn btn-outline"
-                                      style={{ padding: '3px 4px', fontSize: '10px', flex: 1, borderColor: 'var(--accent-blue)', color: 'var(--accent-blue)' }}
-                                    >
-                                      판매완료
-                                    </button>
-                                  </div>
-                                  <button
-                                    onClick={() => handleRollbackStatus(order.id, order.current_status)}
-                                    className="btn btn-outline"
-                                    style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--text-muted)', color: 'var(--text-muted)' }}
-                                  >
-                                    {t('menu1.btn_prev')}
-                                  </button>
-                                </>
-                              ) : (
-                                <>
-                                  <button
-                                    onClick={() => handleNextStatus(order.id, order.current_status)}
-                                    className="btn btn-outline"
-                                    style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-blue)', color: 'var(--accent-blue)' }}
-                                  >
-                                    {t('menu1.btn_next')}
-                                  </button>
-                                  {order.current_status !== 'CONFIRMED' && (
+                          {currentRole !== 'RSM' && (
+                            <td style={{ verticalAlign: 'middle', borderBottom: expandedRows.has(order.id) ? 'none' : '1px solid var(--border-color)', paddingBottom: '5px', paddingTop: '5px' }}>
+                              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }} onClick={e => e.stopPropagation()}>
+                                {order.current_status === 'IN_STOCK' ? (
+                                  <>
+                                    <div style={{ display: 'flex', gap: '4px', justifyContent: 'center' }}>
+                                      <button
+                                        onClick={() => handleCompleteStatus(order.id, 'DISPATCHED')}
+                                        className="btn btn-outline"
+                                        style={{ padding: '3px 4px', fontSize: '10px', flex: 1, borderColor: 'var(--status-stock)', color: 'var(--status-stock)' }}
+                                      >
+                                        출고완료
+                                      </button>
+                                      <button
+                                        onClick={() => handleCompleteStatus(order.id, 'SOLD')}
+                                        className="btn btn-outline"
+                                        style={{ padding: '3px 4px', fontSize: '10px', flex: 1, borderColor: 'var(--accent-blue)', color: 'var(--accent-blue)' }}
+                                      >
+                                        판매완료
+                                      </button>
+                                    </div>
                                     <button
                                       onClick={() => handleRollbackStatus(order.id, order.current_status)}
                                       className="btn btn-outline"
@@ -558,29 +545,48 @@ export default function AdminDashboard({ isMobileView }) {
                                     >
                                       {t('menu1.btn_prev')}
                                     </button>
-                                  )}
-                                </>
-                              )}
-                              <button
-                                onClick={() => handleEditClick(order)}
-                                className="btn btn-outline"
-                                style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-cyan)', color: 'var(--accent-cyan)' }}
-                              >
-                                {t('menu1.btn_edit')}
-                              </button>
-                              <button
-                                onClick={() => handleDeleteOrder(order.id)}
-                                className="btn btn-outline"
-                                style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-red, #ef4444)', color: 'var(--accent-red, #ef4444)' }}
-                              >
-                                {t('menu1.btn_delete')}
-                              </button>
-                            </div>
-                          </td>
+                                  </>
+                                ) : (
+                                  <>
+                                    <button
+                                      onClick={() => handleNextStatus(order.id, order.current_status)}
+                                      className="btn btn-outline"
+                                      style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-blue)', color: 'var(--accent-blue)' }}
+                                    >
+                                      {t('menu1.btn_next')}
+                                    </button>
+                                    {order.current_status !== 'CONFIRMED' && (
+                                      <button
+                                        onClick={() => handleRollbackStatus(order.id, order.current_status)}
+                                        className="btn btn-outline"
+                                        style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--text-muted)', color: 'var(--text-muted)' }}
+                                      >
+                                        {t('menu1.btn_prev')}
+                                      </button>
+                                    )}
+                                  </>
+                                )}
+                                <button
+                                  onClick={() => handleEditClick(order)}
+                                  className="btn btn-outline"
+                                  style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-cyan)', color: 'var(--accent-cyan)' }}
+                                >
+                                  {t('menu1.btn_edit')}
+                                </button>
+                                <button
+                                  onClick={() => handleDeleteOrder(order.id)}
+                                  className="btn btn-outline"
+                                  style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-red, #ef4444)', color: 'var(--accent-red, #ef4444)' }}
+                                >
+                                  {t('menu1.btn_delete')}
+                                </button>
+                              </div>
+                            </td>
+                          )}
                         </tr>
                         {expandedRows.has(order.id) && (
                           <tr>
-                            <td colSpan={6} style={{ backgroundColor: 'var(--bg-card)', paddingTop: '8px', borderTop: '1px dashed var(--border-color)', paddingBottom: '16px', borderBottom: '1px solid var(--border-color)' }}>
+                            <td colSpan={currentRole === 'RSM' ? 6 : 7} style={{ backgroundColor: 'var(--bg-card)', paddingTop: '8px', borderTop: '1px dashed var(--border-color)', paddingBottom: '16px', borderBottom: '1px solid var(--border-color)' }}>
                               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', paddingLeft: '8px' }}>
                                 <div style={{
                                   fontSize: '0.8rem',

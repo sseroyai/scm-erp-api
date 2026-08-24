@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Shield, RefreshCw, CheckCircle, AlertTriangle, Menu, Smartphone, Monitor, Globe, User } from 'lucide-react';
 import WiaLogo from './WiaLogo';
 
-export default function Navbar({ currentRole, setCurrentRole, onSeedReload, onOpenMobileSidebar, onLogout, onHomeClick, onProfileClick }) {
+export default function Navbar({ currentRole, currentUserId, isMobileView, setCurrentRole, onOpenMobileSidebar, onLogout, onHomeClick, onProfileClick }) {
   const { t, i18n } = useTranslation();
   const [notification, setNotification] = useState(null);
 
@@ -24,7 +24,7 @@ export default function Navbar({ currentRole, setCurrentRole, onSeedReload, onOp
 
   return (
     <header className="top-navbar" style={{ borderBottom: '1px solid rgba(205, 170, 125)' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: isMobileView ? '8px' : '16px', flexWrap: 'nowrap', whiteSpace: 'nowrap' }}>
         {/* 모바일 환경 전용 햄버거 메뉴 버튼 */}
         <button
           onClick={onOpenMobileSidebar}
@@ -38,7 +38,9 @@ export default function Navbar({ currentRole, setCurrentRole, onSeedReload, onOp
           <WiaLogo variant="compact" size="medium" onClick={onHomeClick} />
           <div>
             <h2 className="navbar-title">
-              <span style={{ fontFamily: 'SUITE, sans-serif', fontWeight: 800 }}>{t('navbar.title')}</span>
+              <span style={{ fontFamily: 'SUITE, sans-serif', fontWeight: 800 }}>
+                {isMobileView ? 'WME SCM' : t('navbar.title')}
+              </span>
             </h2>
           </div>
         </div>
@@ -55,7 +57,13 @@ export default function Navbar({ currentRole, setCurrentRole, onSeedReload, onOp
         )}
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+      <div className="navbar-actions">
+
+        {currentUserId && (
+          <span style={{ color: '#88796A', fontWeight: 600, fontSize: '0.82rem' }}>
+            {currentUserId}
+          </span>
+        )}
 
         <button
           onClick={onProfileClick}
@@ -79,13 +87,19 @@ export default function Navbar({ currentRole, setCurrentRole, onSeedReload, onOp
 
         {onLogout && (
           <button
+            className="btn btn-outline"
             onClick={onLogout}
             style={{
-              padding: '6px 14px', borderRadius: '6px', background: 'var(--wia-red)', color: 'white',
-              border: 'none', cursor: 'pointer', fontSize: '0.8rem', fontWeight: 600, marginLeft: '8px'
+              padding: '6px 11px', fontSize: '0.8rem',
+              minWidth: isMobileView ? 'auto' : '85px', justifyContent: 'center'
             }}
+            title={t('navbar.logout')}
           >
-            {t('navbar.logout')}
+            {isMobileView ? (
+              <img src="/exit-favicon.svg" alt="Logout" style={{ width: '16px', height: '16px' }} />
+            ) : (
+              <span style={{ fontWeight: 700 }}>{t('navbar.logout')}</span>
+            )}
           </button>
         )}
       </div>
