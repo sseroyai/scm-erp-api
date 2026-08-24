@@ -154,6 +154,7 @@ h6 {
 
 .main-content {
   flex: 1;
+  min-width: 0;
   margin-left: var(--sidebar-width);
   display: flex;
   flex-direction: column;
@@ -162,6 +163,7 @@ h6 {
 .page-body {
   padding: 32px;
   flex: 1;
+  min-width: 0;
   max-width: 1600px;
   margin: 0 auto;
   width: 100%;
@@ -746,6 +748,11 @@ h6 {
 
   .main-content {
     margin-left: 0;
+  }
+
+  .page-body {
+    padding: 16px;
+    overflow-x: hidden;
   }
 
   .mobile-hamburger-btn {

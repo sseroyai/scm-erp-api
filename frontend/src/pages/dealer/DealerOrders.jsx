@@ -134,7 +134,7 @@ export default function DealerOrders({ isMobileView }) {
               <div style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>{t('dealer_orders.no_orders')}</div>
             ) : (
               filteredOrders.map(order => (
-                <div key={order.id} className="mobile-order-card">
+                <div key={order.id} className="mobile-order-card" onClick={() => toggleRow(order.id)} style={{ cursor: 'pointer' }}>
                   <div className="mobile-order-header">
                     <div>
                       <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600 }}>REFERENCE NO.</span>
@@ -152,7 +152,7 @@ export default function DealerOrders({ isMobileView }) {
                     </div>
                   </div>
 
-                  <div style={{ background: 'var(--bg-input)', padding: '12px', borderRadius: '12px', border: '1px solid var(--border-color)', marginBottom: '12px' }}>
+                  <div style={{ background: 'var(--bg-input)', padding: '12px', borderRadius: '12px', border: '1px solid var(--border-color)', marginBottom: '12px' }} onClick={e => e.stopPropagation()}>
                     <StepBar currentStatus={order.current_status} />
                   </div>
 
@@ -170,6 +170,19 @@ export default function DealerOrders({ isMobileView }) {
                       </span>
                     </div>
                   </div>
+
+                  {expandedRows.has(order.id) && (
+                    <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: '1px dashed var(--border-color)', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem', color: 'var(--text-secondary)' }} onClick={e => e.stopPropagation()}>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>S/O:</strong> <span>{order.so_no || '-'}</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>NC:</strong> <span>{order.nc || 'F0iP'}</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>DETAIL SPEC:</strong> <span>{order.detail_spec || 'T/F, CC(S-H)+B, 20BAR, B/I, P/C, Q(A)'}</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu1.order_date', 'Order date')}:</strong> <span>{order.dealer_order_date ? new Date(order.dealer_order_date).toLocaleDateString() : '-'}</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>Incoterms:</strong> <span>{order.incoterms || '-'}</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>ETD / ETA:</strong> <span>{order.etd ? new Date(order.etd).toLocaleDateString() : '-'} / {order.eta ? new Date(order.eta).toLocaleDateString() : '-'}</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>VESSEL:</strong> <span>{order.vessel || '-'}</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>REMARK:</strong> <span>{order.remark || '-'}</span></div>
+                    </div>
+                  )}
                 </div>
               ))
             )}

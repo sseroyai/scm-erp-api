@@ -204,7 +204,7 @@ export default function App() {
           onProfileClick={() => setActiveTab('profile')}
         />
 
-        <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <main style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
           {/* Common Routing */}
           {activeTab === 'profile' && <UserProfile currentUserId={currentUserId} isMobileView={isMobileView} onClose={handleHomeClick} />}
 
