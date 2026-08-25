@@ -129,9 +129,9 @@ export default function UploadSettings() {
   return (
     <div className="page-body">
       <div style={{ marginBottom: '24px' }}>
-        <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>업로드 / 알림설정</h1>
+        <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>Upload / Setting</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-          단발 A발주 입력과 대량 발주 업로드(Bulk) 및 시스템 스케줄링(ETA 알림) 설정 페이지입니다.
+          On this page, you can upload a new order and set an alert for the schedule.
         </p>
       </div>
 
@@ -139,29 +139,29 @@ export default function UploadSettings() {
       <div className="glass-card" style={{ padding: '28px', marginBottom: '32px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
           <ShoppingCart color="var(--accent-blue)" size={24} />
-          <h2 style={{ fontSize: '1.3rem' }}>신규 A & F 발주 생성</h2>
+          <h2 style={{ fontSize: '1.3rem' }}> Upload New A or F Order</h2>
         </div>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '20px' }}>
-          A 또는 F 단일 주문 건에 대해 실시간으로 발주를 생성합니다.
+          You can create new orders for A or F in real-time.
         </p>
 
         <button
           onClick={() => setShowCreateModal(true)}
-          className="btn btn-primary"
+          className="btn btn-primary upload-hover-btn"
           style={{ padding: '10px 20px', fontSize: '0.95rem' }}
         >
           <Plus size={18} />
-          <span>신규 발주 생성하기</span>
+          <span>Create New Order</span>
         </button>
       </div>
 
       <div className="glass-card" style={{ padding: '28px', marginBottom: '32px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
           <FileSpreadsheet color="var(--accent-cyan)" size={24} />
-          <h2 style={{ fontSize: '1.3rem' }}>대량 발주 업로드(Bulk)</h2>
+          <h2 style={{ fontSize: '1.3rem' }}>Order Upload(Bulk)</h2>
         </div>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '20px' }}>
-          딜러주문 발주와 법인재고 발주 모두 업로드가 가능합니다.
+          You can upload both dealer orders and WME stock orders.
         </p>
 
         <form onSubmit={handleFileUpload} style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', background: 'var(--bg-secondary)', padding: '20px', borderRadius: '12px', border: '1px dashed var(--border-color)' }}>
@@ -171,13 +171,13 @@ export default function UploadSettings() {
             onChange={e => setSelectedFile(e.target.files[0])}
             style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}
           />
-          <button type="submit" disabled={uploading || !selectedFile} className="btn btn-primary">
+          <button type="submit" disabled={uploading || !selectedFile} className="btn btn-primary upload-hover-btn">
             <Upload size={16} />
-            <span>{uploading ? 'Pandas 데이터 정합성 검사 및 적재 중...' : '엑셀 업로드 실행'}</span>
+            <span>{uploading ? 'Data validation and upload...' : 'Upload Standard EXCEL Template'}</span>
           </button>
 
           <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-            * 표준 헤더: <code>MODEL, NC, P/O, PRICE, DEALER, DETAIL SPEC, INCOTERMS, PORT</code>
+            * Standard Headers: <code>MODEL, NC, P/O, PRICE, DEALER, DETAIL SPEC, INCOTERMS, PORT</code>
           </div>
         </form>
 
@@ -202,7 +202,7 @@ export default function UploadSettings() {
       <div className="glass-card" style={{ padding: '28px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
           <Mail color="var(--accent-purple)" size={24} />
-          <h2 style={{ fontSize: '1.3rem' }}>자동 일정 알림 및 주기조절 설정</h2>
+          <h2 style={{ fontSize: '1.3rem' }}>Set Up Automated Schedule Notifications and Frequency</h2>
         </div>
         <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '20px' }}>
           <ul style={{ paddingLeft: '20px', lineHeight: 1.6 }}>
@@ -420,6 +420,12 @@ export default function UploadSettings() {
           </div>
         </div>
       )}
+      <style>{`
+        .upload-hover-btn:hover:not(:disabled) {
+          background-color: rgb(205, 170, 125) !important;
+          border-color: rgb(205, 170, 125) !important;
+        }
+      `}</style>
     </div>
   );
 }

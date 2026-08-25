@@ -26,30 +26,30 @@
     "data_isolation_title": "WIA 유럽 법인 데이터 분리",
     "data_isolation_desc": "현재 접속하신 <1>{{role}}</1> 권한에 맞춰 데이터가 안전하게 격리 조회됩니다. (V7 격리 모드 활성화)",
     "admin_menu": {
-      "dashboard": "메뉴1. 포털 대시보드",
-      "inventory": "메뉴2. WIA 재고리스트",
-      "promotion": "메뉴3. WIA 프로모션",
-      "management": "메뉴4. 업로드 / 설정관리",
-      "dispatch": "메뉴5. 출고완료 리스트",
-      "sales_archive": "메뉴6. 판매완료 내역",
-      "analytics": "메뉴7. 영업통계 및 분석",
-      "library": "메뉴8. 제품 라이브러리",
-      "users": "메뉴9. 유저 및 보안관리"
+      "dashboard": "포털 대시보드",
+      "inventory": "WIA 재고리스트",
+      "promotion": "WIA 프로모션",
+      "management": "업로드 / 설정관리",
+      "dispatch": "출고완료 리스트",
+      "sales_archive": "판매완료 내역",
+      "analytics": "영업통계 및 분석",
+      "library": "제품 라이브러리",
+      "users": "유저 및 보안관리"
     },
     "rsm_menu": {
-      "admin_dashboard": "메뉴1. 포털 대시보드",
-      "inventory": "메뉴2. WIA 재고리스트",
-      "promotion": "메뉴3. WIA 프로모션",
-      "library": "메뉴4. 제품 라이브러리",
-      "dashboard": "메뉴5. RSM 영업통계"
+      "admin_dashboard": "포털 대시보드",
+      "inventory": "WIA 재고리스트",
+      "promotion": "WIA 프로모션",
+      "library": "제품 라이브러리",
+      "dashboard": "RSM 영업통계"
     },
     "dealer_menu": {
-      "dashboard": "메뉴1. 포털 대시보드",
-      "orders": "메뉴2. 발주 및 배송상태",
-      "sales_archive": "메뉴3. 내 구매 내역",
-      "inventory": "메뉴4. WIA 재고리스트",
-      "promotion": "메뉴5. WIA 프로모션",
-      "library": "메뉴6. 제품 라이브러리"
+      "dashboard": "포털 대시보드",
+      "orders": "발주 및 배송상태",
+      "sales_archive": "내 구매 내역",
+      "inventory": "WIA 재고리스트",
+      "promotion": "WIA 프로모션",
+      "library": "제품 라이브러리"
     }
   },
   "dashboard": {

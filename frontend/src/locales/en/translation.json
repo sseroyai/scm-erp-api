@@ -26,30 +26,30 @@
     "data_isolation_title": "WIA Europe Data Isolation",
     "data_isolation_desc": "Data is securely isolated based on your current <1>{{role}}</1> access. (V7 Isolation Mode Active)",
     "admin_menu": {
-      "dashboard": "Menu1. Portal Dashboard",
-      "inventory": "Menu2. WIA Stock List",
-      "promotion": "Menu3. WIA Promotion",
-      "management": "Menu4. Upload / Setting",
-      "dispatch": "Menu5. Dispatched List",
-      "sales_archive": "Menu6. Sold List",
-      "analytics": "Menu7. Sales Analytics",
-      "library": "Menu8. Product Library",
-      "users": "Menu 9. Security Mgmt"
+      "dashboard": "Portal Dashboard",
+      "inventory": "WIA Stock List",
+      "promotion": "WIA Promotion",
+      "management": "Upload / Setting",
+      "dispatch": "Dispatched List",
+      "sales_archive": "Sold List",
+      "analytics": "Sales Analytics",
+      "library": "Product Library",
+      "users": "Security Mgmt"
     },
     "rsm_menu": {
-      "admin_dashboard": "Menu 1. Portal Dashboard",
-      "inventory": "Menu 2. WIA Stock List",
-      "promotion": "Menu 3. WIA Promotion",
-      "library": "Menu 4. Product Library",
-      "dashboard": "Menu 5. RSM Sales Stats"
+      "admin_dashboard": "Portal Dashboard",
+      "inventory": "WIA Stock List",
+      "promotion": "WIA Promotion",
+      "library": "Product Library",
+      "dashboard": "RSM Sales Stats"
     },
     "dealer_menu": {
-      "dashboard": "Menu 1. Dashboard",
-      "orders": "Menu2. Order & Shipping Status",
-      "sales_archive": "Menu3. My Ordered",
-      "inventory": "Menu4. WIA Stock List",
-      "promotion": "Menu5. WIA Promotion",
-      "library": "Menu6. Product Library"
+      "dashboard": "Dashboard",
+      "orders": "Order & Shipping Status",
+      "sales_archive": "My Ordered",
+      "inventory": "WIA Stock List",
+      "promotion": "WIA Promotion",
+      "library": "Product Library"
     }
   },
   "dashboard": {

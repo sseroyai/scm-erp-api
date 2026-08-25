@@ -207,11 +207,6 @@ export default function Sidebar({ activeTab, setActiveTab, currentRole, isMobile
             {/* Mobile Simulate Controls */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', padding: '0 8px', marginBottom: '8px' }}>
 
-              <div className="strategy-badge mobile-responsive" style={{ justifyContent: 'center', margin: 0 }}>
-                <Smartphone size={16} />
-                <span style={{ fontSize: '0.75rem' }}>관리자/RSM 모바일반응형 적용</span>
-              </div>
-
               {!isActualMobileView && (
                 <button
                   onClick={() => setSimulateMobile(!simulateMobile)}
@@ -226,7 +221,7 @@ export default function Sidebar({ activeTab, setActiveTab, currentRole, isMobile
                     justifyContent: 'center'
                   }}
                 >
-                  {simulateMobile ? <Monitor size={16} color="var(--accent-cyan)" /> : <Smartphone size={16} />}
+                  {simulateMobile ? <Monitor size={16} color="var(--wia-light-gold)" /> : <Smartphone size={16} />}
                   <span>{simulateMobile ? '🖥️ 데스크탑 뷰로 복귀' : '📱 스마트폰 뷰 시뮬레이션'}</span>
                 </button>
               )}
@@ -235,7 +230,7 @@ export default function Sidebar({ activeTab, setActiveTab, currentRole, isMobile
             <div style={{ alignSelf: 'center', fontSize: '0.75rem', background: 'linear-gradient(135deg, var(--wia-blue-vibrant), var(--wia-blue))', color: '#FFFFFF', padding: '4px 12px', borderRadius: '6px', fontWeight: 700, border: '1px solid var(--wia-light-gold)', textAlign: 'center', width: 'fit-content' }}>
               {t('navbar.version')}
             </div>
-            <div style={{ padding: '16px', background: 'rgba(10, 28, 143, 0.25)', borderRadius: '12px', border: '1px solid var(--wia-light-gold)', fontSize: '0.8rem' }}>
+            <div style={{ padding: '16px', background: 'rgba(6, 182, 212, 0.1)', borderRadius: '12px', border: '1px solid var(--wia-light-gold)', fontSize: '0.8rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--wia-light-gold)', fontWeight: 700, marginBottom: '6px' }}>
                 <ShieldAlert size={16} />
                 <span>{t('sidebar.data_isolation_title')}</span>

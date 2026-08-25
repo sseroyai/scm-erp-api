@@ -640,6 +640,11 @@ h6 {
   flex-direction: column;
   gap: 14px;
   transition: all 0.2s ease;
+  min-width: 0;
+}
+
+.mobile-order-card > * {
+  min-width: 0;
 }
 
 .mobile-order-card:hover {
@@ -668,7 +673,7 @@ h6 {
 .scroll-buttons-container {
   position: fixed;
   bottom: 40px;
-  right: 25px;
+  right: 10px;
   background-color: rgba(239, 244, 255, 0.95);
   backdrop-filter: blur(8px);
   border-radius: 18px;
@@ -715,7 +720,7 @@ h6 {
 /* 미디어 쿼리: PC/태블릿/모바일 분리 대응 */
 @media (max-width: 1024px) {
   .top-navbar {
-    padding: 0 16px;
+    padding: 0 10px;
   }
 
   .page-body {
@@ -751,7 +756,7 @@ h6 {
   }
 
   .page-body {
-    padding: 16px;
+    padding: 16px 10px;
     overflow-x: hidden;
   }
 
@@ -762,7 +767,7 @@ h6 {
   .top-navbar {
     height: auto;
     min-height: var(--header-height);
-    padding: 12px 16px;
+    padding: 12px 10px;
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 8px;
@@ -793,5 +798,9 @@ h6 {
   .step-bar-container::before {
     left: 28px;
     right: 28px;
+  }
+
+  .glass-card {
+    padding: 20px 10px 10px 10px !important;
   }
 }
