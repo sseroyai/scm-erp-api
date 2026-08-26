@@ -364,7 +364,7 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                     <div>
                       <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600 }}>{order.dealer_company ? order.dealer_company.name : 'AK MAKINA'}</span>
                       <div style={{ fontWeight: 700, fontSize: '1.1rem', color: 'var(--accent-cyan)' }}>{order.reference_no}</div>
-                      <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>S/N: {order.serial_number || '미발급'}</div>
+                      <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>S/N: {order.serial_number || '-'}</div>
                     </div>
                   </div>
 
@@ -384,7 +384,7 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                   <div className="mobile-order-meta" style={{ flexDirection: 'column', gap: '8px', marginBottom: '16px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                       <MapPin size={15} color="var(--accent-cyan)" />
-                      <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>도착지:</span>
+                      <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>Port:</span>
                       <span>{order.destination_port || 'Hamburg'}</span>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -399,13 +399,29 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                   {currentRole !== 'RSM' && (
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }} onClick={e => e.stopPropagation()}>
                       {order.current_status === 'IN_STOCK' ? (
-                        <button
-                          onClick={() => handleRollbackStatus(order.id, order.current_status)}
-                          className="btn btn-outline"
-                          style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--text-muted)', color: 'var(--text-muted)' }}
-                        >
-                          이전 단계 롤백
-                        </button>
+                        <>
+                          <button
+                            onClick={() => handleCompleteStatus(order.id, 'DISPATCHED')}
+                            className="btn btn-outline"
+                            style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--status-stock)', color: 'var(--status-stock)', textAlign: 'center' }}
+                          >
+                            {t('menu1.btn_dispatched', '출고완료')}
+                          </button>
+                          <button
+                            onClick={() => handleCompleteStatus(order.id, 'SOLD')}
+                            className="btn btn-outline"
+                            style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-blue)', color: 'var(--accent-blue)', textAlign: 'center' }}
+                          >
+                            {t('menu1.btn_sold', '판매완료')}
+                          </button>
+                          <button
+                            onClick={() => handleRollbackStatus(order.id, order.current_status)}
+                            className="btn btn-outline"
+                            style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--text-muted)', color: 'var(--text-muted)', gridColumn: '1 / -1' }}
+                          >
+                            {t('menu1.btn_prev_mobile', 'Prev')}
+                          </button>
+                        </>
                       ) : (
                         <>
                           <button
@@ -413,7 +429,7 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                             className="btn btn-outline"
                             style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-blue)', color: 'var(--accent-blue)' }}
                           >
-                            다음 단계
+                            {t('menu1.btn_next_mobile', 'Next')}
                           </button>
                           {order.current_status !== 'CONFIRMED' && (
                             <button
@@ -421,7 +437,7 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                               className="btn btn-outline"
                               style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--text-muted)', color: 'var(--text-muted)' }}
                             >
-                              이전 단계 롤백
+                              {t('menu1.btn_prev_mobile', 'Prev')}
                             </button>
                           )}
                         </>
@@ -431,14 +447,14 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                         className="btn btn-outline"
                         style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-cyan)', color: 'var(--accent-cyan)' }}
                       >
-                        정보 수정
+                        {t('menu1.btn_edit', 'Edit')}
                       </button>
                       <button
                         onClick={() => handleDeleteOrder(order.id)}
                         className="btn btn-outline"
                         style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-red, #ef4444)', color: 'var(--accent-red, #ef4444)' }}
                       >
-                        삭제
+                        {t('menu1.btn_delete', 'Delete')}
                       </button>
                     </div>
                   )}
@@ -539,16 +555,16 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                                       <button
                                         onClick={() => handleCompleteStatus(order.id, 'DISPATCHED')}
                                         className="btn btn-outline"
-                                        style={{ padding: '3px 4px', fontSize: '10px', flex: 1, borderColor: 'var(--status-stock)', color: 'var(--status-stock)' }}
+                                        style={{ padding: '3px 4px', fontSize: '10px', flex: 1, borderColor: 'var(--status-stock)', color: 'var(--status-stock)', textAlign: 'center', justifyContent: 'center' }}
                                       >
-                                        출고완료
+                                        {t('menu1.btn_dispatched', '출고완료')}
                                       </button>
                                       <button
                                         onClick={() => handleCompleteStatus(order.id, 'SOLD')}
                                         className="btn btn-outline"
-                                        style={{ padding: '3px 4px', fontSize: '10px', flex: 1, borderColor: 'var(--accent-blue)', color: 'var(--accent-blue)' }}
+                                        style={{ padding: '3px 4px', fontSize: '10px', flex: 1, borderColor: 'var(--accent-blue)', color: 'var(--accent-blue)', textAlign: 'center', justifyContent: 'center' }}
                                       >
-                                        판매완료
+                                        {t('menu1.btn_sold', '판매완료')}
                                       </button>
                                     </div>
                                     <button

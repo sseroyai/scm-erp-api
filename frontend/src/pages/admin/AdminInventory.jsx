@@ -298,7 +298,7 @@ export default function AdminInventory({ isMobileView }) {
 
                     <div style={{ display: 'flex', gap: '12px', flexDirection: 'column', marginTop: '4px' }} onClick={e => e.stopPropagation()}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>용도 변경</span>
+                        <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>TYPE</span>
                         <select
                           value={sType}
                           onChange={(e) => handlePendingChange(order.id, 'stockType', e.target.value)}
@@ -317,7 +317,7 @@ export default function AdminInventory({ isMobileView }) {
                       </div>
 
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>발주 전환</span>
+                        <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>ORDER</span>
                         <div style={{ display: 'flex', gap: '6px', alignItems: 'center', flex: 1, justifyContent: 'flex-end' }}>
                           <select
                             value={pendingChanges[order.id]?.dealerId || ""}

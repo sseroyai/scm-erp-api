@@ -81,9 +81,13 @@
     "header_management": "상태 설정",
     "btn_next": "다음 >>",
     "btn_prev": "<< 이전",
+    "btn_next_mobile": "다음 단계",
+    "btn_prev_mobile": "이전 단계 롤백",
     "btn_edit": "정보 수정",
     "btn_delete": "삭제",
     "btn_in_stock": "출고대기",
+    "btn_dispatched": "출고완료",
+    "btn_sold": "판매완료",
     "edit_modal": {
       "title": "장비 정보 수정",
       "model": "모델명",

@@ -81,9 +81,13 @@
     "header_management": "Progress",
     "btn_next": "Next >>",
     "btn_prev": "<< Prev",
+    "btn_next_mobile": "Next",
+    "btn_prev_mobile": "Prev",
     "btn_edit": "Edit",
     "btn_delete": "Delete",
     "btn_in_stock": "Ready pickup",
+    "btn_dispatched": "Pickup",
+    "btn_sold": "Sold",
     "edit_modal": {
       "title": "Order detail change",
       "model": "Model",
