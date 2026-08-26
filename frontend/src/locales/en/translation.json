@@ -30,8 +30,8 @@
       "inventory": "WIA Stock List",
       "promotion": "WIA Promotion",
       "management": "Upload / Setting",
-      "dispatch": "Dispatched List",
-      "sales_archive": "Sold List",
+      "dispatch": "WIA Warehouse",
+      "sales_archive": "Sales List",
       "analytics": "Sales Analytics",
       "library": "Product Library",
       "users": "Security Mgmt"
@@ -88,6 +88,7 @@
     "btn_in_stock": "Ready pickup",
     "btn_dispatched": "Pickup",
     "btn_sold": "Sold",
+    "btn_in_stock_complete": "Stock Completed",
     "edit_modal": {
       "title": "Order detail change",
       "model": "Model",
@@ -161,6 +162,17 @@
     "day": "day",
     "btn_confirm": "confirm",
     "btn_cancel_popup": "cancell"
+  },
+  "management": {
+    "page_title": "Upload / Setting",
+    "page_desc": "On this page, you can upload a new order and set an alert for the schedule.",
+    "create_order_title": "Upload New A or F Order",
+    "create_order_desc": "You can create new orders for A or F in real-time.",
+    "btn_create_order": "Create New Order",
+    "bulk_upload_title": "Order Upload(Bulk)",
+    "bulk_upload_desc": "You can upload both dealer orders and WME stock orders.",
+    "btn_upload": "Upload Standard EXCEL Template",
+    "standard_headers": "Standard Headers"
   },
   "profile": {
     "title": "My Data",

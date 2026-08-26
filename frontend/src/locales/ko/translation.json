@@ -30,8 +30,8 @@
       "inventory": "WIA 재고리스트",
       "promotion": "WIA 프로모션",
       "management": "업로드 / 설정관리",
-      "dispatch": "출고완료 리스트",
-      "sales_archive": "판매완료 내역",
+      "dispatch": "WIA 창고",
+      "sales_archive": "판매 목록",
       "analytics": "영업통계 및 분석",
       "library": "제품 라이브러리",
       "users": "유저 및 보안관리"
@@ -88,6 +88,7 @@
     "btn_in_stock": "출고대기",
     "btn_dispatched": "출고완료",
     "btn_sold": "판매완료",
+    "btn_in_stock_complete": "입고완료",
     "edit_modal": {
       "title": "장비 정보 수정",
       "model": "모델명",
@@ -114,7 +115,7 @@
     "header_po": "발주번호",
     "header_detailspec": "옵션 상세",
     "header_eta": "도착일정",
-    "header_status_change": "상태변경",
+    "header_status_change": "상태",
     "header_dealer_order": "딜러발주",
     "filter_all": "전체 상태 조회",
     "stat_all": "전체",
@@ -161,6 +162,17 @@
     "day": "일",
     "btn_confirm": "확정",
     "btn_cancel_popup": "취소"
+  },
+  "management": {
+    "page_title": "업로드 / 설정관리",
+    "page_desc": "이 페이지에서는 새로운 발주를 업로드하고 일정에 대한 알림을 설정할 수 있습니다.",
+    "create_order_title": "신규 A 또는 F 발주 업로드",
+    "create_order_desc": "실시간으로 A 또는 F에 대한 신규 발주를 생성할 수 있습니다.",
+    "btn_create_order": "신규 발주 생성",
+    "bulk_upload_title": "발주 업로드(대량)",
+    "bulk_upload_desc": "딜러 발주 및 WME 재고 발주를 모두 업로드할 수 있습니다.",
+    "btn_upload": "표준 EXCEL 템플릿 업로드",
+    "standard_headers": "표준 헤더"
   },
   "profile": {
     "title": "내 정보",

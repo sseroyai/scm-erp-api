@@ -734,6 +734,9 @@ h6 {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --sidebar-width: 300px;
+  }
 
   /* 모바일에서 고정 사이드바 숨기고 드로어로 전환 */
   .sidebar {

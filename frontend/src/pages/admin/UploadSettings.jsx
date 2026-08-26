@@ -129,9 +129,9 @@ export default function UploadSettings() {
   return (
     <div className="page-body">
       <div style={{ marginBottom: '24px' }}>
-        <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>Upload / Setting</h1>
+        <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>{t('management.page_title', 'Upload / Setting')}</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-          On this page, you can upload a new order and set an alert for the schedule.
+          {t('management.page_desc', 'On this page, you can upload a new order and set an alert for the schedule.')}
         </p>
       </div>
 
@@ -139,10 +139,10 @@ export default function UploadSettings() {
       <div className="glass-card" style={{ padding: '28px', marginBottom: '32px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
           <ShoppingCart color="var(--accent-blue)" size={24} />
-          <h2 style={{ fontSize: '1.3rem' }}> Upload New A or F Order</h2>
+          <h2 style={{ fontSize: '1.3rem' }}> {t('management.create_order_title', 'Upload New A or F Order')}</h2>
         </div>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '20px' }}>
-          You can create new orders for A or F in real-time.
+          {t('management.create_order_desc', 'You can create new orders for A or F in real-time.')}
         </p>
 
         <button
@@ -151,17 +151,17 @@ export default function UploadSettings() {
           style={{ padding: '10px 20px', fontSize: '0.95rem' }}
         >
           <Plus size={18} />
-          <span>Create New Order</span>
+          <span>{t('management.btn_create_order', 'Create New Order')}</span>
         </button>
       </div>
 
       <div className="glass-card" style={{ padding: '28px', marginBottom: '32px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
           <FileSpreadsheet color="var(--accent-cyan)" size={24} />
-          <h2 style={{ fontSize: '1.3rem' }}>Order Upload(Bulk)</h2>
+          <h2 style={{ fontSize: '1.3rem' }}>{t('management.bulk_upload_title', 'Order Upload(Bulk)')}</h2>
         </div>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '20px' }}>
-          You can upload both dealer orders and WME stock orders.
+          {t('management.bulk_upload_desc', 'You can upload both dealer orders and WME stock orders.')}
         </p>
 
         <form onSubmit={handleFileUpload} style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', background: 'var(--bg-secondary)', padding: '20px', borderRadius: '12px', border: '1px dashed var(--border-color)' }}>
@@ -173,11 +173,11 @@ export default function UploadSettings() {
           />
           <button type="submit" disabled={uploading || !selectedFile} className="btn btn-primary upload-hover-btn">
             <Upload size={16} />
-            <span>{uploading ? 'Data validation and upload...' : 'Upload Standard EXCEL Template'}</span>
+            <span>{uploading ? 'Data validation and upload...' : t('management.btn_upload', 'Upload Standard EXCEL Template')}</span>
           </button>
 
           <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-            * Standard Headers: <code>MODEL, NC, P/O, PRICE, DEALER, DETAIL SPEC, INCOTERMS, PORT</code>
+            * {t('management.standard_headers', 'Standard Headers')}: <code>MODEL, NC, P/O, PRICE, DEALER, DETAIL SPEC, INCOTERMS, PORT</code>
           </div>
         </form>
 

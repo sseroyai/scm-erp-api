@@ -403,21 +403,14 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                           <button
                             onClick={() => handleCompleteStatus(order.id, 'DISPATCHED')}
                             className="btn btn-outline"
-                            style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--status-stock)', color: 'var(--status-stock)', textAlign: 'center' }}
+                            style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--status-stock)', color: 'var(--status-stock)' }}
                           >
-                            {t('menu1.btn_dispatched', '출고완료')}
-                          </button>
-                          <button
-                            onClick={() => handleCompleteStatus(order.id, 'SOLD')}
-                            className="btn btn-outline"
-                            style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-blue)', color: 'var(--accent-blue)', textAlign: 'center' }}
-                          >
-                            {t('menu1.btn_sold', '판매완료')}
+                            {t('menu1.btn_in_stock_complete', '입고완료')}
                           </button>
                           <button
                             onClick={() => handleRollbackStatus(order.id, order.current_status)}
                             className="btn btn-outline"
-                            style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--text-muted)', color: 'var(--text-muted)', gridColumn: '1 / -1' }}
+                            style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--text-muted)', color: 'var(--text-muted)' }}
                           >
                             {t('menu1.btn_prev_mobile', 'Prev')}
                           </button>
@@ -551,22 +544,13 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                               <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }} onClick={e => e.stopPropagation()}>
                                 {order.current_status === 'IN_STOCK' ? (
                                   <>
-                                    <div style={{ display: 'flex', gap: '4px', justifyContent: 'center' }}>
-                                      <button
-                                        onClick={() => handleCompleteStatus(order.id, 'DISPATCHED')}
-                                        className="btn btn-outline"
-                                        style={{ padding: '3px 4px', fontSize: '10px', flex: 1, borderColor: 'var(--status-stock)', color: 'var(--status-stock)', textAlign: 'center', justifyContent: 'center' }}
-                                      >
-                                        {t('menu1.btn_dispatched', '출고완료')}
-                                      </button>
-                                      <button
-                                        onClick={() => handleCompleteStatus(order.id, 'SOLD')}
-                                        className="btn btn-outline"
-                                        style={{ padding: '3px 4px', fontSize: '10px', flex: 1, borderColor: 'var(--accent-blue)', color: 'var(--accent-blue)', textAlign: 'center', justifyContent: 'center' }}
-                                      >
-                                        {t('menu1.btn_sold', '판매완료')}
-                                      </button>
-                                    </div>
+                                    <button
+                                      onClick={() => handleCompleteStatus(order.id, 'DISPATCHED')}
+                                      className="btn btn-outline"
+                                      style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--status-stock)', color: 'var(--status-stock)' }}
+                                    >
+                                      {t('menu1.btn_in_stock_complete', '입고완료')}
+                                    </button>
                                     <button
                                       onClick={() => handleRollbackStatus(order.id, order.current_status)}
                                       className="btn btn-outline"
