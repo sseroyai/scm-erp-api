@@ -143,7 +143,7 @@ export default function AdminPromotion({ isMobileView }) {
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>진행 상태</span>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>STATUS</span>
                   {promo.status === 'AVAILABLE' && <span className="status-badge" style={{ background: 'hsla(190, 95%, 49%, 0.2)', color: 'var(--accent-cyan)', width: '80px', justifyContent: 'center', fontSize: '11px' }}>{t('menu3.status_available', '판매가능')}</span>}
                   {promo.status === 'RESERVED' && <span className="status-badge" style={{ background: 'hsla(45, 93%, 58%, 0.2)', color: 'var(--status-production)', width: '80px', justifyContent: 'center', fontSize: '11px' }}>{t('menu3.status_reserved', '예약중')}</span>}
                   {promo.status === 'SOLD' && <span className="status-badge" style={{ background: 'hsla(142, 76%, 46%, 0.2)', color: 'var(--status-stock)', width: '80px', justifyContent: 'center', fontSize: '11px' }}>{t('menu3.status_sold', '판매완료')}</span>}
@@ -152,14 +152,14 @@ export default function AdminPromotion({ isMobileView }) {
                 <div style={{ fontSize: '0.85rem', paddingBottom: '12px', borderBottom: '1px dashed var(--border-color)', marginBottom: '12px' }}>
                   {promo.status === 'RESERVED' && (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                      <div><strong style={{ color: 'var(--text-secondary)' }}>예약:</strong> <span style={{ color: 'var(--accent-cyan)', fontWeight: 600 }}>{promo.reserved_dealer ? promo.reserved_dealer.name : 'Unknown'}</span></div>
+                      <div><strong style={{ color: 'var(--text-secondary)' }}>Reservation:</strong> <span style={{ color: 'var(--accent-cyan)', fontWeight: 600 }}>{promo.reserved_dealer ? promo.reserved_dealer.name : 'Unknown'}</span></div>
                       <div><strong style={{ color: 'var(--text-secondary)' }}>{t('menu3.label_expire', '만료')}:</strong> <span>{promo.reservation_expiry ? new Date(promo.reservation_expiry).toLocaleDateString().replace(/\.$/, '') : ''}</span></div>
                     </div>
                   )}
                   {promo.status === 'SOLD' && (
                     <div><strong style={{ color: 'var(--text-secondary)' }}>구매:</strong> <span style={{ color: 'var(--status-stock)', fontWeight: 600 }}>{promo.final_buyer_dealer ? promo.final_buyer_dealer.name : 'Unknown'}</span></div>
                   )}
-                  {promo.status === 'AVAILABLE' && <span style={{ color: 'var(--text-muted)' }}>현재 예약 없음</span>}
+                  {promo.status === 'AVAILABLE' && <span style={{ color: 'var(--text-muted)' }}> - </span>}
                 </div>
 
                 <div>
