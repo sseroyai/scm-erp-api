@@ -185,11 +185,13 @@ export default function App() {
         activeTab={activeTab} 
         setActiveTab={setActiveTab} 
         currentRole={currentRole}
+        currentUserId={currentUserId}
         isMobileOpen={isMobileOpen}
         onClose={() => setIsMobileOpen(false)}
         isActualMobileView={isActualMobileView}
         simulateMobile={simulateMobile}
         setSimulateMobile={setSimulateMobile}
+        onProfileClick={() => setActiveTab('profile')}
       />
 
       <div className="main-content">

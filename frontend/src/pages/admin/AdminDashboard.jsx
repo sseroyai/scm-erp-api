@@ -402,8 +402,8 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                         <>
                           <button
                             onClick={() => handleCompleteStatus(order.id, 'DISPATCHED')}
-                            className="btn btn-outline"
-                            style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--status-stock)', color: 'var(--status-stock)' }}
+                            className="btn btn-outline btn-in-stock-complete"
+                            style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center' }}
                           >
                             {t('menu1.btn_in_stock_complete', '입고완료')}
                           </button>
@@ -546,8 +546,8 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                                   <>
                                     <button
                                       onClick={() => handleCompleteStatus(order.id, 'DISPATCHED')}
-                                      className="btn btn-outline"
-                                      style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--status-stock)', color: 'var(--status-stock)' }}
+                                      className="btn btn-outline btn-in-stock-complete"
+                                      style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center' }}
                                     >
                                       {t('menu1.btn_in_stock_complete', '입고완료')}
                                     </button>

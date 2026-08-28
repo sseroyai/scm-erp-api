@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 export default function AdminSalesArchive({ isMobileView }) {
   const { t } = useTranslation();
   const [orders, setOrders] = useState([]);
-  
+
   // Master data for edit modal
   const [models, setModels] = useState([]);
   const [dealers, setDealers] = useState([]);
@@ -15,7 +15,7 @@ export default function AdminSalesArchive({ isMobileView }) {
 
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
-  
+
   const [editingOrder, setEditingOrder] = useState(null);
   const [editForm, setEditForm] = useState({
     product_model_id: '',
@@ -92,8 +92,8 @@ export default function AdminSalesArchive({ isMobileView }) {
     if (orders.length === 0) return;
 
     const headers = [
-      '주문일자', '구매 딜러', '모델', 'NC', 'P/O', 'S/N', 
-      '판매 가격', '구매 가격', 'ETA', '출고 예정', '매출 일정'
+      '주문일', '구매 딜러', '모델', 'NC', 'P/O', 'S/N',
+      '판매 가격', '구매가', 'ETA', '출고 예정', '매출 일정'
     ];
     const rows = orders.map(order => [
       order.dealer_order_date ? new Date(order.dealer_order_date).toLocaleDateString() : (order.created_at ? new Date(order.created_at).toLocaleDateString() : '-'),
@@ -103,7 +103,7 @@ export default function AdminSalesArchive({ isMobileView }) {
       order.reference_no || '-',
       order.serial_number || '-',
       order.price || '-',
-      '-', // 구매 가격
+      '-', // 구매가
       order.eta ? new Date(order.eta).toLocaleDateString() : '-',
       '-', // 출고 예정
       '-'  // 매출 일정
@@ -209,7 +209,7 @@ export default function AdminSalesArchive({ isMobileView }) {
               <Search size={16} color="var(--text-muted)" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)' }} />
               <input
                 type="text"
-                placeholder="S/N, 모델, P/O, 딜러명 검색..."
+                placeholder="검색"
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
                 style={{
@@ -272,9 +272,9 @@ export default function AdminSalesArchive({ isMobileView }) {
 
                   {expandedRows.has(order.id) && (
                     <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: '1px dashed var(--border-color)', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>주문일자:</strong> <span>{order.dealer_order_date ? new Date(order.dealer_order_date).toLocaleDateString() : (order.created_at ? new Date(order.created_at).toLocaleDateString() : '-')}</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>주문일:</strong> <span>{order.dealer_order_date ? new Date(order.dealer_order_date).toLocaleDateString() : (order.created_at ? new Date(order.created_at).toLocaleDateString() : '-')}</span></div>
                       <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>판매 가격:</strong> <span>{order.price || '-'}</span></div>
-                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>구매 가격:</strong> <span>-</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>구매가:</strong> <span>-</span></div>
                       <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>ETA:</strong> <span>{order.eta ? new Date(order.eta).toLocaleDateString() : '-'}</span></div>
                       <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>출고 예정:</strong> <span>-</span></div>
                       <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>매출 일정:</strong> <span>-</span></div>
@@ -289,13 +289,13 @@ export default function AdminSalesArchive({ isMobileView }) {
             <table className="data-table">
               <thead>
                 <tr>
-                  <th style={{ width: '5%', textAlign: 'center', fontWeight: 'bold' }}>No.</th>
-                  <th style={{ width: '15%', textAlign: 'center', fontWeight: 'bold' }}>구매 딜러</th>
+                  <th style={{ width: '5%', textAlign: 'center', fontWeight: 'bold' }}>*</th>
+                  <th style={{ width: '15%', textAlign: 'center', fontWeight: 'bold' }}>딜러</th>
                   <th style={{ width: '15%', textAlign: 'center', fontWeight: 'bold' }}>모델</th>
                   <th style={{ width: '10%', textAlign: 'center', fontWeight: 'bold' }}>NC</th>
                   <th style={{ width: '15%', textAlign: 'center', fontWeight: 'bold' }}>P/O</th>
                   <th style={{ width: '15%', textAlign: 'center', fontWeight: 'bold' }}>S/N</th>
-                  <th style={{ width: '10%', textAlign: 'center', fontWeight: 'bold' }}>판매 가격</th>
+                  <th style={{ width: '10%', textAlign: 'center', fontWeight: 'bold' }}>판매가</th>
                   <th style={{ width: '15%', textAlign: 'center', fontWeight: 'bold' }}>관리</th>
                 </tr>
               </thead>
@@ -335,12 +335,12 @@ export default function AdminSalesArchive({ isMobileView }) {
                           <div style={{ fontSize: '12px' }}>{order.price || '-'}</div>
                         </td>
                         <td onClick={e => e.stopPropagation()} style={{ borderBottom: expandedRows.has(order.id) ? 'none' : '1px solid var(--border-color)', paddingBottom: '5px', paddingTop: '5px', textAlign: 'center' }}>
-                          <button 
+                          <button
                             onClick={() => openEditModal(order)}
-                            className="btn btn-outline" 
+                            className="btn btn-outline"
                             style={{ padding: '4px 8px', fontSize: '11px', display: 'inline-flex', alignItems: 'center' }}
                           >
-                            <Edit size={14} style={{ marginRight: '4px' }}/> 수정
+                            <Edit size={14} style={{ marginRight: '4px' }} /> 수정
                           </button>
                         </td>
                       </tr>
@@ -352,9 +352,9 @@ export default function AdminSalesArchive({ isMobileView }) {
                                 fontSize: '12px', color: 'var(--text-secondary)', lineHeight: '1.8', textAlign: 'left',
                                 paddingLeft: '16px', borderLeft: '3px solid var(--wia-blue)',
                               }}>
-                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>주문일자:</span> {order.dealer_order_date ? new Date(order.dealer_order_date).toLocaleDateString() : (order.created_at ? new Date(order.created_at).toLocaleDateString() : '-')}</div>
+                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>주문일:</span> {order.dealer_order_date ? new Date(order.dealer_order_date).toLocaleDateString() : (order.created_at ? new Date(order.created_at).toLocaleDateString() : '-')}</div>
                                 <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>ETA:</span> {order.eta ? new Date(order.eta).toLocaleDateString() : '-'}</div>
-                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>구매 가격:</span> -</div>
+                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>구매가:</span> -</div>
                               </div>
                               <div style={{
                                 fontSize: '12px', color: 'var(--text-secondary)', lineHeight: '1.8', textAlign: 'left',
@@ -375,7 +375,7 @@ export default function AdminSalesArchive({ isMobileView }) {
           </div>
         )}
       </div>
-      
+
       {editingOrder && (
         <div style={{
           position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,

@@ -17,17 +17,17 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
 
   const filteredModels = mockModels.filter(model => {
     const matchesCategory = selectedCategory === 'ALL' || model.category === selectedCategory;
-    
+
     // 검색어 및 모델명에서 띄어쓰기, 하이픈, 슬래시 등을 제거하고 비교 (강력한 검색 지원)
     const normalizedSearch = searchQuery.toLowerCase().replace(/[\s\-\/]/g, '');
     const normalizedName = (model.name || '').toLowerCase().replace(/[\s\-\/]/g, '');
     const matchesSearch = normalizedName.includes(normalizedSearch);
-    
+
     return matchesCategory && matchesSearch;
   });
 
   const getDocIcon = (type) => {
-    switch(type) {
+    switch (type) {
       case 'BROCHURE': return <Book size={18} color="var(--wia-blue)" />;
       case 'MANUAL': return <FileText size={18} color="var(--wia-gold)" />;
       case 'DRAWING': return <FolderOpen size={18} color="var(--wia-light-gold)" />;
@@ -39,7 +39,7 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
 
   return (
     <div style={{ padding: isMobileView ? '16px' : '32px', animation: 'fadeIn 0.4s ease-out' }}>
-      
+
       {/* Header */}
       <div style={{ display: 'flex', flexDirection: isMobileView ? 'column' : 'row', justifyContent: 'space-between', alignItems: isMobileView ? 'stretch' : 'center', gap: '16px', marginBottom: '24px' }}>
         <div>
@@ -48,11 +48,11 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
             {t('menu7.page_title')}
           </h1>
         </div>
-        
+
         {/* Write Access for SCM_ADMIN */}
         {currentRole === 'SCM_ADMIN' && (
           <button style={{
-            background: 'var(--wia-blue)', color: 'white', border: 'none', padding: '10px 20px', 
+            background: 'var(--wia-blue)', color: 'white', border: 'none', padding: '10px 20px',
             borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontWeight: 600,
             boxShadow: 'var(--glass-shadow)', alignSelf: isMobileView ? 'stretch' : 'auto', justifyContent: 'center'
           }}>
@@ -78,9 +78,9 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
 
         <div style={{ position: 'relative', width: isMobileView ? '100%' : '300px' }}>
           <Search size={18} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
-          <input 
-            type="text" 
-            placeholder={t('menu7.search_placeholder')} 
+          <input
+            type="text"
+            placeholder={t('menu7.search_placeholder')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             style={{ width: '100%', padding: '10px 12px 10px 40px', borderRadius: '8px', border: '1px solid var(--border-color)', outline: 'none' }}
@@ -91,9 +91,9 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
       {/* Master List View (Grid) */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
         {filteredModels.map(model => (
-          <div 
-            key={model.id} 
-            className="clean-card" 
+          <div
+            key={model.id}
+            className="clean-card"
             style={{ overflow: 'hidden', cursor: 'pointer', display: 'flex', flexDirection: 'column' }}
             onClick={() => setSelectedModel(model)}
           >
@@ -109,7 +109,7 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
             <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '8px' }}>{model.name}</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '16px' }}>문서 {model.documents.length}개 보유</p>
-              
+
               <div style={{ marginTop: 'auto', background: 'var(--bg-secondary)', padding: '12px', borderRadius: '8px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', marginBottom: '4px' }}>
                   <span style={{ color: 'var(--text-muted)' }}>스핀들:</span>
@@ -128,21 +128,21 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
       {/* Quick View Modal */}
       {selectedModel && (
         <div style={{
-          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, 
+          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
           backgroundColor: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000,
           padding: isMobileView ? '16px' : '40px', backdropFilter: 'blur(4px)'
         }}>
-          <div className="clean-card" style={{ 
-            background: 'var(--bg-primary)', width: '100%', maxWidth: '800px', maxHeight: '90vh', 
-            overflowY: 'auto', borderRadius: '16px', display: 'flex', flexDirection: 'column' 
+          <div className="clean-card" style={{
+            background: 'var(--bg-primary)', width: '100%', maxWidth: '800px', maxHeight: '90vh',
+            overflowY: 'auto', borderRadius: '16px', display: 'flex', flexDirection: 'column'
           }}>
             <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: 'var(--bg-primary)', zIndex: 10 }}>
-              <h2 style={{ fontSize: '1.5rem', margin: 0 }}>{selectedModel.name} <span style={{fontSize: '1rem', color: 'var(--text-muted)', fontWeight: 'normal'}}>{selectedModel.category}</span></h2>
+              <h2 style={{ fontSize: '1.5rem', margin: 0 }}>{selectedModel.name} <span style={{ fontSize: '1rem', color: 'var(--text-muted)', fontWeight: 'normal' }}>{selectedModel.category}</span></h2>
               <button onClick={() => setSelectedModel(null)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)' }}>
                 <X size={24} />
               </button>
             </div>
-            
+
             <div style={{ padding: '24px', display: 'flex', flexDirection: isMobileView ? 'column' : 'row', gap: '32px' }}>
               {/* Left Column: Specs */}
               <div style={{ flex: '1' }}>
@@ -161,13 +161,13 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
 
               {/* Right Column: Digital File Download Hub */}
               <div style={{ flex: '1.5' }}>
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '16px', color: 'var(--text-primary)' }}>디지털 자산 (문서)</h3>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '16px', color: 'var(--text-primary)' }}>문서 (EN)</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   {selectedModel.documents
                     // RBAC Logic: Filter INTERNAL documents if user is DEALER
                     .filter(doc => currentRole !== 'DEALER' || doc.securityLevel !== 'INTERNAL')
                     .map(doc => (
-                      <div key={doc.id} className="clean-card no-hover-bg" style={{ 
+                      <div key={doc.id} className="clean-card no-hover-bg" style={{
                         padding: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                         borderLeft: doc.securityLevel === 'INTERNAL' ? '4px solid var(--wia-red)' : '4px solid var(--wia-blue)'
                       }}>
@@ -180,12 +180,12 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
                             <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', gap: '8px', marginTop: '4px' }}>
                               <span>{doc.size}</span>
                               {doc.securityLevel === 'INTERNAL' && (
-                                <span style={{ color: 'var(--wia-red)', fontWeight: 600 }}><ShieldAlert size={10} style={{display:'inline'}}/> 보안 등급: 대외비</span>
+                                <span style={{ color: 'var(--wia-red)', fontWeight: 600 }}><ShieldAlert size={10} style={{ display: 'inline' }} /> 보안 등급: 대외비</span>
                               )}
                             </div>
                           </div>
                         </div>
-                        <button style={{ 
+                        <button style={{
                           background: 'none', border: '1px solid var(--border-color)', borderRadius: '8px', padding: '8px',
                           cursor: 'pointer', color: 'var(--wia-blue)', transition: 'all 0.2s',
                           display: 'flex', alignItems: 'center', justifyContent: 'center'
@@ -194,12 +194,12 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
                         </button>
                       </div>
                     ))}
-                    
-                    {selectedModel.documents.filter(doc => currentRole !== 'DEALER' || doc.securityLevel !== 'INTERNAL').length === 0 && (
-                      <div style={{ padding: '32px', textAlign: 'center', color: 'var(--text-muted)', background: 'var(--bg-secondary)', borderRadius: '8px' }}>
-                        이용 가능한 문서가 없습니다.
-                      </div>
-                    )}
+
+                  {selectedModel.documents.filter(doc => currentRole !== 'DEALER' || doc.securityLevel !== 'INTERNAL').length === 0 && (
+                    <div style={{ padding: '32px', textAlign: 'center', color: 'var(--text-muted)', background: 'var(--bg-secondary)', borderRadius: '8px' }}>
+                      이용 가능한 문서가 없습니다.
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

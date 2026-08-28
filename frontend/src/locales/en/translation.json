@@ -88,7 +88,7 @@
     "btn_in_stock": "Ready pickup",
     "btn_dispatched": "Pickup",
     "btn_sold": "Sold",
-    "btn_in_stock_complete": "Stock Completed",
+    "btn_in_stock_complete": "into Stock",
     "edit_modal": {
       "title": "Order detail change",
       "model": "Model",

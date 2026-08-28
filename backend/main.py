@@ -499,12 +499,21 @@ def get_sales_analytics(db: Session = Depends(get_db), current_role: Optional[st
             "achievement_rate": round(min(100.0, (len(r_orders) / 10) * 100), 1)
         })
 
+    # 6. ATP by port
+    atp_by_port = {}
+    for o in orders:
+        if o.current_status == models.OrderStatus.IN_STOCK:
+            port_name = o.destination_port or "Unknown"
+            atp_by_port[port_name] = atp_by_port.get(port_name, 0) + 1
+
     return {
         "kpi": {
             "total_orders": total_orders,
+            "in_production": status_counts.get(models.OrderStatus.IN_PRODUCTION.value, 0),
             "in_shipping": status_counts.get(models.OrderStatus.SHIPPING.value, 0),
             "arrived_port": status_counts.get(models.OrderStatus.ARRIVED.value, 0),
-            "available_atp_stock": status_counts.get(models.OrderStatus.IN_STOCK.value, 0)
+            "available_atp_stock": status_counts.get(models.OrderStatus.IN_STOCK.value, 0),
+            "atp_by_port": atp_by_port
         },
         "status_distribution": status_counts,
         "model_distribution": [{"model": k, "count": v} for k, v in model_counts.items()],

@@ -59,21 +59,7 @@ export default function Navbar({ currentRole, currentUserId, isMobileView, setCu
 
       <div className="navbar-actions">
 
-        {currentUserId && (
-          <span style={{ color: '#88796A', fontWeight: 600, fontSize: '0.82rem' }}>
-            {currentUserId}
-          </span>
-        )}
 
-        <button
-          onClick={onProfileClick}
-          className="btn btn-outline"
-          style={{ padding: '6px 10px', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: '4px' }}
-          title={t('profile.title')}
-        >
-          <User size={14} />
-          <span style={{ fontWeight: 700, display: 'none' }} className="d-sm-inline">{t('profile.title')}</span>
-        </button>
 
         <button
           onClick={toggleLanguage}

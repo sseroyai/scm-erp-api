@@ -8,7 +8,7 @@ const getAgingStatus = (etd) => {
   const today = new Date();
   const diffTime = Math.abs(today - etdDate);
   const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-  
+
   if (diffDays <= 180) return { status: '일반', days: diffDays, color: 'var(--status-stock)', bg: 'rgba(16, 185, 129, 0.1)' };
   if (diffDays <= 360) return { status: '장기', days: diffDays, color: '#f59e0b', bg: 'rgba(245, 158, 11, 0.1)' };
   return { status: '악성', days: diffDays, color: 'var(--accent-red)', bg: 'rgba(239, 68, 68, 0.1)' };
@@ -19,10 +19,10 @@ export default function AdminDispatch({ isMobileView }) {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
-  
+
   const [agingFilter, setAgingFilter] = useState('ALL');
   const [stockTypeFilter, setStockTypeFilter] = useState('ALL');
-  
+
   const [selectedOrderForHistory, setSelectedOrderForHistory] = useState(null);
   const [orderHistory, setOrderHistory] = useState([]);
 
@@ -149,7 +149,7 @@ export default function AdminDispatch({ isMobileView }) {
               <Search size={16} color="var(--text-muted)" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)' }} />
               <input
                 type="text"
-                placeholder="S/N, 모델, NC, P/O 검색"
+                placeholder="검색"
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
                 style={{
@@ -334,8 +334,8 @@ export default function AdminDispatch({ isMobileView }) {
                             <div style={{ fontSize: '12px' }}>{order.serial_number || '-'}</div>
                           </td>
                           <td style={{ borderBottom: expandedRows.has(order.id) ? 'none' : '1px solid var(--border-color)', paddingBottom: '5px', paddingTop: '5px', textAlign: 'center' }}>
-                            <span style={{ 
-                              display: 'inline-block', padding: '4px 8px', borderRadius: '12px', 
+                            <span style={{
+                              display: 'inline-block', padding: '4px 8px', borderRadius: '12px',
                               fontSize: '11px', fontWeight: 600, color: aging.color, background: aging.bg
                             }}>
                               {aging.status} ({aging.days}일)

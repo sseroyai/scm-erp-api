@@ -807,3 +807,32 @@ h6 {
     padding: 20px 10px 10px 10px !important;
   }
 }
+
+.sidebar-profile-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.sidebar-profile-btn:hover {
+  color: rgb(10, 28, 143) !important;
+  background: rgba(10, 28, 143, 0.1);
+}
+
+.btn-in-stock-complete {
+  background-color: rgb(225, 243, 254) !important;
+  color: rgb(12, 62, 95) !important;
+  border-color: rgb(12, 62, 95) !important;
+  transition: all 0.2s ease;
+}
+
+.btn-in-stock-complete:hover {
+  background-color: rgb(16, 70, 59) !important;
+  color: rgb(255, 255, 255) !important;
+}

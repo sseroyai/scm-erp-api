@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import { LayoutDashboard, BarChart3, FileSpreadsheet, Tag, Package, Truck, ShieldAlert, X, FolderOpen, Smartphone, Monitor, RefreshCw } from 'lucide-react';
+import { LayoutDashboard, BarChart3, FileSpreadsheet, Tag, Package, Truck, ShieldAlert, X, FolderOpen, Smartphone, Monitor, RefreshCw, User } from 'lucide-react';
 import WiaLogo from './WiaLogo';
 
-export default function Sidebar({ activeTab, setActiveTab, currentRole, isMobileOpen, onClose, isActualMobileView, simulateMobile, setSimulateMobile }) {
+export default function Sidebar({ activeTab, setActiveTab, currentRole, currentUserId, isMobileOpen, onClose, isActualMobileView, simulateMobile, setSimulateMobile, onProfileClick }) {
   const { t } = useTranslation();
   const touchStartX = useRef(null);
   const touchStartY = useRef(null);
@@ -188,7 +188,16 @@ export default function Sidebar({ activeTab, setActiveTab, currentRole, isMobile
 
         <div className="sidebar-menu">
           <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'rgb(205, 170, 125)', padding: '0 16px', marginBottom: '8px', letterSpacing: '0.05em', lineHeight: '1.4' }}>
-            <div>{t('sidebar.navigation_title')}</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span>{currentUserId}</span>
+              <button
+                className="sidebar-profile-btn"
+                onClick={onProfileClick}
+                title={t('profile.title')}
+              >
+                <User size={14} />
+              </button>
+            </div>
             <div>({currentRole === 'DEALER' ? t('sidebar.dealer_portal') : (currentRole === 'RSM' ? t('sidebar.rsm_portal', 'RSM 포털') : t('sidebar.admin_portal'))})</div>
           </div>
           {menuItems.map(item => (
