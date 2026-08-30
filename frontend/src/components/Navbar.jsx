@@ -71,21 +71,17 @@ export default function Navbar({ currentRole, currentUserId, isMobileView, setCu
           <span style={{ fontWeight: 700 }}>{i18n.language.startsWith('ko') ? 'KR' : 'EN'}</span>
         </button>
 
-        {onLogout && (
+        {!isMobileView && onLogout && (
           <button
             className="btn btn-outline"
             onClick={onLogout}
             style={{
               padding: '6px 11px', fontSize: '0.8rem',
-              minWidth: isMobileView ? 'auto' : '85px', justifyContent: 'center'
+              minWidth: '85px', justifyContent: 'center'
             }}
             title={t('navbar.logout')}
           >
-            {isMobileView ? (
-              <img src="/exit-favicon.svg" alt="Logout" style={{ width: '16px', height: '16px' }} />
-            ) : (
-              <span style={{ fontWeight: 700 }}>{t('navbar.logout')}</span>
-            )}
+            <span style={{ fontWeight: 700 }}>{t('navbar.logout')}</span>
           </button>
         )}
       </div>

@@ -128,7 +128,7 @@ export default function UploadSettings() {
 
   return (
     <div className="page-body">
-      <div style={{ marginBottom: '24px' }}>
+      <div style={{ marginBottom: '24px', paddingTop: '4px', paddingLeft: '28px' }}>
         <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>{t('management.page_title', 'Upload / Setting')}</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
           {t('management.page_desc', 'On this page, you can upload a new order and set an alert for the schedule.')}

@@ -58,7 +58,7 @@ export default function RsmDashboard({ isMobileView, currentUserId }) {
 
   return (
     <div className="page-body">
-      <div style={{ marginBottom: '24px' }}>
+      <div style={{ marginBottom: '24px', paddingTop: '4px', paddingLeft: '28px' }}>
         <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>RSM Portal Dashboard</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
           Overview of dealer performance and pipeline metrics
@@ -171,7 +171,7 @@ export default function RsmDashboard({ isMobileView, currentUserId }) {
           {/* Active Pipeline Table */}
           <div className="glass-card" style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
             <h3 style={{ fontSize: '1.2rem', marginBottom: '16px' }}>Active Pipeline (Dealers)</h3>
-            <div className="data-table-container">
+            <div className="data-table-container full-bleed">
               <table className="data-table">
                 <thead>
                   <tr>

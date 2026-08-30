@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 import io
 from typing import List, Optional
 from fastapi import FastAPI, Depends, HTTPException, status, UploadFile, File, Query, Header
+from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from sqlalchemy import text
@@ -13,6 +14,7 @@ import schemas
 from seed import init_seed
 from scheduler import start_scheduler, stop_scheduler
 from email_service import send_etd_notification, send_warehouse_arrival_notification, send_port_arrival_notification
+from storage import default_storage
 
 app = FastAPI(
     title="공작기계 글로벌 SCM 재고 관리 ERP API (V5)",
@@ -848,3 +850,19 @@ def login(payload: schemas.UserLogin, db: Session = Depends(get_db)):
         "username": user.username,
         "role": user.role.value
     }
+
+# ==========================================
+# 10. 문서 다운로드 API
+# ==========================================
+@app.get("/api/documents/{filename}/download", summary="문서 파일 다운로드")
+def download_document(filename: str):
+    url = default_storage.get_download_url(filename)
+    if url:
+        return RedirectResponse(url=url)
+        
+    file_path = default_storage.get_file_path(filename)
+    if file_path:
+        return FileResponse(path=file_path, filename=filename)
+        
+    raise HTTPException(status_code=404, detail="File not found")
+

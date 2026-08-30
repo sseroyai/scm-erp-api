@@ -71,7 +71,7 @@ export default function DealerInventory({ isMobileView }) {
 
   return (
     <div className="page-body">
-      <div style={{ marginBottom: '24px' }}>
+      <div style={{ marginBottom: '24px', paddingTop: '4px', paddingLeft: '28px' }}>
         <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>{t('menu2.page_title')}</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
           {t('menu2.page_desc')}
@@ -160,7 +160,7 @@ export default function DealerInventory({ isMobileView }) {
             )}
           </div>
         ) : (
-          <div className="data-table-container">
+          <div className="data-table-container full-bleed">
           <table className="data-table">
             <thead>
               <tr>

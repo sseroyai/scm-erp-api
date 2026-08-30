@@ -192,6 +192,7 @@ export default function App() {
         simulateMobile={simulateMobile}
         setSimulateMobile={setSimulateMobile}
         onProfileClick={() => setActiveTab('profile')}
+        onLogout={handleLogout}
       />
 
       <div className="main-content">

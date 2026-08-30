@@ -100,12 +100,7 @@ export default function SalesAnalytics({ isMobileView, isDesktopOptimized }) {
 
   return (
     <div className="page-body">
-      <div style={{ marginBottom: '16px' }}>
-        <div className="strategy-badge desktop-optimized" title="구성가이드 V8 설계 적용">
-          <Monitor size={16} />
-          <span>V8 설계: 관리자 영업 통계/분석 (1024px 이상 PC 데스크탑 최적화)</span>
-        </div>
-      </div>
+
 
       {(!isDesktopOptimized || isMobileView) && (
         <div className="desktop-recommend-banner">
@@ -122,7 +117,7 @@ export default function SalesAnalytics({ isMobileView, isDesktopOptimized }) {
       )}
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '28px', flexWrap: 'wrap', gap: '16px' }}>
-        <div>
+        <div style={{ paddingTop: '4px', paddingLeft: '28px' }}>
           <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>관리자용 영업 통계 및 분석 (Sales Analytics)</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
             유럽 현지 판매 법인의 SCM 효율화 및 실적, 목표 달성률을 종합적으로 모니터링합니다. (V8)

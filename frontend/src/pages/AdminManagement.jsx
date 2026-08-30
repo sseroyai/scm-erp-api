@@ -218,7 +218,7 @@ export default function AdminManagement({ isMobileView, isDesktopOptimized }) {
         </div>
       )}
 
-      <div style={{ marginBottom: '28px' }}>
+      <div style={{ marginBottom: '28px', paddingTop: '4px', paddingLeft: '28px' }}>
         <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>엑셀 업로드 / 프로모션 / 자동 알림 관리</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
           V3~V6 가이드에 확정된 핵심 비즈니스 로직(단건 생성, Pandas 검증 일괄 적재, 장기 재고 예약 전환, ETA 알림 제어)을 총괄 관리합니다.
@@ -301,7 +301,7 @@ export default function AdminManagement({ isMobileView, isDesktopOptimized }) {
           3년 이상 장기 보관된 특별 재고 및 한정 기종의 상태를 <code>판매가능(Available) ➔ 예약중(Reserved) ➔ 판매완료(Sold)</code> 순으로 엄격히 관리합니다.
         </p>
 
-        <div className="data-table-container">
+        <div className="data-table-container full-bleed">
           <table className="data-table">
             <thead>
               <tr>
@@ -415,7 +415,7 @@ export default function AdminManagement({ isMobileView, isDesktopOptimized }) {
           기계의 해상 운송(SHIPPING) 시점 및 항구 도착을 기준으로 주기적인 이메일 통지 규칙(예: 출항 2일 후, 15일 후 정기 보고)을 세팅하고 온/오프 제어합니다.
         </p>
 
-        <div className="data-table-container">
+        <div className="data-table-container full-bleed">
           <table className="data-table">
             <thead>
               <tr>

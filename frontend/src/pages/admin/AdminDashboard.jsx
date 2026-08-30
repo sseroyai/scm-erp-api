@@ -257,7 +257,7 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
   });
   return (
     <div className="page-body">
-      <div style={{ marginBottom: '24px' }}>
+      <div style={{ marginBottom: '24px', paddingTop: '4px', paddingLeft: '28px' }}>
         <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>{t('dashboard.title')}</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
           {t('dashboard.subtitle')}
@@ -469,7 +469,7 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
             )}
           </div>
         ) : (
-          <div className="data-table-container">
+          <div className="data-table-container full-bleed">
             <table className="data-table">
               <thead>
                 <tr>

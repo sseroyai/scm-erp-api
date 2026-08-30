@@ -106,7 +106,7 @@ export default function AdminPromotion({ isMobileView }) {
 
   return (
     <div className="page-body">
-      <div style={{ marginBottom: '24px' }}>
+      <div style={{ marginBottom: '24px', paddingTop: '4px', paddingLeft: '28px' }}>
         <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>{t('menu3.page_title', '프로모션 관리')}</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
           {t('menu3.page_desc', '프로모션 이벤트 기종의 예약/판매 상태를 관리합니다.')}
@@ -235,7 +235,7 @@ export default function AdminPromotion({ isMobileView }) {
             ))}
           </div>
         ) : (
-          <div className="data-table-container">
+          <div className="data-table-container full-bleed">
             <table className="data-table promotion-table">
               <thead>
                 <tr>

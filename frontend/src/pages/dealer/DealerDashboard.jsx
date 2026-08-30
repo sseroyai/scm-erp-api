@@ -86,7 +86,7 @@ export default function DealerDashboard({ isMobileView, setActiveTab }) {
 
   return (
     <div className="page-body">
-      <div style={{ marginBottom: '24px' }}>
+      <div style={{ marginBottom: '24px', paddingTop: '4px', paddingLeft: '28px' }}>
         <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>{t('dealer_dashboard.title')}</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
           {t('dealer_dashboard.subtitle', { dealerName: 'AK MAKINA' })}

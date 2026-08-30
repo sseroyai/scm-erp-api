@@ -126,7 +126,7 @@ export default function AdminDispatch({ isMobileView }) {
 
   return (
     <div className="page-body">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', paddingTop: '4px', paddingLeft: '28px' }}>
         <div>
           <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>WIA 창고</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
@@ -286,7 +286,7 @@ export default function AdminDispatch({ isMobileView }) {
             )}
           </div>
         ) : (
-          <div className="data-table-container">
+          <div className="data-table-container full-bleed">
             <table className="data-table">
               <thead>
                 <tr>

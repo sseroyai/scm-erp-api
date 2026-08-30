@@ -37,6 +37,35 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
     }
   };
 
+  const handleDownload = async (doc) => {
+    if (!doc.filename) {
+      alert('다운로드할 파일이 설정되지 않았습니다.');
+      return;
+    }
+    
+    try {
+      const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+      const response = await fetch(`${baseUrl}/api/documents/${doc.filename}/download`);
+      
+      if (!response.ok) {
+        throw new Error('파일을 찾을 수 없습니다.');
+      }
+      
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = url;
+      a.download = doc.filename;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+    } catch (error) {
+      alert('다운로드 실패: ' + error.message);
+    }
+  };
+
   return (
     <div style={{ padding: isMobileView ? '16px' : '32px', animation: 'fadeIn 0.4s ease-out' }}>
 
@@ -143,7 +172,7 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
               </button>
             </div>
 
-            <div style={{ padding: '24px', display: 'flex', flexDirection: isMobileView ? 'column' : 'row', gap: '32px' }}>
+            <div style={{ padding: '24px', display: 'flex', flexDirection: isMobileView ? 'column-reverse' : 'row', gap: '32px' }}>
               {/* Left Column: Specs */}
               <div style={{ flex: '1' }}>
                 <h3 style={{ fontSize: '1.1rem', marginBottom: '16px', color: 'var(--text-primary)' }}>핵심 스펙</h3>
@@ -185,7 +214,7 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
                             </div>
                           </div>
                         </div>
-                        <button style={{
+                        <button onClick={() => handleDownload(doc)} style={{
                           background: 'none', border: '1px solid var(--border-color)', borderRadius: '8px', padding: '8px',
                           cursor: 'pointer', color: 'var(--wia-blue)', transition: 'all 0.2s',
                           display: 'flex', alignItems: 'center', justifyContent: 'center'

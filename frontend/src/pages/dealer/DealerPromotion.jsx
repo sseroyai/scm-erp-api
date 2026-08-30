@@ -37,7 +37,7 @@ export default function DealerPromotion({ isMobileView }) {
 
   return (
     <div className="page-body">
-      <div style={{ marginBottom: '24px' }}>
+      <div style={{ marginBottom: '24px', paddingTop: '4px', paddingLeft: '28px' }}>
         <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>{t('dealer_promotion.page_title')}</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
           {t('dealer_promotion.page_desc')}
@@ -121,7 +121,7 @@ export default function DealerPromotion({ isMobileView }) {
             )}
           </div>
         ) : (
-          <div className="data-table-container">
+          <div className="data-table-container full-bleed">
             <table className="data-table promotion-table">
               <thead>
                 <tr>

@@ -126,7 +126,7 @@ export default function DealerDashboard({ currentRole, isMobileView }) {
       </div>
 
       {/* 타이틀 및 헤더 영역 */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', paddingTop: '4px', paddingLeft: '28px' }}>
         <div>
           <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>딜러 전용 포털 대시보드</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
@@ -305,7 +305,7 @@ export default function DealerDashboard({ currentRole, isMobileView }) {
           </div>
         ) : (
           /* 데스크탑 최적화 그리드 테이블 뷰 (Desktop Table View) */
-          <div className="data-table-container">
+          <div className="data-table-container full-bleed">
             <table className="data-table">
               <thead>
                 <tr>
@@ -440,7 +440,7 @@ export default function DealerDashboard({ currentRole, isMobileView }) {
               )}
             </div>
           ) : (
-            <div className="data-table-container" style={{ flex: 1 }}>
+            <div className="data-table-container full-bleed" style={{ flex: 1 }}>
               <table className="data-table">
                 <thead>
                   <tr>

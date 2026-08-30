@@ -65,7 +65,7 @@ export default function DealerSalesArchive({ isMobileView }) {
 
   return (
     <div className="page-body">
-      <div style={{ marginBottom: '24px' }}>
+      <div style={{ marginBottom: '24px', paddingTop: '4px', paddingLeft: '28px' }}>
         <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>{t('sidebar.dealer_menu.sales_archive', '메뉴3. 내 구매 내역')}</h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
           {t('dealer_sales_archive.subtitle', '과거 구매 내역 및 완료된 주문 건들을 확인합니다.')}
@@ -100,7 +100,7 @@ export default function DealerSalesArchive({ isMobileView }) {
           </div>
         </div>
 
-        <div className="data-table-container">
+        <div className="data-table-container full-bleed">
           {loading ? (
             <div style={{ padding: '40px', textAlign: 'center', color: 'var(--text-muted)' }}>{t('navbar.init_seed_loading', '데이터를 불러오는 중입니다...')}</div>
           ) : (

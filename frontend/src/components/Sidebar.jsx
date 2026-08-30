@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import { LayoutDashboard, BarChart3, FileSpreadsheet, Tag, Package, Truck, ShieldAlert, X, FolderOpen, Smartphone, Monitor, RefreshCw, User } from 'lucide-react';
+import { LayoutDashboard, BarChart3, FileSpreadsheet, Tag, Package, Truck, ShieldAlert, X, FolderOpen, Smartphone, Monitor, RefreshCw, User, LogOut } from 'lucide-react';
 import WiaLogo from './WiaLogo';
 
-export default function Sidebar({ activeTab, setActiveTab, currentRole, currentUserId, isMobileOpen, onClose, isActualMobileView, simulateMobile, setSimulateMobile, onProfileClick }) {
+export default function Sidebar({ activeTab, setActiveTab, currentRole, currentUserId, isMobileOpen, onClose, isActualMobileView, simulateMobile, setSimulateMobile, onProfileClick, onLogout }) {
   const { t } = useTranslation();
   const touchStartX = useRef(null);
   const touchStartY = useRef(null);
@@ -196,6 +196,13 @@ export default function Sidebar({ activeTab, setActiveTab, currentRole, currentU
                 title={t('profile.title')}
               >
                 <User size={14} />
+              </button>
+              <button
+                className="sidebar-profile-btn"
+                onClick={onLogout}
+                title={t('navbar.logout', '로그아웃')}
+              >
+                <LogOut size={14} />
               </button>
             </div>
             <div>({currentRole === 'DEALER' ? t('sidebar.dealer_portal') : (currentRole === 'RSM' ? t('sidebar.rsm_portal', 'RSM 포털') : t('sidebar.admin_portal'))})</div>

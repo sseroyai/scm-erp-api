@@ -471,6 +471,18 @@ h6 {
   overflow-x: auto;
 }
 
+.data-table-container.full-bleed {
+  margin: 0 -28px;
+  width: calc(100% + 56px);
+}
+
+@media (max-width: 768px) {
+  .data-table-container.full-bleed {
+    margin: 0 -20px;
+    width: calc(100% + 40px);
+  }
+}
+
 .data-table {
   width: 100%;
   border-collapse: separate;

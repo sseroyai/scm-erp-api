@@ -211,7 +211,7 @@ export default function AdminUsers({ isMobileView }) {
 
   return (
     <div style={{ padding: isMobileView ? '16px' : '32px', animation: 'fadeIn 0.5s ease-out' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', paddingTop: '4px', paddingLeft: '28px' }}>
         <h1 style={{ fontSize: '1.75rem', color: 'var(--wia-blue)', display: 'flex', alignItems: 'center', gap: '8px' }}>
           <ShieldAlert size={28} />
           {t('menu6.page_title')}
