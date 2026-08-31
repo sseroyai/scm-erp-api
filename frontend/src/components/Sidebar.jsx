@@ -187,23 +187,25 @@ export default function Sidebar({ activeTab, setActiveTab, currentRole, currentU
         </div>
 
         <div className="sidebar-menu">
-          <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'rgb(205, 170, 125)', padding: '0 16px', marginBottom: '8px', letterSpacing: '0.05em', lineHeight: '1.4' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ fontSize: '1rem', fontWeight: 700, color: 'rgb(205, 170, 125)', padding: '0 16px', marginBottom: '8px', letterSpacing: '0.05em', lineHeight: '1.4' }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
               <span>{currentUserId}</span>
-              <button
-                className="sidebar-profile-btn"
-                onClick={onProfileClick}
-                title={t('profile.title')}
-              >
-                <User size={14} />
-              </button>
-              <button
-                className="sidebar-profile-btn"
-                onClick={onLogout}
-                title={t('navbar.logout', '로그아웃')}
-              >
-                <LogOut size={14} />
-              </button>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginLeft: 'auto' }}>
+                <button
+                  className="sidebar-profile-btn"
+                  onClick={onProfileClick}
+                  title={t('profile.title')}
+                >
+                  <User size={20} />
+                </button>
+                <button
+                  className="sidebar-profile-btn"
+                  onClick={onLogout}
+                  title={t('navbar.logout', '로그아웃')}
+                >
+                  <LogOut size={20} />
+                </button>
+              </div>
             </div>
             <div>({currentRole === 'DEALER' ? t('sidebar.dealer_portal') : (currentRole === 'RSM' ? t('sidebar.rsm_portal', 'RSM 포털') : t('sidebar.admin_portal'))})</div>
           </div>

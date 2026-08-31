@@ -47,8 +47,8 @@ export default function Login({ onLogin }) {
         <div style={{ width: '100%', maxWidth: '400px' }}>
           <div style={{ marginBottom: '48px', textAlign: 'center' }}>
             <WiaLogo size="large" />
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '2px', gap: '12px' }}>
-              <h1 style={{ fontSize: '2rem', color: 'var(--text-primary)', margin: 0, fontWeight: 'bold' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end', marginTop: '50px', gap: '12px' }}>
+              <h1 style={{ fontSize: '2rem', color: 'var(--text-primary)', margin: 0, fontWeight: '300' }}>
                 WME SCM
               </h1>
               <img src="/A-machine.ico" alt="Machine" style={{ width: '52px', height: '52px', objectFit: 'contain' }} />

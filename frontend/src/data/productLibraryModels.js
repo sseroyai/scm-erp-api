@@ -3,7 +3,7 @@ export const productLibraryModels = [
       id: 'E160A',
       name: 'E160A',
       category: 'CNC T/C',
-      image: 'https://via.placeholder.com/300x200.png?text=E160A',
+      image: '/images/products/E160A.png',
       specs: {
         '척 사이즈 (inch)': '6',
         '최대 가공경 (mm)': '438',
@@ -27,7 +27,7 @@ export const productLibraryModels = [
       id: 'E160C',
       name: 'E160C',
       category: 'CNC T/C',
-      image: 'https://via.placeholder.com/300x200.png?text=E160C',
+      image: '/images/products/E160C.png',
       specs: {
         '척 사이즈 (inch)': '12',
         '최대 가공경 (mm)': '358',
@@ -51,7 +51,7 @@ export const productLibraryModels = [
       id: 'HD2200',
       name: 'HD2200',
       category: 'CNC T/C',
-      image: 'https://via.placeholder.com/300x200.png?text=HD2200',
+      image: '/images/products/HD2200.png',
       specs: {
         '척 사이즈 (inch)': '8',
         '최대 가공경 (mm)': '583',

@@ -122,15 +122,18 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
         {filteredModels.map(model => (
           <div
             key={model.id}
-            className="clean-card"
+            className="clean-card library-product-card"
             style={{ overflow: 'hidden', cursor: 'pointer', display: 'flex', flexDirection: 'column' }}
             onClick={() => setSelectedModel(model)}
           >
-            <div style={{ height: '160px', background: 'var(--bg-secondary)', position: 'relative' }}>
-              {/* Dummy Image logic, in real life use actual images */}
-              <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', fontWeight: 700, fontSize: '1.2rem', background: '#e0e4eb' }}>
-                {model.id} 썸네일
-              </div>
+            <div style={{ height: '160px', background: 'transparent', position: 'relative' }}>
+              {model.image ? (
+                <img src={model.image} alt={model.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              ) : (
+                <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', fontWeight: 700, fontSize: '1.2rem', background: 'transparent' }}>
+                  {model.id} 썸네일
+                </div>
+              )}
               <span style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(0,0,0,0.6)', color: 'white', padding: '4px 8px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600 }}>
                 {model.category}
               </span>
@@ -235,6 +238,15 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
           </div>
         </div>
       )}
+
+      <style>{`
+        .library-product-card:hover {
+          border-color: rgb(205, 170, 125) !important;
+          /* Base border is 1px, inset shadow adds 1px for a total 2px visual border */
+          box-shadow: inset 0 0 0 1px rgb(205, 170, 125), var(--shadow-lg) !important;
+          background-color: var(--bg-card) !important;
+        }
+      `}</style>
     </div>
   );
 }
