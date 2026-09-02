@@ -175,6 +175,22 @@ export default function AdminUsers({ isMobileView }) {
     }
   };
 
+  const handleDeleteUser = async (userId) => {
+    if (!window.confirm("정말 이 사용자를 삭제하시겠습니까?")) return;
+    try {
+      const res = await fetch(`/api/users/${userId}`, { method: 'DELETE' });
+      if (res.ok) {
+        setUsers(users.filter(u => u.id !== userId));
+        alert("사용자가 삭제되었습니다.");
+      } else {
+        const err = await res.json();
+        alert(`삭제 실패: ${err.detail || '알 수 없는 오류'}`);
+      }
+    } catch (err) {
+      alert("서버 통신 오류가 발생했습니다.");
+    }
+  };
+
   // Compute KPI values
   const activeUsersCount = users.length;
   const pendingUsersCount = 0; // Default pending invitations
@@ -334,7 +350,7 @@ export default function AdminUsers({ isMobileView }) {
                     <td style={{ padding: '16px', fontSize: '0.9rem', color: 'var(--text-muted)' }}><Clock size={14} style={{display:'inline', marginRight:'4px'}}/>{user.lastLogin}</td>
                     <td style={{ padding: '16px', textAlign: 'center' }}>
                       <button onClick={() => openEditModal(user)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)', marginRight: '8px' }}><Edit2 size={16} /></button>
-                      <button style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--wia-red)' }}><Trash2 size={16} /></button>
+                      <button onClick={() => handleDeleteUser(user.id)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--wia-red)' }}><Trash2 size={16} /></button>
                     </td>
                   </tr>
                 ))}

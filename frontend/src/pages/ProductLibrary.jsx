@@ -4,8 +4,15 @@ import { Search, Filter, Book, FileText, Settings, Download, X, Upload, ShieldAl
 import { productLibraryModels } from '../data/productLibraryModels';
 
 export default function ProductLibrary({ currentRole, isMobileView }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isKo = i18n.language === 'ko';
   const [selectedCategory, setSelectedCategory] = useState('ALL');
+
+  const getDocTitle = (title) => {
+    if (title.includes('카탈로그')) return isKo ? '카탈로그(EN). PDF' : 'CATALOG (EN). PDF';
+    if (title.includes('세일즈 가이드')) return isKo ? '세일즈 가이드 (EN). PDF' : 'SALES GUIDE (EN). PDF';
+    return title;
+  };
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedModel, setSelectedModel] = useState(null); // For Quick View Modal
 
@@ -42,15 +49,15 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
       alert('다운로드할 파일이 설정되지 않았습니다.');
       return;
     }
-    
+
     try {
       const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
       const response = await fetch(`${baseUrl}/api/documents/${doc.filename}/download`);
-      
+
       if (!response.ok) {
         throw new Error('파일을 찾을 수 없습니다.');
       }
-      
+
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -118,7 +125,7 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
       </div>
 
       {/* Master List View (Grid) */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
+      <div className="library-grid">
         {filteredModels.map(model => (
           <div
             key={model.id}
@@ -126,9 +133,9 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
             style={{ overflow: 'hidden', cursor: 'pointer', display: 'flex', flexDirection: 'column' }}
             onClick={() => setSelectedModel(model)}
           >
-            <div style={{ height: '160px', background: 'transparent', position: 'relative' }}>
+            <div style={{ height: '190px', background: 'transparent', position: 'relative' }}>
               {model.image ? (
-                <img src={model.image} alt={model.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                <img src={model.image} alt={model.name} style={{ width: '100%', height: '100%', paddingTop: '5px', objectFit: 'contain' }} />
               ) : (
                 <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', fontWeight: 700, fontSize: '1.2rem', background: 'transparent' }}>
                   {model.id} 썸네일
@@ -139,17 +146,32 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
               </span>
             </div>
             <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '8px' }}>{model.name}</h3>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '16px' }}>문서 {model.documents.length}개 보유</p>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '16px' }}>
+                <div>
+                  <h3 style={{ fontSize: '1.55rem', marginBottom: '4px' }}>{model.name}</h3>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', margin: 0 }}>{model.series || '-'}</p>
+                </div>
+                <div style={{
+                  border: '1px solid var(--border-color)',
+                  borderRadius: '10px',
+                  padding: '8px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'var(--wia-blue)',
+                  backgroundColor: 'white',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.03)'
+                }}>
+                  <Download size={14} strokeWidth={2.5} />
+                </div>
+              </div>
 
               <div style={{ marginTop: 'auto', background: 'var(--bg-secondary)', padding: '12px', borderRadius: '8px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', marginBottom: '4px' }}>
-                  <span style={{ color: 'var(--text-muted)' }}>스핀들:</span>
-                  <span style={{ fontWeight: 600 }}>{model.specs['주축 회전수 (r/min)']}</span>
+                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '4px' }}>
+                  {model.typeCategory || '-'}
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem' }}>
-                  <span style={{ color: 'var(--text-muted)' }}>이송거리:</span>
-                  <span style={{ fontWeight: 600 }}>{model.specs['최대이송거리 (X/Z) (mm)']}</span>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                  {model.typeDescription || '-'}
                 </div>
               </div>
             </div>
@@ -178,7 +200,7 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
             <div style={{ padding: '24px', display: 'flex', flexDirection: isMobileView ? 'column-reverse' : 'row', gap: '32px' }}>
               {/* Left Column: Specs */}
               <div style={{ flex: '1' }}>
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '16px', color: 'var(--text-primary)' }}>핵심 스펙</h3>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '16px', color: 'var(--text-primary)' }}>{isKo ? '핵심 스펙' : 'Specifications'}</h3>
                 <div style={{ background: 'var(--bg-secondary)', borderRadius: '8px', overflow: 'hidden' }}>
                   {Object.entries(selectedModel.specs).map(([key, value], idx) => (
                     <div key={key} style={{ display: 'flex', padding: '8px', borderBottom: idx !== Object.entries(selectedModel.specs).length - 1 ? '1px solid var(--border-color)' : 'none' }}>
@@ -193,7 +215,7 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
 
               {/* Right Column: Digital File Download Hub */}
               <div style={{ flex: '1.5' }}>
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '16px', color: 'var(--text-primary)' }}>문서 (EN)</h3>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '16px', color: 'var(--text-primary)' }}>{isKo ? '다운로드 (EN)' : 'DOWNLOAD (EN)'}</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   {selectedModel.documents
                     // RBAC Logic: Filter INTERNAL documents if user is DEALER
@@ -208,7 +230,7 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
                             {getDocIcon(doc.type)}
                           </div>
                           <div>
-                            <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{doc.title}</div>
+                            <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{getDocTitle(doc.title)}</div>
                             <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', gap: '8px', marginTop: '4px' }}>
                               <span>{doc.size}</span>
                               {doc.securityLevel === 'INTERNAL' && (
@@ -240,6 +262,16 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
       )}
 
       <style>{`
+        .library-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          gap: 20px;
+        }
+        @media (min-width: 1600px) {
+          .library-grid {
+            grid-template-columns: repeat(5, 1fr);
+          }
+        }
         .library-product-card:hover {
           border-color: rgb(205, 170, 125) !important;
           /* Base border is 1px, inset shadow adds 1px for a total 2px visual border */

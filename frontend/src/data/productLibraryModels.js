@@ -3,6 +3,9 @@ export const productLibraryModels = [
       id: 'E160A',
       name: 'E160A',
       category: 'CNC T/C',
+      series: 'E160 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '6/8-inch Compact Type',
       image: '/images/products/E160A.png',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -20,13 +23,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-001.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'E160C',
       name: 'E160C',
       category: 'CNC T/C',
+      series: 'E160 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '8/10-inch Box Way Type',
       image: '/images/products/E160C.png',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -44,13 +50,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-001.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD2200',
       name: 'HD2200',
       category: 'CNC T/C',
+      series: 'HD2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '8/10-inch Box Way Type',
       image: '/images/products/HD2200.png',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -68,13 +77,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-002.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD2200C',
       name: 'HD2200C',
       category: 'CNC T/C',
+      series: 'HD2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '8/10-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD2200C',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -92,13 +104,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-002.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD2200M',
       name: 'HD2200M',
       category: 'CNC T/C',
+      series: 'HD2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '8/10-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD2200M',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -116,13 +131,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-002.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD2200MC',
       name: 'HD2200MC',
       category: 'CNC T/C',
+      series: 'HD2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '8/10-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD2200MC',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -140,13 +158,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-002.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD2600',
       name: 'HD2600',
       category: 'CNC T/C',
+      series: 'HD2600/3100 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD2600',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -164,13 +185,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-003.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD2600L',
       name: 'HD2600L',
       category: 'CNC T/C',
+      series: 'HD2600/3100 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD2600L',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -188,13 +212,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-003.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD2600LM',
       name: 'HD2600LM',
       category: 'CNC T/C',
+      series: 'HD2600/3100 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD2600LM',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -212,13 +239,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-003.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD2600M',
       name: 'HD2600M',
       category: 'CNC T/C',
+      series: 'HD2600/3100 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD2600M',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -236,13 +266,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-003.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD3100',
       name: 'HD3100',
       category: 'CNC T/C',
+      series: 'HD2600/3100 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD3100',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -260,13 +293,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-004.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD3100A',
       name: 'HD3100A',
       category: 'CNC T/C',
+      series: 'HD2600/3100 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD3100A',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -284,13 +320,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-004.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD3100L',
       name: 'HD3100L',
       category: 'CNC T/C',
+      series: 'HD2600/3100 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD3100L',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -308,13 +347,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-004.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD3100LM',
       name: 'HD3100LM',
       category: 'CNC T/C',
+      series: 'HD2600/3100 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD3100LM',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -332,13 +374,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-004.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD3100M',
       name: 'HD3100M',
       category: 'CNC T/C',
+      series: 'HD2600/3100 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD3100M',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -356,13 +401,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-004.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD3100MA',
       name: 'HD3100MA',
       category: 'CNC T/C',
+      series: 'HD2600/3100 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD3100MA',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -380,13 +428,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB', filename: 'catalog-004.pdf' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KIT250',
       name: 'KIT250',
       category: 'CNC T/C',
+      series: 'KIT Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: 'Gang-type',
       image: 'https://via.placeholder.com/300x200.png?text=KIT250',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -404,13 +455,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KIT4500',
       name: 'KIT4500',
       category: 'CNC T/C',
+      series: 'KIT Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: 'Gang-type',
       image: 'https://via.placeholder.com/300x200.png?text=KIT4500',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -428,13 +482,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KIT60G',
       name: 'KIT60G',
       category: 'CNC T/C',
+      series: 'KIT Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: 'Gang-type',
       image: 'https://via.placeholder.com/300x200.png?text=KIT60G',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -452,13 +509,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L300A',
       name: 'L300A',
       category: 'CNC T/C',
+      series: 'L300 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12/15-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L300A',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -476,13 +536,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L300C',
       name: 'L300C',
       category: 'CNC T/C',
+      series: 'L300 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12/15-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L300C',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -500,13 +563,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L300LA',
       name: 'L300LA',
       category: 'CNC T/C',
+      series: 'L300 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12/15-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L300LA',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -524,13 +590,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L300LC',
       name: 'L300LC',
       category: 'CNC T/C',
+      series: 'L300 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12/15-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L300LC',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -548,13 +617,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L300LMA',
       name: 'L300LMA',
       category: 'CNC T/C',
+      series: 'L300 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12/15-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L300LMA',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -572,13 +644,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L300LMC',
       name: 'L300LMC',
       category: 'CNC T/C',
+      series: 'L300 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12/15-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L300LMC',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -596,13 +671,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L300LMSA',
       name: 'L300LMSA',
       category: 'CNC T/C',
+      series: 'L300 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12/15-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L300LMSA',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -620,13 +698,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L300MA',
       name: 'L300MA',
       category: 'CNC T/C',
+      series: 'L300 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12/15-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L300MA',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -644,13 +725,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L300MC',
       name: 'L300MC',
       category: 'CNC T/C',
+      series: 'L300 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12/15-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L300MC',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -668,13 +752,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L300MSA',
       name: 'L300MSA',
       category: 'CNC T/C',
+      series: 'L300 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12/15-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L300MSA',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -692,13 +779,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L300MSC',
       name: 'L300MSC',
       category: 'CNC T/C',
+      series: 'L300 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10/12/15-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L300MSC',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -716,13 +806,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L4000',
       name: 'L4000',
       category: 'CNC T/C',
+      series: 'L4000 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '15/18/21-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L4000',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -740,13 +833,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L4000C',
       name: 'L4000C',
       category: 'CNC T/C',
+      series: 'L4000 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '15/18/21-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L4000C',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -764,13 +860,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L4000L',
       name: 'L4000L',
       category: 'CNC T/C',
+      series: 'L4000 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '15/18/21-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L4000L',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -788,13 +887,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L4000LC',
       name: 'L4000LC',
       category: 'CNC T/C',
+      series: 'L4000 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '15/18/21-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L4000LC',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -812,13 +914,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L4000LM',
       name: 'L4000LM',
       category: 'CNC T/C',
+      series: 'L4000 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '15/18/21-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L4000LM',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -836,13 +941,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L4000LMC',
       name: 'L4000LMC',
       category: 'CNC T/C',
+      series: 'L4000 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '15/18/21-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L4000LMC',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -860,13 +968,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L4000M',
       name: 'L4000M',
       category: 'CNC T/C',
+      series: 'L4000 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '15/18/21-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L4000M',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -884,13 +995,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L4000MC',
       name: 'L4000MC',
       category: 'CNC T/C',
+      series: 'L4000 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '15/18/21-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L4000MC',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -908,13 +1022,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L5100L',
       name: 'L5100L',
       category: 'CNC T/C',
+      series: 'L5100L Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '21/24/32-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L5100L',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -932,13 +1049,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L5100LC',
       name: 'L5100LC',
       category: 'CNC T/C',
+      series: 'L5100L Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '21/24/32-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L5100LC',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -956,13 +1076,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L5100LM',
       name: 'L5100LM',
       category: 'CNC T/C',
+      series: 'L5100L Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '21/24/32-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L5100LM',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -980,13 +1103,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L5100LMC',
       name: 'L5100LMC',
       category: 'CNC T/C',
+      series: 'L5100L Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '21/24/32-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L5100LMC',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -1004,13 +1130,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L600A',
       name: 'L600A',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L600A',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -1028,13 +1157,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L600LA',
       name: 'L600LA',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L600LA',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -1052,13 +1184,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L600LMA',
       name: 'L600LMA',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L600LMA',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -1076,13 +1211,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L600MA',
       name: 'L600MA',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L600MA',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -1100,13 +1238,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L700A',
       name: 'L700A',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L700A',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -1124,13 +1265,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L700LA',
       name: 'L700LA',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L700LA',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -1148,13 +1292,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L700LMA',
       name: 'L700LMA',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L700LMA',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -1172,13 +1319,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L700MA',
       name: 'L700MA',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L700MA',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -1196,13 +1346,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L800A',
       name: 'L800A',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L800A',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -1220,13 +1373,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L800D',
       name: 'L800D',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L800D',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -1244,13 +1400,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L800LA',
       name: 'L800LA',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L800LA',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -1268,13 +1427,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L800LD',
       name: 'L800LD',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L800LD',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -1292,13 +1454,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L800LMA',
       name: 'L800LMA',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L800LMA',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -1316,13 +1481,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L800LMD',
       name: 'L800LMD',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L800LMD',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -1340,13 +1508,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L800MA',
       name: 'L800MA',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L800MA',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -1364,13 +1535,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L800MD',
       name: 'L800MD',
       category: 'CNC T/C',
+      series: 'L600/700/800 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '18/21/24/27/32/34-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L800MD',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -1388,13 +1562,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200',
       name: 'SE2200',
       category: 'CNC T/C',
+      series: 'SE2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '6/8/10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -1412,13 +1589,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200A',
       name: 'SE2200A',
       category: 'CNC T/C',
+      series: 'SE2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '6/8/10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200A',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -1436,13 +1616,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200L',
       name: 'SE2200L',
       category: 'CNC T/C',
+      series: 'SE2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '6/8/10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200L',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -1460,13 +1643,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200LA',
       name: 'SE2200LA',
       category: 'CNC T/C',
+      series: 'SE2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '6/8/10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200LA',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -1484,13 +1670,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200LC',
       name: 'SE2200LC',
       category: 'CNC T/C',
+      series: 'SE2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '6/8/10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200LC',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -1508,13 +1697,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200LM',
       name: 'SE2200LM',
       category: 'CNC T/C',
+      series: 'SE2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '6/8/10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200LM',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -1532,13 +1724,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200LMA',
       name: 'SE2200LMA',
       category: 'CNC T/C',
+      series: 'SE2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '6/8/10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200LMA',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -1556,13 +1751,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200LMC',
       name: 'SE2200LMC',
       category: 'CNC T/C',
+      series: 'SE2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '6/8/10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200LMC',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -1580,13 +1778,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200LMS',
       name: 'SE2200LMS',
       category: 'CNC T/C',
+      series: 'SE2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '6/8/10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200LMS',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -1604,13 +1805,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200LMSA',
       name: 'SE2200LMSA',
       category: 'CNC T/C',
+      series: 'SE2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '6/8/10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200LMSA',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -1628,13 +1832,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200LMSC',
       name: 'SE2200LMSC',
       category: 'CNC T/C',
+      series: 'SE2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '6/8/10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200LMSC',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -1652,13 +1859,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200M',
       name: 'SE2200M',
       category: 'CNC T/C',
+      series: 'SE2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '6/8/10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200M',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -1676,13 +1886,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200MA',
       name: 'SE2200MA',
       category: 'CNC T/C',
+      series: 'SE2200 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '6/8/10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200MA',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -1700,13 +1913,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2600',
       name: 'SE2600',
       category: 'CNC T/C',
+      series: 'SE2600 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2600',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -1724,13 +1940,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2600L',
       name: 'SE2600L',
       category: 'CNC T/C',
+      series: 'SE2600 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2600L',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -1748,13 +1967,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2600LM',
       name: 'SE2600LM',
       category: 'CNC T/C',
+      series: 'SE2600 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2600LM',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -1772,13 +1994,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2600M',
       name: 'SE2600M',
       category: 'CNC T/C',
+      series: 'SE2600 Series',
+      typeCategory: 'Horizontal 2-Axis Turning Center',
+      typeDescription: '10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2600M',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -1796,13 +2021,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD2200SY',
       name: 'HD2200SY',
       category: 'CNC T/C',
+      series: 'HD-SY Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD2200SY',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -1820,13 +2048,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD2200Y',
       name: 'HD2200Y',
       category: 'CNC T/C',
+      series: 'HD-SY Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD2200Y',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -1844,13 +2075,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD2600LSY',
       name: 'HD2600LSY',
       category: 'CNC T/C',
+      series: 'HD-SY Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD2600LSY',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -1868,13 +2102,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD2600LY',
       name: 'HD2600LY',
       category: 'CNC T/C',
+      series: 'HD-SY Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD2600LY',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -1892,13 +2129,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD2600SY',
       name: 'HD2600SY',
       category: 'CNC T/C',
+      series: 'HD-SY Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD2600SY',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -1916,13 +2156,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD2600Y',
       name: 'HD2600Y',
       category: 'CNC T/C',
+      series: 'HD-SY Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD2600Y',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -1940,13 +2183,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD3100LY',
       name: 'HD3100LY',
       category: 'CNC T/C',
+      series: 'HD-SY Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD3100LY',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -1964,13 +2210,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD3100LYA',
       name: 'HD3100LYA',
       category: 'CNC T/C',
+      series: 'HD-SY Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD3100LYA',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -1988,13 +2237,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD3100SY',
       name: 'HD3100SY',
       category: 'CNC T/C',
+      series: 'HD-SY Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD3100SY',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -2012,13 +2264,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD3100SYA',
       name: 'HD3100SYA',
       category: 'CNC T/C',
+      series: 'HD-SY Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD3100SYA',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -2036,13 +2291,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD3100Y',
       name: 'HD3100Y',
       category: 'CNC T/C',
+      series: 'HD-SY Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD3100Y',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -2060,13 +2318,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HD3100YA',
       name: 'HD3100YA',
       category: 'CNC T/C',
+      series: 'HD-SY Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=HD3100YA',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -2084,13 +2345,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KL7000LY',
       name: 'KL7000LY',
       category: 'CNC T/C',
+      series: 'KL-Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '24/32-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=KL7000LY',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -2108,13 +2372,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KL8000LY',
       name: 'KL8000LY',
       category: 'CNC T/C',
+      series: 'KL-Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '24/32-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=KL8000LY',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -2132,13 +2399,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L5100LY',
       name: 'L5100LY',
       category: 'CNC T/C',
+      series: 'L5100LY',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '21/24-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L5100LY',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -2156,13 +2426,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L2000LSY',
       name: 'L2000LSY',
       category: 'CNC T/C',
+      series: 'L-Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L2000LSY',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -2180,13 +2453,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L2000LY',
       name: 'L2000LY',
       category: 'CNC T/C',
+      series: 'L-Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L2000LY',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -2204,13 +2480,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L2000SY',
       name: 'L2000SY',
       category: 'CNC T/C',
+      series: 'L-Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L2000SY',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -2228,13 +2507,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L2000Y',
       name: 'L2000Y',
       category: 'CNC T/C',
+      series: 'L-Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L2000Y',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -2252,13 +2534,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L2600LY',
       name: 'L2600LY',
       category: 'CNC T/C',
+      series: 'L-Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L2600LY',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -2276,13 +2561,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L2600SY',
       name: 'L2600SY',
       category: 'CNC T/C',
+      series: 'L-Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L2600SY',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -2300,13 +2588,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L2600Y',
       name: 'L2600Y',
       category: 'CNC T/C',
+      series: 'L-Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L2600Y',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -2324,13 +2615,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L3000LY',
       name: 'L3000LY',
       category: 'CNC T/C',
+      series: 'L-Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L3000LY',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -2348,13 +2642,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L3000SY',
       name: 'L3000SY',
       category: 'CNC T/C',
+      series: 'L-Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L3000SY',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -2372,13 +2669,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'L3000Y',
       name: 'L3000Y',
       category: 'CNC T/C',
+      series: 'L-Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '8/10/12-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=L3000Y',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -2396,13 +2696,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200LSY',
       name: 'SE2200LSY',
       category: 'CNC T/C',
+      series: 'SE2200Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '6/8-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200LSY',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -2420,13 +2723,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200LSYA',
       name: 'SE2200LSYA',
       category: 'CNC T/C',
+      series: 'SE2200Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '6/8-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200LSYA',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -2444,13 +2750,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200LY',
       name: 'SE2200LY',
       category: 'CNC T/C',
+      series: 'SE2200Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '6/8-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200LY',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -2468,13 +2777,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200LYA',
       name: 'SE2200LYA',
       category: 'CNC T/C',
+      series: 'SE2200Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '6/8-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200LYA',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -2492,13 +2804,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200Y',
       name: 'SE2200Y',
       category: 'CNC T/C',
+      series: 'SE2200Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '6/8-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200Y',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -2516,13 +2831,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2200YA',
       name: 'SE2200YA',
       category: 'CNC T/C',
+      series: 'SE2200Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '6/8-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2200YA',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -2540,13 +2858,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2600LSY',
       name: 'SE2600LSY',
       category: 'CNC T/C',
+      series: 'SE2600Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2600LSY',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -2564,13 +2885,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2600LY',
       name: 'SE2600LY',
       category: 'CNC T/C',
+      series: 'SE2600Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2600LY',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -2588,13 +2912,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2600SY',
       name: 'SE2600SY',
       category: 'CNC T/C',
+      series: 'SE2600Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2600SY',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -2612,13 +2939,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'SE2600Y',
       name: 'SE2600Y',
       category: 'CNC T/C',
+      series: 'SE2600Y Series',
+      typeCategory: 'Horizontal Y-Axis Turning Center',
+      typeDescription: '10-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=SE2600Y',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -2636,13 +2966,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV1100R',
       name: 'LV1100R',
       category: 'CNC T/C',
+      series: 'LV1100 Series',
+      typeCategory: 'Vertical 2-Axis Turning Center',
+      typeDescription: '32/40-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV1100R',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -2660,13 +2993,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV1100RM',
       name: 'LV1100RM',
       category: 'CNC T/C',
+      series: 'LV1100 Series',
+      typeCategory: 'Vertical 2-Axis Turning Center',
+      typeDescription: '32/40-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV1100RM',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -2684,13 +3020,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV4500L',
       name: 'LV4500L',
       category: 'CNC T/C',
+      series: 'LV4500 Series',
+      typeCategory: 'Vertical 2-Axis Turning Center',
+      typeDescription: '12/15-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV4500L',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -2708,13 +3047,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV4500LM',
       name: 'LV4500LM',
       category: 'CNC T/C',
+      series: 'LV4500 Series',
+      typeCategory: 'Vertical 2-Axis Turning Center',
+      typeDescription: '12/15-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV4500LM',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -2732,13 +3074,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV4500R',
       name: 'LV4500R',
       category: 'CNC T/C',
+      series: 'LV4500 Series',
+      typeCategory: 'Vertical 2-Axis Turning Center',
+      typeDescription: '12/15-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV4500R',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -2756,13 +3101,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV4500RM',
       name: 'LV4500RM',
       category: 'CNC T/C',
+      series: 'LV4500 Series',
+      typeCategory: 'Vertical 2-Axis Turning Center',
+      typeDescription: '12/15-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV4500RM',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -2780,13 +3128,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV500L',
       name: 'LV500L',
       category: 'CNC T/C',
+      series: 'LV500 Series',
+      typeCategory: 'Vertical 2-Axis Turning Center',
+      typeDescription: '15/18-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV500L',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -2804,13 +3155,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV500LM',
       name: 'LV500LM',
       category: 'CNC T/C',
+      series: 'LV500 Series',
+      typeCategory: 'Vertical 2-Axis Turning Center',
+      typeDescription: '15/18-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV500LM',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -2828,13 +3182,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV500R',
       name: 'LV500R',
       category: 'CNC T/C',
+      series: 'LV500 Series',
+      typeCategory: 'Vertical 2-Axis Turning Center',
+      typeDescription: '15/18-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV500R',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -2852,13 +3209,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV500RM',
       name: 'LV500RM',
       category: 'CNC T/C',
+      series: 'LV500 Series',
+      typeCategory: 'Vertical 2-Axis Turning Center',
+      typeDescription: '15/18-inch Linear Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV500RM',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -2876,13 +3236,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV8500L',
       name: 'LV8500L',
       category: 'CNC T/C',
+      series: 'LV8500 Series',
+      typeCategory: 'Vertical 2-Axis Turning Center',
+      typeDescription: '18/21/24-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV8500L',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -2900,13 +3263,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV8500LM',
       name: 'LV8500LM',
       category: 'CNC T/C',
+      series: 'LV8500 Series',
+      typeCategory: 'Vertical 2-Axis Turning Center',
+      typeDescription: '18/21/24-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV8500LM',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -2924,13 +3290,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV8500R',
       name: 'LV8500R',
       category: 'CNC T/C',
+      series: 'LV8500 Series',
+      typeCategory: 'Vertical 2-Axis Turning Center',
+      typeDescription: '18/21/24-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV8500R',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -2948,13 +3317,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV8500RM',
       name: 'LV8500RM',
       category: 'CNC T/C',
+      series: 'LV8500 Series',
+      typeCategory: 'Vertical 2-Axis Turning Center',
+      typeDescription: '18/21/24-inch Box Way Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV8500RM',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -2972,13 +3344,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV1400',
       name: 'LV1400',
       category: 'CNC T/C',
+      series: 'LV1400/2000',
+      typeCategory: 'Vertical Ram Type Turning Center',
+      typeDescription: 'Ø1000/Ø1600 Table Ram Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV1400',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -2996,13 +3371,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV2000MM',
       name: 'LV2000MM',
       category: 'CNC T/C',
+      series: 'LV1400/2000',
+      typeCategory: 'Vertical Ram Type Turning Center',
+      typeDescription: 'Ø1000/Ø1600 Table Ram Type',
       image: 'https://via.placeholder.com/300x200.png?text=LV2000MM',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -3020,13 +3398,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LF2200 Ⅱ',
       name: 'LF2200 Ⅱ',
       category: 'CNC T/C',
+      series: 'LF-Ⅱ Series',
+      typeCategory: '2-Spindle Facing Turning Center',
+      typeDescription: '8/10-inch Front Loading Type',
       image: 'https://via.placeholder.com/300x200.png?text=LF2200 Ⅱ',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -3044,13 +3425,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LF2200M Ⅱ',
       name: 'LF2200M Ⅱ',
       category: 'CNC T/C',
+      series: 'LF-Ⅱ Series',
+      typeCategory: '2-Spindle Facing Turning Center',
+      typeDescription: '8/10-inch Front Loading Type',
       image: 'https://via.placeholder.com/300x200.png?text=LF2200M Ⅱ',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -3068,13 +3452,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LF2200MQUICK Ⅱ',
       name: 'LF2200MQUICK Ⅱ',
       category: 'CNC T/C',
+      series: 'LF-Ⅱ Series',
+      typeCategory: '2-Spindle Facing Turning Center',
+      typeDescription: '8/10-inch Front Loading Type',
       image: 'https://via.placeholder.com/300x200.png?text=LF2200MQUICK Ⅱ',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -3092,13 +3479,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LF2200QUICK Ⅱ',
       name: 'LF2200QUICK Ⅱ',
       category: 'CNC T/C',
+      series: 'LF-Ⅱ Series',
+      typeCategory: '2-Spindle Facing Turning Center',
+      typeDescription: '8/10-inch Front Loading Type',
       image: 'https://via.placeholder.com/300x200.png?text=LF2200QUICK Ⅱ',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -3116,13 +3506,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LF2600 Ⅱ',
       name: 'LF2600 Ⅱ',
       category: 'CNC T/C',
+      series: 'LF-Ⅱ Series',
+      typeCategory: '2-Spindle Facing Turning Center',
+      typeDescription: '8/10-inch Front Loading Type',
       image: 'https://via.placeholder.com/300x200.png?text=LF2600 Ⅱ',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -3140,13 +3533,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LF2600M Ⅱ',
       name: 'LF2600M Ⅱ',
       category: 'CNC T/C',
+      series: 'LF-Ⅱ Series',
+      typeCategory: '2-Spindle Facing Turning Center',
+      typeDescription: '8/10-inch Front Loading Type',
       image: 'https://via.placeholder.com/300x200.png?text=LF2600M Ⅱ',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -3164,13 +3560,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LF2600MQUICK Ⅱ',
       name: 'LF2600MQUICK Ⅱ',
       category: 'CNC T/C',
+      series: 'LF-Ⅱ Series',
+      typeCategory: '2-Spindle Facing Turning Center',
+      typeDescription: '8/10-inch Front Loading Type',
       image: 'https://via.placeholder.com/300x200.png?text=LF2600MQUICK Ⅱ',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -3188,13 +3587,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LF2600QUICK Ⅱ',
       name: 'LF2600QUICK Ⅱ',
       category: 'CNC T/C',
+      series: 'LF-Ⅱ Series',
+      typeCategory: '2-Spindle Facing Turning Center',
+      typeDescription: '8/10-inch Front Loading Type',
       image: 'https://via.placeholder.com/300x200.png?text=LF2600QUICK Ⅱ',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -3212,13 +3614,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LM1600TTMS',
       name: 'LM1600TTMS',
       category: 'CNC T/C',
+      series: 'LM1600TT Series',
+      typeCategory: 'Multi-Axis Turning Center',
+      typeDescription: '6-inch 2-Spindle 2-Turret Type',
       image: 'https://via.placeholder.com/300x200.png?text=LM1600TTMS',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -3236,13 +3641,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LM1600TTS',
       name: 'LM1600TTS',
       category: 'CNC T/C',
+      series: 'LM1600TT Series',
+      typeCategory: 'Multi-Axis Turning Center',
+      typeDescription: '6-inch 2-Spindle 2-Turret Type',
       image: 'https://via.placeholder.com/300x200.png?text=LM1600TTS',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -3260,13 +3668,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LM1600TTSY',
       name: 'LM1600TTSY',
       category: 'CNC T/C',
+      series: 'LM1600TT Series',
+      typeCategory: 'Multi-Axis Turning Center',
+      typeDescription: '6-inch 2-Spindle 2-Turret Type',
       image: 'https://via.placeholder.com/300x200.png?text=LM1600TTSY',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -3284,13 +3695,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LM1800TTMS',
       name: 'LM1800TTMS',
       category: 'CNC T/C',
+      series: 'LM1800TT Series',
+      typeCategory: 'Multi-Axis Turning Center',
+      typeDescription: '8-inch 2-Spindle 2-Turret Type',
       image: 'https://via.placeholder.com/300x200.png?text=LM1800TTMS',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -3308,13 +3722,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LM1800TTS',
       name: 'LM1800TTS',
       category: 'CNC T/C',
+      series: 'LM1800TT Series',
+      typeCategory: 'Multi-Axis Turning Center',
+      typeDescription: '8-inch 2-Spindle 2-Turret Type',
       image: 'https://via.placeholder.com/300x200.png?text=LM1800TTS',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -3332,13 +3749,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LM1800TTSY',
       name: 'LM1800TTSY',
       category: 'CNC T/C',
+      series: 'LM1800TT Series',
+      typeCategory: 'Multi-Axis Turning Center',
+      typeDescription: '8-inch 2-Spindle 2-Turret Type',
       image: 'https://via.placeholder.com/300x200.png?text=LM1800TTSY',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -3356,13 +3776,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LM2200TTSYY',
       name: 'LM2200TTSYY',
       category: 'CNC T/C',
+      series: 'LM2200TT Series',
+      typeCategory: 'Multi-Axis Turning Center',
+      typeDescription: '8/10-inch 2-Spindle 2-Turret Type',
       image: 'https://via.placeholder.com/300x200.png?text=LM2200TTSYY',
       specs: {
         '척 사이즈 (inch)': '15',
@@ -3380,13 +3803,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LM2200TTSYYC',
       name: 'LM2200TTSYYC',
       category: 'CNC T/C',
+      series: 'LM2200TT Series',
+      typeCategory: 'Multi-Axis Turning Center',
+      typeDescription: '8/10-inch 2-Spindle 2-Turret Type',
       image: 'https://via.placeholder.com/300x200.png?text=LM2200TTSYYC',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -3404,13 +3830,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LM2500TT Ⅱ',
       name: 'LM2500TT Ⅱ',
       category: 'CNC T/C',
+      series: 'LM2500TT II Series',
+      typeCategory: 'Multi-Axis Turning Center',
+      typeDescription: '10-inch 2-Spindle 2-Turret Type',
       image: 'https://via.placeholder.com/300x200.png?text=LM2500TT Ⅱ',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -3428,13 +3857,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LM2500TTM Ⅱ',
       name: 'LM2500TTM Ⅱ',
       category: 'CNC T/C',
+      series: 'LM2500TT II Series',
+      typeCategory: 'Multi-Axis Turning Center',
+      typeDescription: '10-inch 2-Spindle 2-Turret Type',
       image: 'https://via.placeholder.com/300x200.png?text=LM2500TTM Ⅱ',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -3452,13 +3884,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LM2500TTMS Ⅱ',
       name: 'LM2500TTMS Ⅱ',
       category: 'CNC T/C',
+      series: 'LM2500TT II Series',
+      typeCategory: 'Multi-Axis Turning Center',
+      typeDescription: '10-inch 2-Spindle 2-Turret Type',
       image: 'https://via.placeholder.com/300x200.png?text=LM2500TTMS Ⅱ',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -3476,13 +3911,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LM2500TTS Ⅱ',
       name: 'LM2500TTS Ⅱ',
       category: 'CNC T/C',
+      series: 'LM2500TT II Series',
+      typeCategory: 'Multi-Axis Turning Center',
+      typeDescription: '10-inch 2-Spindle 2-Turret Type',
       image: 'https://via.placeholder.com/300x200.png?text=LM2500TTS Ⅱ',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -3500,13 +3938,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LM2500TTSY II',
       name: 'LM2500TTSY II',
       category: 'CNC T/C',
+      series: 'LM2500TT II Series',
+      typeCategory: 'Multi-Axis Turning Center',
+      typeDescription: '10-inch 2-Spindle 2-Turret Type',
       image: 'https://via.placeholder.com/300x200.png?text=LM2500TTSY II',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -3524,13 +3965,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KL6500AW',
       name: 'KL6500AW',
       category: 'CNC T/C',
+      series: 'AL WHEEL Series',
+      typeCategory: 'Aluminum Wheel Turning Center',
+      typeDescription: 'Aluminum Wheel Machining',
       image: 'https://via.placeholder.com/300x200.png?text=KL6500AW',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -3548,13 +3992,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV800AW-TT',
       name: 'LV800AW-TT',
       category: 'CNC T/C',
+      series: 'AL WHEEL Series',
+      typeCategory: 'Aluminum Wheel Turning Center',
+      typeDescription: 'Aluminum Wheel Machining',
       image: 'https://via.placeholder.com/300x200.png?text=LV800AW-TT',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -3572,13 +4019,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV8500RAW',
       name: 'LV8500RAW',
       category: 'CNC T/C',
+      series: 'AL WHEEL Series',
+      typeCategory: 'Aluminum Wheel Turning Center',
+      typeDescription: 'Aluminum Wheel Machining',
       image: 'https://via.placeholder.com/300x200.png?text=LV8500RAW',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -3596,13 +4046,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KIT600G',
       name: 'KIT600G',
       category: 'CNC T/C',
+      series: 'KIT600G/800G',
+      typeCategory: 'Semiconductor Parts Grinding Turning Center',
+      typeDescription: 'Horizontal 12-inch Grinding Machine',
       image: 'https://via.placeholder.com/300x200.png?text=KIT600G',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -3620,13 +4073,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KIT800G',
       name: 'KIT800G',
       category: 'CNC T/C',
+      series: 'KIT600G/800G',
+      typeCategory: 'Semiconductor Parts Grinding Turning Center',
+      typeDescription: 'Horizontal 12-inch Grinding Machine',
       image: 'https://via.placeholder.com/300x200.png?text=KIT800G',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -3644,13 +4100,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'LV600G',
       name: 'LV600G',
       category: 'CNC T/C',
+      series: 'LV600G',
+      typeCategory: 'Semiconductor Parts Grinding Turning Center',
+      typeDescription: 'Vertical 12-inch Grinding Machine',
       image: 'https://via.placeholder.com/300x200.png?text=LV600G',
       specs: {
         '척 사이즈 (inch)': '6',
@@ -3668,13 +4127,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'i-CUT4000',
       name: 'i-CUT4000',
       category: 'Vertical M/C',
+      series: 'i-CUT Series',
+      typeCategory: 'Tapping Center',
+      typeDescription: 'Tapping Machine',
       image: 'https://via.placeholder.com/300x200.png?text=i-CUT4000',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -3692,13 +4154,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'i-CUT400TD',
       name: 'i-CUT400TD',
       category: 'Vertical M/C',
+      series: 'i-CUT Series',
+      typeCategory: 'Tapping Center',
+      typeDescription: 'Tapping Machine',
       image: 'https://via.placeholder.com/300x200.png?text=i-CUT400TD',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -3716,13 +4181,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'i-CUT4500',
       name: 'i-CUT4500',
       category: 'Vertical M/C',
+      series: 'i-CUT Series',
+      typeCategory: 'Tapping Center',
+      typeDescription: 'Tapping Machine',
       image: 'https://via.placeholder.com/300x200.png?text=i-CUT4500',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -3740,13 +4208,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'F960B',
       name: 'F960B',
       category: 'Vertical M/C',
+      series: 'F960B',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'Heavy Duty Cutting Box Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=F960B',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -3764,13 +4235,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF4',
       name: 'KF4',
       category: 'Vertical M/C',
+      series: 'KF4/5/6 Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'High Speed LM Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF4',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -3788,13 +4262,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF4L',
       name: 'KF4L',
       category: 'Vertical M/C',
+      series: 'KF4/5/6 Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'High Speed LM Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF4L',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -3812,13 +4289,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF5',
       name: 'KF5',
       category: 'Vertical M/C',
+      series: 'KF4/5/6 Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'High Speed LM Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF5',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -3836,13 +4316,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF5/50',
       name: 'KF5/50',
       category: 'Vertical M/C',
+      series: 'KF4/5/6 Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'High Speed LM Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF5/50',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -3860,13 +4343,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF5L',
       name: 'KF5L',
       category: 'Vertical M/C',
+      series: 'KF4/5/6 Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'High Speed LM Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF5L',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -3884,13 +4370,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF6',
       name: 'KF6',
       category: 'Vertical M/C',
+      series: 'KF4/5/6 Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'High Speed LM Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF6',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -3908,13 +4397,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF6/50',
       name: 'KF6/50',
       category: 'Vertical M/C',
+      series: 'KF4/5/6 Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'High Speed LM Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF6/50',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -3932,13 +4424,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF6L',
       name: 'KF6L',
       category: 'Vertical M/C',
+      series: 'KF4/5/6 Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'High Speed LM Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF6L',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -3956,13 +4451,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF7600L',
       name: 'KF7600L',
       category: 'Vertical M/C',
+      series: 'KF7600L',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'High Speed LM Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF7600L',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -3980,13 +4478,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF5700B/50 II',
       name: 'KF5700B/50 II',
       category: 'Vertical M/C',
+      series: 'KF-B II Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'Heavy Duty Cutting Box Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF5700B/50 II',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4004,13 +4505,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF5700B II',
       name: 'KF5700B II',
       category: 'Vertical M/C',
+      series: 'KF-B II Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'Heavy Duty Cutting Box Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF5700B II',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4028,13 +4532,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF6700B/50 II',
       name: 'KF6700B/50 II',
       category: 'Vertical M/C',
+      series: 'KF-B II Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'Heavy Duty Cutting Box Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF6700B/50 II',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4052,13 +4559,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF6700B II',
       name: 'KF6700B II',
       category: 'Vertical M/C',
+      series: 'KF-B II Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'Heavy Duty Cutting Box Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF6700B II',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4076,13 +4586,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF7700B/50 II',
       name: 'KF7700B/50 II',
       category: 'Vertical M/C',
+      series: 'KF-B II Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'Heavy Duty Cutting Box Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF7700B/50 II',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4100,13 +4613,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF7700B II',
       name: 'KF7700B II',
       category: 'Vertical M/C',
+      series: 'KF-B II Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'Heavy Duty Cutting Box Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF7700B II',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4124,13 +4640,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF1000B',
       name: 'KF1000B',
       category: 'Vertical M/C',
+      series: 'KF-B Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'Heavy Duty Cutting Box Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF1000B',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4148,13 +4667,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF1100B',
       name: 'KF1100B',
       category: 'Vertical M/C',
+      series: 'KF-B Series',
+      typeCategory: 'Vertical Machining Center',
+      typeDescription: 'Heavy Duty Cutting Box Guide Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF1100B',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4172,13 +4694,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF4300D',
       name: 'KF4300D',
       category: 'Vertical M/C',
+      series: 'KF-D Series',
+      typeCategory: 'Dual Table',
+      typeDescription: 'Dual Table Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF4300D',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4196,13 +4721,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF5200D',
       name: 'KF5200D',
       category: 'Vertical M/C',
+      series: 'KF-D Series',
+      typeCategory: 'Dual Table',
+      typeDescription: 'Dual Table Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF5200D',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4220,13 +4748,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF6000D',
       name: 'KF6000D',
       category: 'Vertical M/C',
+      series: 'KF-D Series',
+      typeCategory: 'Dual Table',
+      typeDescription: 'Dual Table Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF6000D',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4244,13 +4775,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF4000/2SP',
       name: 'KF4000/2SP',
       category: 'Vertical M/C',
+      series: 'KF-2SP Series',
+      typeCategory: '2-Spindle Machining Center',
+      typeDescription: '2 Spindle Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF4000/2SP',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4268,13 +4802,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF4000I/2SP',
       name: 'KF4000I/2SP',
       category: 'Vertical M/C',
+      series: 'KF-2SP Series',
+      typeCategory: '2-Spindle Machining Center',
+      typeDescription: '2 Spindle Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF4000I/2SP',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4292,13 +4829,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF4300/2SP',
       name: 'KF4300/2SP',
       category: 'Vertical M/C',
+      series: 'KF-2SP Series',
+      typeCategory: '2-Spindle Machining Center',
+      typeDescription: '2 Spindle Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF4300/2SP',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4316,13 +4856,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF4300G/2SP',
       name: 'KF4300G/2SP',
       category: 'Vertical M/C',
+      series: 'KF-2SP Series',
+      typeCategory: '2-Spindle Machining Center',
+      typeDescription: '2 Spindle Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF4300G/2SP',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4340,13 +4883,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF4300P/2SP',
       name: 'KF4300P/2SP',
       category: 'Vertical M/C',
+      series: 'KF-2SP Series',
+      typeCategory: '2-Spindle Machining Center',
+      typeDescription: '2 Spindle Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF4300P/2SP',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4364,13 +4910,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF5200/2SP',
       name: 'KF5200/2SP',
       category: 'Vertical M/C',
+      series: 'KF-2SP Series',
+      typeCategory: '2-Spindle Machining Center',
+      typeDescription: '2 Spindle Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF5200/2SP',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4388,13 +4937,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF5200G/2SP',
       name: 'KF5200G/2SP',
       category: 'Vertical M/C',
+      series: 'KF-2SP Series',
+      typeCategory: '2-Spindle Machining Center',
+      typeDescription: '2 Spindle Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF5200G/2SP',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4412,13 +4964,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF5200P/2SP',
       name: 'KF5200P/2SP',
       category: 'Vertical M/C',
+      series: 'KF-2SP Series',
+      typeCategory: '2-Spindle Machining Center',
+      typeDescription: '2 Spindle Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF5200P/2SP',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4436,13 +4991,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF5700/2SP',
       name: 'KF5700/2SP',
       category: 'Vertical M/C',
+      series: 'KF-2SP Series',
+      typeCategory: '2-Spindle Machining Center',
+      typeDescription: '2 Spindle Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF5700/2SP',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4460,13 +5018,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF5700G/2SP',
       name: 'KF5700G/2SP',
       category: 'Vertical M/C',
+      series: 'KF-2SP Series',
+      typeCategory: '2-Spindle Machining Center',
+      typeDescription: '2 Spindle Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF5700G/2SP',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4484,13 +5045,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF6700/2SP',
       name: 'KF6700/2SP',
       category: 'Vertical M/C',
+      series: 'KF-2SP Series',
+      typeCategory: '2-Spindle Machining Center',
+      typeDescription: '2 Spindle Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF6700/2SP',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4508,13 +5072,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF6700G/2SP',
       name: 'KF6700G/2SP',
       category: 'Vertical M/C',
+      series: 'KF-2SP Series',
+      typeCategory: '2-Spindle Machining Center',
+      typeDescription: '2 Spindle Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF6700G/2SP',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4532,13 +5099,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF6750/2SP',
       name: 'KF6750/2SP',
       category: 'Vertical M/C',
+      series: 'KF-2SP Series',
+      typeCategory: '2-Spindle Machining Center',
+      typeDescription: '2 Spindle Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF6750/2SP',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4556,13 +5126,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF8200/2SP',
       name: 'KF8200/2SP',
       category: 'Vertical M/C',
+      series: 'KF-2SP Series',
+      typeCategory: '2-Spindle Machining Center',
+      typeDescription: '2 Spindle Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF8200/2SP',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4580,13 +5153,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF8250/2SP',
       name: 'KF8250/2SP',
       category: 'Vertical M/C',
+      series: 'KF-2SP Series',
+      typeCategory: '2-Spindle Machining Center',
+      typeDescription: '2 Spindle Type',
       image: 'https://via.placeholder.com/300x200.png?text=KF8250/2SP',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4604,13 +5180,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HS10000',
       name: 'HS10000',
       category: 'Horizontal M/C',
+      series: 'HS10000',
+      typeCategory: 'Horizontal Machining Center',
+      typeDescription: 'LM Guide Way Type, □1,000 Table',
       image: 'https://via.placeholder.com/300x200.png?text=HS10000',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4628,13 +5207,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HS4000 II',
       name: 'HS4000 II',
       category: 'Horizontal M/C',
+      series: 'HS4000/5000 II Series',
+      typeCategory: 'Horizontal Machining Center',
+      typeDescription: 'LM Guide Way Type, □400/□500 Table',
       image: 'https://via.placeholder.com/300x200.png?text=HS4000 II',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4652,13 +5234,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HS5000/50 II',
       name: 'HS5000/50 II',
       category: 'Horizontal M/C',
+      series: 'HS4000/5000 II Series',
+      typeCategory: 'Horizontal Machining Center',
+      typeDescription: 'LM Guide Way Type, □400/□500 Table',
       image: 'https://via.placeholder.com/300x200.png?text=HS5000/50 II',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4676,13 +5261,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HS5000 II',
       name: 'HS5000 II',
       category: 'Horizontal M/C',
+      series: 'HS4000/5000 II Series',
+      typeCategory: 'Horizontal Machining Center',
+      typeDescription: 'LM Guide Way Type, □400/□500 Table',
       image: 'https://via.placeholder.com/300x200.png?text=HS5000 II',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4700,13 +5288,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HS6300 II',
       name: 'HS6300 II',
       category: 'Horizontal M/C',
+      series: 'HS6300/8000 II',
+      typeCategory: 'Horizontal Machining Center',
+      typeDescription: 'LM Guide Way Type, □630/□800 Table',
       image: 'https://via.placeholder.com/300x200.png?text=HS6300 II',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4724,13 +5315,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'HS8000 II',
       name: 'HS8000 II',
       category: 'Horizontal M/C',
+      series: 'HS6300/8000 II',
+      typeCategory: 'Horizontal Machining Center',
+      typeDescription: 'LM Guide Way Type, □630/□800 Table',
       image: 'https://via.placeholder.com/300x200.png?text=HS8000 II',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4748,13 +5342,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KH1000',
       name: 'KH1000',
       category: 'Horizontal M/C',
+      series: 'KH1000',
+      typeCategory: 'Horizontal Machining Center',
+      typeDescription: 'Box Guide Way Type, □1,000 Table',
       image: 'https://via.placeholder.com/300x200.png?text=KH1000',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4772,13 +5369,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KH50G',
       name: 'KH50G',
       category: 'Horizontal M/C',
+      series: 'KH50G',
+      typeCategory: 'Horizontal Machining Center',
+      typeDescription: 'Box Guide Way Type, □500 Table',
       image: 'https://via.placeholder.com/300x200.png?text=KH50G',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4796,13 +5396,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KH6300',
       name: 'KH6300',
       category: 'Horizontal M/C',
+      series: 'KH6300/8000',
+      typeCategory: 'Horizontal Machining Center',
+      typeDescription: 'Box Guide Way Type, □630/□800 Table',
       image: 'https://via.placeholder.com/300x200.png?text=KH6300',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4820,13 +5423,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KH8000',
       name: 'KH8000',
       category: 'Horizontal M/C',
+      series: 'KH6300/8000',
+      typeCategory: 'Horizontal Machining Center',
+      typeDescription: 'Box Guide Way Type, □630/□800 Table',
       image: 'https://via.placeholder.com/300x200.png?text=KH8000',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4844,13 +5450,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KBN1300C',
       name: 'KBN1300C',
       category: 'Horizontal M/C',
+      series: 'KBN Series',
+      typeCategory: 'Quill Type',
+      typeDescription: 'Quill-Type Boring Machine',
       image: 'https://via.placeholder.com/300x200.png?text=KBN1300C',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4868,13 +5477,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KBN1600C',
       name: 'KBN1600C',
       category: 'Horizontal M/C',
+      series: 'KBN Series',
+      typeCategory: 'Quill Type',
+      typeDescription: 'Quill-Type Boring Machine',
       image: 'https://via.placeholder.com/300x200.png?text=KBN1600C',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4892,13 +5504,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KBR1300C',
       name: 'KBR1300C',
       category: 'Horizontal M/C',
+      series: 'KBR Series',
+      typeCategory: 'Ram Type',
+      typeDescription: 'Ram-Type Boring Machine',
       image: 'https://via.placeholder.com/300x200.png?text=KBR1300C',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4916,13 +5531,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KBR1600C',
       name: 'KBR1600C',
       category: 'Horizontal M/C',
+      series: 'KBR Series',
+      typeCategory: 'Ram Type',
+      typeDescription: 'Ram-Type Boring Machine',
       image: 'https://via.placeholder.com/300x200.png?text=KBR1600C',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -4940,13 +5558,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'XM2600',
       name: 'XM2600',
       category: 'Multi-Tasking',
+      series: 'XM Series',
+      typeCategory: 'Multi-tasking Machine',
+      typeDescription: '10/12-inch Multi-tasking Machine',
       image: 'https://via.placeholder.com/300x200.png?text=XM2600',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -4964,13 +5585,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'XM2600S',
       name: 'XM2600S',
       category: 'Multi-Tasking',
+      series: 'XM Series',
+      typeCategory: 'Multi-tasking Machine',
+      typeDescription: '10/12-inch Multi-tasking Machine',
       image: 'https://via.placeholder.com/300x200.png?text=XM2600S',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -4988,13 +5612,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'XM2600ST',
       name: 'XM2600ST',
       category: 'Multi-Tasking',
+      series: 'XM Series',
+      typeCategory: 'Multi-tasking Machine',
+      typeDescription: '10/12-inch Multi-tasking Machine',
       image: 'https://via.placeholder.com/300x200.png?text=XM2600ST',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -5012,13 +5639,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'XM3100',
       name: 'XM3100',
       category: 'Multi-Tasking',
+      series: 'XM Series',
+      typeCategory: 'Multi-tasking Machine',
+      typeDescription: '10/12-inch Multi-tasking Machine',
       image: 'https://via.placeholder.com/300x200.png?text=XM3100',
       specs: {
         '척 사이즈 (inch)': '8',
@@ -5036,13 +5666,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'XM3100S',
       name: 'XM3100S',
       category: 'Multi-Tasking',
+      series: 'XM Series',
+      typeCategory: 'Multi-tasking Machine',
+      typeDescription: '10/12-inch Multi-tasking Machine',
       image: 'https://via.placeholder.com/300x200.png?text=XM3100S',
       specs: {
         '척 사이즈 (inch)': '12',
@@ -5060,13 +5693,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'XM3100ST',
       name: 'XM3100ST',
       category: 'Multi-Tasking',
+      series: 'XM Series',
+      typeCategory: 'Multi-tasking Machine',
+      typeDescription: '10/12-inch Multi-tasking Machine',
       image: 'https://via.placeholder.com/300x200.png?text=XM3100ST',
       specs: {
         '척 사이즈 (inch)': '10',
@@ -5084,13 +5720,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF3500/5A',
       name: 'KF3500/5A',
       category: '5-Axis M/C',
+      series: 'KF-5A Series',
+      typeCategory: 'Vertical 5-Axis',
+      typeDescription: 'Vertical 5-Axis Machining Center',
       image: 'https://via.placeholder.com/300x200.png?text=KF3500/5A',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -5108,13 +5747,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF6500/5A',
       name: 'KF6500/5A',
       category: '5-Axis M/C',
+      series: 'KF-5A Series',
+      typeCategory: 'Vertical 5-Axis',
+      typeDescription: 'Vertical 5-Axis Machining Center',
       image: 'https://via.placeholder.com/300x200.png?text=KF6500/5A',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -5132,13 +5774,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'KF7300/5A',
       name: 'KF7300/5A',
       category: '5-Axis M/C',
+      series: 'KF-5A Series',
+      typeCategory: 'Vertical 5-Axis',
+      typeDescription: 'Vertical 5-Axis Machining Center',
       image: 'https://via.placeholder.com/300x200.png?text=KF7300/5A',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -5156,13 +5801,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'XF6300',
       name: 'XF6300',
       category: '5-Axis M/C',
+      series: 'XF Series',
+      typeCategory: 'Vertical 5-Axis',
+      typeDescription: 'High-Speed Vertical 5-Axis Machining Center',
       image: 'https://via.placeholder.com/300x200.png?text=XF6300',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -5180,13 +5828,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'XF8500',
       name: 'XF8500',
       category: '5-Axis M/C',
+      series: 'XF Series',
+      typeCategory: 'Vertical 5-Axis',
+      typeDescription: 'High-Speed Vertical 5-Axis Machining Center',
       image: 'https://via.placeholder.com/300x200.png?text=XF8500',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -5204,13 +5855,16 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     },
     {
       id: 'XF2000i',
       name: 'XF2000i',
       category: '5-Axis M/C',
+      series: 'XF2000i',
+      typeCategory: 'Horizontal 5-Axis',
+      typeDescription: 'Horizontal 5-Axis Machining Center',
       image: 'https://via.placeholder.com/300x200.png?text=XF2000i',
       specs: {
         '척 사이즈 (inch)': '-',
@@ -5228,6 +5882,6 @@ export const productLibraryModels = [
       },
       documents: [
         { id: 1, title: '카탈로그(EN) PDF', type: 'BROCHURE', securityLevel: 'PUBLIC', size: '4.2 MB' },
-        { id: 2, title: '사용자 매뉴얼', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
+        { id: 2, title: '세일즈 가이드 (EN)', type: 'MANUAL', securityLevel: 'PUBLIC', size: '12.5 MB' }
       ]
     }];

@@ -178,6 +178,18 @@ def update_user_admin(user_id: int, payload: schemas.AdminUserUpdate, db: Sessio
     db.refresh(user)
     return user
 
+@app.delete("/api/users/{user_id}")
+def delete_user_admin(user_id: int, db: Session = Depends(get_db), current_role: Optional[str] = Depends(get_current_role)):
+    if current_role == "RSM":
+        raise HTTPException(status_code=403, detail="접근 권한이 없습니다.")
+    user = db.query(models.CustomUser).filter(models.CustomUser.id == user_id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="사용자를 찾을 수 없습니다.")
+    
+    db.delete(user)
+    db.commit()
+    return {"status": "success", "message": "사용자가 삭제되었습니다."}
+
 @app.get("/api/models", response_model=List[schemas.ProductModelOut])
 def get_product_models(db: Session = Depends(get_db)):
     return db.query(models.ProductModel).order_by(models.ProductModel.model_code.asc()).all()
