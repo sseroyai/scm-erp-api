@@ -44,35 +44,47 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
     }
   };
 
-  const handleDownload = async (doc) => {
+  const handleDownload = (doc) => {
     if (!doc.filename) {
       alert('다운로드할 파일이 설정되지 않았습니다.');
       return;
     }
 
     try {
-      const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
-      const response = await fetch(`${baseUrl}/api/documents/${doc.filename}/download`);
-
-      if (!response.ok) {
-        throw new Error('파일을 찾을 수 없습니다.');
-      }
-
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
+      const baseUrl = import.meta.env.VITE_API_URL || '';
+      const downloadUrl = `${baseUrl}/api/documents/${doc.filename}/download`;
+      
       const a = document.createElement('a');
       a.style.display = 'none';
-      a.href = url;
-      a.download = doc.filename;
+      a.href = downloadUrl;
+      // download 속성은 cross-origin 리다이렉트 시 무시될 수 있으므로 백엔드에서 Content-Disposition을 제어해야 함
+      a.download = doc.filename; 
       document.body.appendChild(a);
       a.click();
-      window.URL.revokeObjectURL(url);
       document.body.removeChild(a);
     } catch (error) {
       alert('다운로드 실패: ' + error.message);
     }
   };
 
+  const translateSpecKey = (key) => {
+    if (isKo) return key;
+    const specMap = {
+      '척 사이즈 (inch)': 'Chuck Size (inch)',
+      '최대 가공경 (mm)': 'Max. Machining Diameter (mm)',
+      '최대 가공길이 (mm)': 'Max. Machining Length (mm)',
+      '최대이송거리 (X/Z) (mm)': 'Travel (X/Z) (mm)',
+      '급이송속도 (X/Z) (m/min)': 'Rapid Feed (X/Z) (m/min)',
+      '주축 회전수 (r/min)': 'Spindle Speed (r/min)',
+      '주축 출력 (kW)': 'Spindle Power (kW)',
+      '주축 토크 (N.m)': 'Spindle Torque (N.m)',
+      '주축 구동방식 (-)': 'Spindle Drive Type (-)',
+      '공구 보유수 (EA)': 'No. of Tools (EA)',
+      '회전공구 회전수 (r/min)': 'Rotary Tool Speed (r/min)',
+      '슬라이드 방식 (-)': 'Slide Type (-)'
+    };
+    return specMap[key] || key;
+  };
   return (
     <div style={{ padding: isMobileView ? '16px' : '32px', animation: 'fadeIn 0.4s ease-out' }}>
 
@@ -205,7 +217,7 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
                   {Object.entries(selectedModel.specs).map(([key, value], idx) => (
                     <div key={key} style={{ display: 'flex', padding: '8px', borderBottom: idx !== Object.entries(selectedModel.specs).length - 1 ? '1px solid var(--border-color)' : 'none' }}>
                       <span style={{ flex: '0 0 60%', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-                        {key}
+                        {translateSpecKey(key)}
                       </span>
                       <span style={{ flex: '0 0 40%', fontWeight: 600, fontSize: '0.9rem', textAlign: 'right' }}>{value}</span>
                     </div>

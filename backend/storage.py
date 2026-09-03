@@ -66,7 +66,11 @@ class S3StorageProvider(StorageProvider):
         try:
             url = self.s3_client.generate_presigned_url(
                 ClientMethod='get_object',
-                Params={'Bucket': self.bucket_name, 'Key': filename},
+                Params={
+                    'Bucket': self.bucket_name, 
+                    'Key': filename,
+                    'ResponseContentDisposition': f'attachment; filename="{filename}"'
+                },
                 ExpiresIn=3600
             )
             return url

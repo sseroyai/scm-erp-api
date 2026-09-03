@@ -225,8 +225,8 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
   };
 
   const handleDeleteOrder = async (orderId) => {
-    const adminId = prompt("삭제 권한이 있는 관리자 아이디를 입력하세요 (예: scm_admin_kr):");
-    if (adminId !== 'scm_admin_kr') {
+    const adminId = prompt("삭제 권한이 있는 관리자 아이디를 입력하세요 (예: WME-admin):");
+    if (adminId !== 'WME-admin') {
       alert("입력하신 아이디는 삭제 권한이 없습니다.");
       return;
     }
