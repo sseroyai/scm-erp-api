@@ -62,6 +62,13 @@ def on_startup():
             db.commit()
         except Exception:
             db.rollback()
+
+        # Schema Migration for orders (add is_timeline_completed)
+        try:
+            db.execute(text("ALTER TABLE orders ADD COLUMN is_timeline_completed BOOLEAN DEFAULT FALSE"))
+            db.commit()
+        except Exception:
+            db.rollback()
         
         # 2. Update dealer emails to test emails
         dealers = db.query(models.CustomUser).filter(models.CustomUser.role == models.UserRole.DEALER).all()
@@ -232,7 +239,10 @@ def get_orders(
     if status_filter:
         query = query.filter(models.Order.current_status == status_filter)
     if exclude_completed:
-        query = query.filter(~models.Order.current_status.in_([models.OrderStatus.DISPATCHED, models.OrderStatus.SOLD]))
+        query = query.filter(
+            ~models.Order.current_status.in_([models.OrderStatus.DISPATCHED, models.OrderStatus.SOLD]),
+            models.Order.is_timeline_completed.isnot(True)
+        )
     if is_corporate_stock is not None:
         if is_corporate_stock:
             query = query.filter(
@@ -312,6 +322,9 @@ def update_order_info(
         if not model:
             raise HTTPException(status_code=404, detail="유효하지 않은 모델입니다.")
         order.product_model_id = payload.product_model_id
+
+    if payload.is_timeline_completed is not None:
+        order.is_timeline_completed = payload.is_timeline_completed
 
     if payload.stock_type is not None:
         order.stock_type = payload.stock_type
@@ -621,7 +634,7 @@ async def upload_excel_bulk(file: UploadFile = File(...), db: Session = Depends(
         raise HTTPException(status_code=400, detail=f"엑셀 파일 판독 오류: {str(e)}")
 
     # 필수 컬럼 검증 (신규 표준 헤더 사용)
-    required_cols = {'MODEL', 'NC', 'P/O', 'PRICE', 'DEALER', 'DETAIL SPEC', 'INCOTERMS', 'PORT'}
+    required_cols = {'MODEL', 'NC', 'P/O', 'DEALER', 'ORDER DATE', 'DETAIL SPEC', 'BUYING', 'INCOTERMS', 'PORT'}
     missing_cols = required_cols - set(df.columns)
     if missing_cols:
         return {
@@ -647,8 +660,9 @@ async def upload_excel_bulk(file: UploadFile = File(...), db: Session = Depends(
         m_code = str(row.get('MODEL', '')).strip()
         nc_val = str(row.get('NC', '')).strip()
         ref_no = str(row.get('P/O', '')).strip()
-        price_val = str(row.get('PRICE', '')).strip()
+        price_val = str(row.get('BUYING', '')).strip()
         d_name = str(row.get('DEALER', '')).strip()
+        order_date_val = row.get('ORDER DATE')
         detail_spec_val = str(row.get('DETAIL SPEC', '')).strip()
         incoterms_val = str(row.get('INCOTERMS', '')).strip()
         port_val = str(row.get('PORT', '')).strip()
@@ -673,11 +687,21 @@ async def upload_excel_bulk(file: UploadFile = File(...), db: Session = Depends(
         existing = db.query(models.Order).filter(models.Order.reference_no == ref_no).first()
         if not existing:
             is_corp_stock = (d_name.upper() == 'WME')
+            
+            # 파싱된 ORDER DATE 처리
+            parsed_order_date = None
+            if pd.notnull(order_date_val):
+                try:
+                    parsed_order_date = pd.to_datetime(order_date_val)
+                except:
+                    pass
+
             new_order = models.Order(
                 reference_no=ref_no,
                 serial_number=None,
                 product_model_id=models_dict[m_code],
                 dealer_company_id=dealers_dict[d_name],
+                dealer_order_date=parsed_order_date,
                 current_status=models.OrderStatus.CONFIRMED,
                 etd=datetime.utcnow() + timedelta(days=20),
                 eta=datetime.utcnow() + timedelta(days=60),

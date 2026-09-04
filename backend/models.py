@@ -130,7 +130,8 @@ class Order(Base):
     etd = Column(DateTime, nullable=True)
     eta = Column(DateTime, nullable=True)
     
-    is_corporate_stock = Column(Boolean, default=False)
+    is_corporate_stock = Column(Boolean, default=False, nullable=False)
+    is_timeline_completed = Column(Boolean, default=False, nullable=False)
     stock_type = Column(String, nullable=True) # AVAILABLE, RENTAL, SHOWROOM
     
     # 상세 주문 정보 (UI/UX 확장용)

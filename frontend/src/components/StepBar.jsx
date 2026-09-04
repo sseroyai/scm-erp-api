@@ -35,6 +35,12 @@ export default function StepBar({ currentStatus }) {
               <IconComponent size={18} strokeWidth={1.5} />
             </div>
             <span className={labelClass} style={isActive ? { color: 'var(--text-primary)', fontWeight: 800 } : {}}>{step.label}</span>
+            {index < STEPS.length - 1 && (
+              <div className="step-connector">
+                <span className="dot"></span>
+                <span className="dot"></span>
+              </div>
+            )}
           </div>
         );
       })}

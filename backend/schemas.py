@@ -101,6 +101,7 @@ class OrderBase(BaseModel):
     
     current_status: OrderStatus = OrderStatus.CONFIRMED
     is_corporate_stock: bool = False
+    is_timeline_completed: bool = False
     stock_type: Optional[str] = None # AVAILABLE, RENTAL, SHOWROOM
     
     etd: Optional[datetime] = None
@@ -123,6 +124,7 @@ class OrderCreate(BaseModel):
     rsm_user_id: Optional[int] = None
     serial_number: Optional[str] = None
     is_corporate_stock: bool = False
+    is_timeline_completed: bool = False
     stock_type: Optional[str] = None
     etd: Optional[datetime] = None
     eta: Optional[datetime] = None
@@ -145,6 +147,7 @@ class OrderUpdate(BaseModel):
     dealer_company_id: Optional[int] = None
     serial_number: Optional[str] = None
     product_model_id: Optional[int] = None
+    is_timeline_completed: Optional[bool] = None
     stock_type: Optional[str] = None
     nc: Optional[str] = None
     detail_spec: Optional[str] = None

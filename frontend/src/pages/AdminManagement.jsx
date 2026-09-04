@@ -268,7 +268,7 @@ export default function AdminManagement({ isMobileView, isDesktopOptimized }) {
           </button>
 
           <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-            * 표준 헤더: <code>reference_no, model_code, dealer_name, status</code>
+            * 표준 헤더: <code>MODEL, NC, P/O, DEALER, ORDER DATE, DETAIL SPEC, BUYING, INCOTERMS, PORT</code>
           </div>
         </form>
 

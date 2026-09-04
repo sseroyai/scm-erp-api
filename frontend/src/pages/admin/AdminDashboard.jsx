@@ -177,19 +177,20 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
     }
   };
 
-  const handleCompleteStatus = async (orderId, targetStatus) => {
+  const handleFinishTimeline = async (orderId) => {
     try {
-      await fetch(`/api/orders/${orderId}/status`, {
+      const res = await fetch(`/api/orders/${orderId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          to_status: targetStatus,
-          direction: 'FORWARD',
-          changed_by_id: 1,
-          reason: 'Status Completed by Admin'
+          is_timeline_completed: true
         })
       });
-      fetchOrders(false);
+      if (res.ok) {
+        fetchOrders(false);
+      } else {
+        alert("상태 변경 실패");
+      }
     } catch (e) {
       alert("상태 변경 실패");
     }
@@ -401,7 +402,7 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                       {order.current_status === 'IN_STOCK' ? (
                         <>
                           <button
-                            onClick={(e) => { e.stopPropagation(); e.preventDefault(); handleCompleteStatus(order.id, 'DISPATCHED'); }}
+                            onClick={(e) => { e.stopPropagation(); e.preventDefault(); handleFinishTimeline(order.id); }}
                             className="btn btn-outline btn-in-stock-complete"
                             style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center' }}
                           >
@@ -545,7 +546,7 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                                 {order.current_status === 'IN_STOCK' ? (
                                   <>
                                     <button
-                                      onClick={() => handleCompleteStatus(order.id, 'DISPATCHED')}
+                                      onClick={() => handleFinishTimeline(order.id)}
                                       className="btn btn-outline btn-in-stock-complete"
                                       style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center' }}
                                     >

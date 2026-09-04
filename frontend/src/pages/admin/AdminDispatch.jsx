@@ -66,7 +66,7 @@ export default function AdminDispatch({ isMobileView }) {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          to_status: 'DISPATCHED',
+          to_status: 'SOLD',
           direction: 'FORWARD',
           changed_by_id: 1 // Default to 1 for simplicity here
         })
