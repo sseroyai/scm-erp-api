@@ -377,7 +377,7 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                     </div>
                   </div>
 
-                  <div style={{ background: 'var(--bg-input)', padding: '12px', borderRadius: '12px', border: '1px solid var(--border-color)', marginBottom: '12px' }} onClick={e => e.stopPropagation()}>
+                  <div style={{ marginBottom: '12px' }} onClick={e => e.stopPropagation()}>
                     <StepBar currentStatus={order.current_status} />
                   </div>
 
@@ -401,14 +401,14 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                       {order.current_status === 'IN_STOCK' ? (
                         <>
                           <button
-                            onClick={() => handleCompleteStatus(order.id, 'DISPATCHED')}
+                            onClick={(e) => { e.stopPropagation(); e.preventDefault(); handleCompleteStatus(order.id, 'DISPATCHED'); }}
                             className="btn btn-outline btn-in-stock-complete"
                             style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center' }}
                           >
                             {t('menu1.btn_in_stock_complete', '입고완료')}
                           </button>
                           <button
-                            onClick={() => handleRollbackStatus(order.id, order.current_status)}
+                            onClick={(e) => { e.stopPropagation(); e.preventDefault(); handleRollbackStatus(order.id, order.current_status); }}
                             className="btn btn-outline"
                             style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--text-muted)', color: 'var(--text-muted)' }}
                           >
@@ -418,7 +418,7 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                       ) : (
                         <>
                           <button
-                            onClick={() => handleNextStatus(order.id, order.current_status)}
+                            onClick={(e) => { e.stopPropagation(); e.preventDefault(); handleNextStatus(order.id, order.current_status); }}
                             className="btn btn-outline"
                             style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-blue)', color: 'var(--accent-blue)' }}
                           >
@@ -426,7 +426,7 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                           </button>
                           {order.current_status !== 'CONFIRMED' && (
                             <button
-                              onClick={() => handleRollbackStatus(order.id, order.current_status)}
+                              onClick={(e) => { e.stopPropagation(); e.preventDefault(); handleRollbackStatus(order.id, order.current_status); }}
                               className="btn btn-outline"
                               style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--text-muted)', color: 'var(--text-muted)' }}
                             >
@@ -436,14 +436,14 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                         </>
                       )}
                       <button
-                        onClick={() => handleEditClick(order)}
+                        onClick={(e) => { e.stopPropagation(); e.preventDefault(); handleEditClick(order); }}
                         className="btn btn-outline"
                         style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-cyan)', color: 'var(--accent-cyan)' }}
                       >
                         {t('menu1.btn_edit', 'Edit')}
                       </button>
                       <button
-                        onClick={() => handleDeleteOrder(order.id)}
+                        onClick={(e) => { e.stopPropagation(); e.preventDefault(); handleDeleteOrder(order.id); }}
                         className="btn btn-outline"
                         style={{ padding: '3px 4px', fontSize: '10px', justifyContent: 'center', borderColor: 'var(--accent-red, #ef4444)', color: 'var(--accent-red, #ef4444)' }}
                       >

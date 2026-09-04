@@ -152,7 +152,7 @@ export default function DealerOrders({ isMobileView }) {
                     </div>
                   </div>
 
-                  <div style={{ background: 'var(--bg-input)', padding: '12px', borderRadius: '12px', border: '1px solid var(--border-color)', marginBottom: '12px' }} onClick={e => e.stopPropagation()}>
+                  <div style={{ marginBottom: '12px' }} onClick={e => e.stopPropagation()}>
                     <StepBar currentStatus={order.current_status} />
                   </div>
 

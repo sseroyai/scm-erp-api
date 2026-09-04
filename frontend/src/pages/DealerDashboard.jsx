@@ -61,8 +61,10 @@ export default function DealerDashboard({ currentRole, isMobileView }) {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          status: nextStatus,
-          physical_location: locations[nextStatus] || '유럽 이동 중'
+          to_status: nextStatus,
+          direction: 'FORWARD',
+          changed_by_id: 1,
+          reason: 'Dealer Simulation Update'
         })
       });
       fetchOrders();
@@ -254,7 +256,7 @@ export default function DealerDashboard({ currentRole, isMobileView }) {
                   </div>
 
                   {/* 모바일 화면에 최적화된 진행 스텝바 */}
-                  <div style={{ background: 'var(--bg-input)', padding: '12px', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
+                  <div style={{ marginBottom: '12px' }}>
                     <StepBar currentStatus={order.current_status} />
                   </div>
 
