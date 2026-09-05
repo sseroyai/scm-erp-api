@@ -68,7 +68,7 @@ class S3StorageProvider(StorageProvider):
                 ClientMethod='get_object',
                 Params={
                     'Bucket': self.bucket_name, 
-                    'Key': filename,
+                    'Key': f'catalog/{filename}',
                     'ResponseContentDisposition': f'attachment; filename="{filename}"'
                 },
                 ExpiresIn=3600

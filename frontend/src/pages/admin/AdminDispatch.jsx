@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Package, CheckCircle, Clock } from 'lucide-react';
+import { Search, Package, CheckCircle, Clock, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const getAgingStatus = (etd) => {
@@ -277,11 +277,12 @@ export default function AdminDispatch({ isMobileView }) {
                         <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>선적일자(ETD):</strong> <span>{order.etd ? new Date(order.etd).toLocaleDateString() : '-'}</span></div>
                         <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>입고일자:</strong> <span>{order.current_status_changed_at ? new Date(order.current_status_changed_at).toLocaleDateString() : '-'}</span></div>
                         <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>REMARK:</strong> <span>{order.remark || '-'}</span></div>
-                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>상세 사양:</strong> <span>{order.detail_spec || '-'}</span></div>
+                        <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '100px' }}>DETAIL SPEC:</strong> <span>{order.detail_spec || '-'}</span></div>
                       </div>
                     )}
                   </div>
                 );
+
               })
             )}
           </div>
@@ -297,7 +298,7 @@ export default function AdminDispatch({ isMobileView }) {
                   <th style={{ width: '12%', textAlign: 'center', fontWeight: 'bold' }}>S/N</th>
                   <th style={{ width: '12%', textAlign: 'center', fontWeight: 'bold' }}>재고상태(에이징)</th>
                   <th style={{ width: '10%', textAlign: 'center', fontWeight: 'bold' }}>재고타입</th>
-                  <th style={{ width: '25%', textAlign: 'center', fontWeight: 'bold' }}>액션</th>
+                  <th style={{ width: '25%', textAlign: 'center', fontWeight: 'bold' }}>진행</th>
                 </tr>
               </thead>
               <tbody>
@@ -379,7 +380,7 @@ export default function AdminDispatch({ isMobileView }) {
                                   fontSize: '12px', color: 'var(--text-secondary)', lineHeight: '1.8', textAlign: 'left',
                                   paddingLeft: '16px', borderLeft: '3px solid var(--wia-blue)',
                                 }}>
-                                  <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>상세 사양:</span> {order.detail_spec || '-'}</div>
+                                  <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>DETAIL SPEC:</span> {order.detail_spec || '-'}</div>
                                 </div>
                               </div>
                             </td>
@@ -398,11 +399,16 @@ export default function AdminDispatch({ isMobileView }) {
       {selectedOrderForHistory && (
         <div className="modal-overlay" onClick={closeHistory}>
           <div className="modal-content" onClick={e => e.stopPropagation()} style={{ maxWidth: '500px' }}>
-            <div className="modal-header">
-              <h3 style={{ margin: 0 }}>타임라인 뷰 (진행 이력)</h3>
-              <p style={{ margin: '4px 0 0 0', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                {selectedOrderForHistory.product_model?.model_name} (S/N: {selectedOrderForHistory.serial_number || '미배정'})
-              </p>
+            <div className="modal-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+              <div>
+                <h3 style={{ margin: 0 }}>타임라인 뷰 (진행 이력)</h3>
+                <p style={{ margin: '4px 0 0 0', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+                  {selectedOrderForHistory.product_model?.model_name} (S/N: {selectedOrderForHistory.serial_number || '미배정'})
+                </p>
+              </div>
+              <button onClick={closeHistory} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-secondary)', padding: '4px' }}>
+                <X size={20} />
+              </button>
             </div>
             <div className="modal-body" style={{ maxHeight: '60vh', overflowY: 'auto', padding: '20px' }}>
               {orderHistory.length > 0 ? (

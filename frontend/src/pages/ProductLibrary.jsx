@@ -147,7 +147,12 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
           >
             <div style={{ height: '190px', background: 'transparent', position: 'relative' }}>
               {model.image ? (
-                <img src={model.image} alt={model.name} style={{ width: '100%', height: '100%', paddingTop: '5px', objectFit: 'contain' }} />
+                <img 
+                  src={import.meta.env.VITE_R2_CUSTOM_DOMAIN ? `${import.meta.env.VITE_R2_CUSTOM_DOMAIN}/thumbnail/${model.id}.webp` : model.image} 
+                  alt={model.name} 
+                  style={{ width: '100%', height: '100%', paddingTop: '5px', objectFit: 'contain' }}
+                  loading="lazy"
+                />
               ) : (
                 <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', fontWeight: 700, fontSize: '1.2rem', background: 'transparent' }}>
                   {model.id} 썸네일
@@ -193,23 +198,16 @@ export default function ProductLibrary({ currentRole, isMobileView }) {
 
       {/* Quick View Modal */}
       {selectedModel && (
-        <div style={{
-          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-          backgroundColor: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000,
-          padding: isMobileView ? '16px' : '40px', backdropFilter: 'blur(4px)'
-        }}>
-          <div className="clean-card" style={{
-            background: 'var(--bg-primary)', width: '100%', maxWidth: '800px', maxHeight: '90vh',
-            overflowY: 'auto', borderRadius: '16px', display: 'flex', flexDirection: 'column'
-          }}>
-            <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, background: 'var(--bg-primary)', zIndex: 10 }}>
+        <div className="modal-overlay" onClick={() => setSelectedModel(null)}>
+          <div className="modal-content" onClick={e => e.stopPropagation()} style={{ maxWidth: '800px' }}>
+            <div className="modal-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <h2 style={{ fontSize: '1.5rem', margin: 0 }}>{selectedModel.name} <span style={{ fontSize: '1rem', color: 'var(--text-muted)', fontWeight: 'normal' }}>{selectedModel.category}</span></h2>
-              <button onClick={() => setSelectedModel(null)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)' }}>
+              <button onClick={() => setSelectedModel(null)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)', padding: '4px' }}>
                 <X size={24} />
               </button>
             </div>
 
-            <div style={{ padding: '24px', display: 'flex', flexDirection: isMobileView ? 'column-reverse' : 'row', gap: '32px' }}>
+            <div className="modal-body" style={{ display: 'flex', flexDirection: isMobileView ? 'column-reverse' : 'row', gap: '32px' }}>
               {/* Left Column: Specs */}
               <div style={{ flex: '1' }}>
                 <h3 style={{ fontSize: '1.1rem', marginBottom: '16px', color: 'var(--text-primary)' }}>{isKo ? '핵심 스펙' : 'Specifications'}</h3>

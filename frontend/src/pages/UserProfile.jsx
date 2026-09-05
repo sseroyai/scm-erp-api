@@ -264,24 +264,17 @@ export default function UserProfile({ currentUserId, isMobileView, onClose }) {
 
       {/* Password Change Modal */}
       {isPasswordModalOpen && (
-        <div style={{
-          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, 
-          backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 9999, 
-          display: 'flex', justifyContent: 'center', alignItems: 'center',
-          padding: '20px'
-        }}>
-          <div style={{
-            backgroundColor: '#fff', borderRadius: '12px', width: '100%', maxWidth: '400px',
-            boxShadow: '0 10px 25px rgba(0,0,0,0.2)', display: 'flex', flexDirection: 'column', overflow: 'hidden'
-          }}>
-            <div style={{ padding: '20px', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className="modal-overlay" onClick={() => setIsPasswordModalOpen(false)}>
+          <div className="modal-content" onClick={e => e.stopPropagation()} style={{ maxWidth: '400px' }}>
+            <div className="modal-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <h3 style={{ fontSize: '1.1rem', fontWeight: 700, margin: 0 }}>비밀번호 변경</h3>
-              <button onClick={() => setIsPasswordModalOpen(false)} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+              <button type="button" onClick={() => setIsPasswordModalOpen(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '4px' }}>
                 <X size={20} color="var(--text-muted)" />
               </button>
             </div>
             
-            <form onSubmit={handleChangePassword} style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <form onSubmit={handleChangePassword} style={{ display: 'flex', flexDirection: 'column', flex: 1, overflow: 'hidden' }}>
+              <div className="modal-body" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {passwordError && <div style={{ padding: '10px', borderRadius: '8px', backgroundColor: 'rgba(230,0,18,0.1)', color: 'var(--wia-red)', fontSize: '0.85rem' }}>{passwordError}</div>}
               {passwordSuccess && <div style={{ padding: '10px', borderRadius: '8px', backgroundColor: 'rgba(0,180,50,0.1)', color: 'green', fontSize: '0.85rem' }}>{passwordSuccess}</div>}
 
@@ -316,7 +309,9 @@ export default function UserProfile({ currentUserId, isMobileView, onClose }) {
                 />
               </div>
 
-              <div style={{ display: 'flex', gap: '12px', marginTop: '10px' }}>
+              </div>
+
+              <div className="modal-footer" style={{ display: 'flex', gap: '12px' }}>
                 <button 
                   type="button" 
                   onClick={() => setIsPasswordModalOpen(false)}

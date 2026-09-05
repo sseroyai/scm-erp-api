@@ -399,21 +399,21 @@ export default function AdminUsers({ isMobileView }) {
 
       {/* 신규 사용자 등록 모달 */}
       {showCreateModal && (
-        <div style={{
-          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-          background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-          zIndex: 1000, padding: '20px'
-        }}>
-          <div className="glass-card" style={{ width: '100%', maxWidth: '500px', padding: '28px', position: 'relative' }}>
-            <button
-              onClick={closeCreateModal}
-              style={{ position: 'absolute', top: '20px', right: '20px', background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer' }}
-            >
-              <XCircle size={24} />
-            </button>
-            <h2 style={{ fontSize: '1.4rem', marginBottom: '20px', color: 'var(--text-primary)' }}>{t('menu6.modal_title')}</h2>
+        <div className="modal-overlay" onClick={closeCreateModal}>
+          <div className="modal-content" onClick={e => e.stopPropagation()} style={{ maxWidth: '500px' }}>
+            <div className="modal-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <h2 style={{ fontSize: '1.4rem', margin: 0, color: 'var(--text-primary)' }}>{t('menu6.modal_title')}</h2>
+              <button
+                type="button"
+                onClick={closeCreateModal}
+                style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer', padding: '4px' }}
+              >
+                <XCircle size={24} />
+              </button>
+            </div>
 
-            <form onSubmit={handleCreateUser} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <form onSubmit={handleCreateUser} style={{ display: 'flex', flexDirection: 'column', flex: 1, overflow: 'hidden' }}>
+              <div className="modal-body" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
                 <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t('menu6.label_username')} *</label>
                 <input
@@ -479,7 +479,9 @@ export default function AdminUsers({ isMobileView }) {
                 </div>
               )}
 
-              <div style={{ display: 'flex', gap: '12px', marginTop: '16px', justifyContent: 'flex-end' }}>
+              </div>
+
+              <div className="modal-footer" style={{ display: 'flex', gap: '12px', justifyContent: 'flex-end' }}>
                 <button type="button" onClick={closeCreateModal} className="btn btn-outline">{t('menu6.btn_cancel')}</button>
                 <button type="submit" disabled={creatingUser} className="btn btn-primary">
                   {creatingUser ? '...' : t('menu6.btn_register')}
@@ -492,21 +494,21 @@ export default function AdminUsers({ isMobileView }) {
 
       {/* 사용자 정보 수정 모달 */}
       {showEditModal && (
-        <div style={{
-          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-          background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-          zIndex: 1000, padding: '20px'
-        }}>
-          <div className="glass-card" style={{ width: '100%', maxWidth: '500px', padding: '28px', position: 'relative' }}>
-            <button
-              onClick={() => setShowEditModal(false)}
-              style={{ position: 'absolute', top: '20px', right: '20px', background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer' }}
-            >
-              <XCircle size={24} />
-            </button>
-            <h2 style={{ fontSize: '1.4rem', marginBottom: '20px', color: 'var(--text-primary)' }}>{t('menu6.edit_modal_title')}</h2>
+        <div className="modal-overlay" onClick={() => setShowEditModal(false)}>
+          <div className="modal-content" onClick={e => e.stopPropagation()} style={{ maxWidth: '500px' }}>
+            <div className="modal-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <h2 style={{ fontSize: '1.4rem', margin: 0, color: 'var(--text-primary)' }}>{t('menu6.edit_modal_title')}</h2>
+              <button
+                type="button"
+                onClick={() => setShowEditModal(false)}
+                style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer', padding: '4px' }}
+              >
+                <XCircle size={24} />
+              </button>
+            </div>
 
-            <form onSubmit={handleUpdateUser} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <form onSubmit={handleUpdateUser} style={{ display: 'flex', flexDirection: 'column', flex: 1, overflow: 'hidden' }}>
+              <div className="modal-body" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
                 <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t('menu6.label_username')} *</label>
                 <input
@@ -572,7 +574,9 @@ export default function AdminUsers({ isMobileView }) {
                 </div>
               )}
 
-              <div style={{ display: 'flex', gap: '12px', marginTop: '16px', justifyContent: 'flex-end' }}>
+              </div>
+
+              <div className="modal-footer" style={{ display: 'flex', gap: '12px', justifyContent: 'flex-end' }}>
                 <button type="button" onClick={() => setShowEditModal(false)} className="btn btn-outline">{t('menu6.btn_cancel')}</button>
                 <button type="submit" disabled={updatingUser} className="btn btn-primary">
                   {updatingUser ? '...' : t('menu6.btn_save')}
