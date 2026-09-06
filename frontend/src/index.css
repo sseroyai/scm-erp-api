@@ -463,11 +463,28 @@ h6 {
   font-weight: 600;
   color: var(--text-muted);
   white-space: nowrap;
+  text-align: center;
 }
 
 .step-label.active {
   color: var(--text-primary);
   font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .step-label {
+    font-size: 0.65rem;
+    letter-spacing: -0.02em;
+  }
+  .step-dot {
+    width: 32px;
+    height: 32px;
+  }
+  .step-connector {
+    top: 16px;
+    left: calc(50% + 16px);
+    width: calc(100% - 32px);
+  }
 }
 
 /* Table Styles */
