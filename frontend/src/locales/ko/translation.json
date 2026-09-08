@@ -172,7 +172,8 @@
     "bulk_upload_title": "발주 업로드(대량)",
     "bulk_upload_desc": "딜러 발주 및 WME 재고 발주를 모두 업로드할 수 있습니다.",
     "btn_upload": "표준 EXCEL 템플릿 업로드",
-    "standard_headers": "표준 헤더"
+    "standard_headers": "표준 헤더",
+    "notification_setup_title": "자동 일정 알림 및 빈도 설정"
   },
   "profile": {
     "title": "내 정보",

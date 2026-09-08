@@ -172,7 +172,8 @@
     "bulk_upload_title": "Order Upload(Bulk)",
     "bulk_upload_desc": "You can upload both dealer orders and WME stock orders.",
     "btn_upload": "Upload Standard EXCEL Template",
-    "standard_headers": "Standard Headers"
+    "standard_headers": "Standard Headers",
+    "notification_setup_title": "Set Up Automated Schedule Notifications and Frequency"
   },
   "profile": {
     "title": "My Data",

@@ -202,7 +202,7 @@ export default function UploadSettings() {
       <div className="glass-card" style={{ padding: '28px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
           <Mail color="var(--accent-purple)" size={24} />
-          <h2 style={{ fontSize: '1.3rem' }}>Set Up Automated Schedule Notifications and Frequency</h2>
+          <h2 style={{ fontSize: '1.3rem' }}>{t('management.notification_setup_title', 'Set Up Automated Schedule Notifications and Frequency')}</h2>
         </div>
         <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '20px' }}>
           <ul style={{ paddingLeft: '20px', lineHeight: 1.6 }}>
