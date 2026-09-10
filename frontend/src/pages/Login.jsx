@@ -45,13 +45,13 @@ export default function Login({ onLogin }) {
       {/* Left Area - Login Form */}
       <div style={{ flex: '1', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '40px' }}>
         <div style={{ width: '100%', maxWidth: '400px' }}>
-          <div style={{ marginBottom: '48px', textAlign: 'center' }}>
+          <div style={{ marginBottom: '20px', textAlign: 'center' }}>
             <WiaLogo size="large" />
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end', marginTop: '50px', gap: '12px' }}>
-              <h1 style={{ fontSize: '2rem', color: 'var(--text-primary)', margin: 0, fontWeight: '300' }}>
-                WME SCM
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px', gap: '30px' }}>
+              <h1 style={{ fontSize: '1.8rem', color: 'var(--text-primary)', margin: 0, fontWeight: '300' }}>
+                WME Shipping & Stock Management
               </h1>
-              <img src="/A-machine.ico" alt="Machine" style={{ width: '52px', height: '52px', objectFit: 'contain' }} />
+              <img src="/A-machine.ico" alt="Machine" style={{ width: '70px', height: '70px', objectFit: 'contain' }} />
             </div>
           </div>
 

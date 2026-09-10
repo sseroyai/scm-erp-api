@@ -386,13 +386,14 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                       <MapPin size={15} color="var(--accent-cyan)" />
                       <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>Port:</span>
-                      <span>{order.destination_port || 'Hamburg'}</span>
+                      <span>{order.incoterms ? `${order.incoterms} ` : ''}{getStandardPort(order.destination_port)}</span>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                       <Clock size={15} color="var(--accent-blue)" />
-                      <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>ETA:</span>
-                      <span style={{ color: 'var(--accent-blue)', fontWeight: 600 }}>
-                        {order.eta ? new Date(order.eta).toLocaleDateString() : '2026.08.30'}
+                      <span style={{ fontWeight: 600 }}>
+                        <span style={{ color: 'var(--text-primary)' }}>ETD:</span> <span style={{ color: 'var(--accent-blue)' }}>{order.etd ? new Date(order.etd).toLocaleDateString() : '-'}</span>
+                        <span style={{ color: 'var(--text-primary)', margin: '0 4px' }}>/</span>
+                        <span style={{ color: 'var(--text-primary)' }}>ETA:</span> <span style={{ color: 'var(--accent-blue)' }}>{order.eta ? new Date(order.eta).toLocaleDateString() : '-'}</span>
                       </span>
                     </div>
                   </div>
@@ -455,14 +456,13 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
 
                   {expandedRows.has(order.id) && (
                     <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: '1px dashed var(--border-color)', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem', color: 'var(--text-secondary)' }} onClick={e => e.stopPropagation()}>
-                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_status', '진행상태')}:</strong> <span>{order.current_status ? t(`stepbar.${order.current_status.toLowerCase()}`, order.current_status) : '-'}</span></div>
-                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_sn', 'S/N')}:</strong> <span>{order.serial_number || '-'}</span></div>
-                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_so', 'S/O')}:</strong> <span>{order.so_no || '-'}</span></div>
-                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_remark', 'REMARK')}:</strong> <span>{order.remark || '-'}</span></div>
-                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_etd_eta', 'ETD / ETA')}:</strong> <span>{order.etd ? new Date(order.etd).toLocaleDateString() : '-'} / {order.eta ? new Date(order.eta).toLocaleDateString() : '-'}</span></div>
-                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_port', 'PORT')}:</strong> <span>{getStandardPort(order.destination_port)}</span></div>
-                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_incoterms', 'INCOTERMS')}:</strong> <span>{order.incoterms || '-'}</span></div>
-                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '90px' }}>{t('menu2.detail_vessel', 'VESSEL')}:</strong> <span>{order.vessel || '-'}</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '100px' }}>{t('menu2.detail_so', 'S/O')}:</strong> <span>{order.so_no || '-'}</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '100px' }}>NC:</strong> <span>{order.nc || '-'}</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '100px' }}>DETAIL SPEC:</strong> <span>{order.detail_spec || 'T/F, CC(S-H)+B, 20BAR, B/I, P/C, Q(A)'}</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '100px' }}>Order date:</strong> <span>{order.dealer_order_date ? new Date(order.dealer_order_date).toLocaleDateString() : '-'}</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '100px' }}>Date of Request:</strong> <span>{order.delivery_request_date || '-'}</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '100px' }}>{t('menu2.detail_etd_eta', 'ETD / ETA')}:</strong> <span>{order.etd ? new Date(order.etd).toLocaleDateString() : '-'} / {order.eta ? new Date(order.eta).toLocaleDateString() : '-'}</span></div>
+                      <div style={{ display: 'flex' }}><strong style={{ color: 'var(--text-primary)', width: '100px' }}>{t('menu2.detail_vessel', 'VESSEL')}:</strong> <span>{order.vessel || '-'}</span></div>
                     </div>
                   )}
                 </div>
@@ -481,7 +481,7 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                   <th style={{ width: '35%', textAlign: 'center', fontWeight: 'bold' }}>{t('menu1.header_status')}</th>
                   <th style={{ width: '15%', textAlign: 'left', fontWeight: 'bold' }}>{t('menu1.header_port')}</th>
                   {currentRole !== 'RSM' && (
-                    <th style={{ width: '10%', textAlign: 'left', fontWeight: 'bold' }}>{t('menu1.header_management')}</th>
+                    <th style={{ width: '10%', textAlign: 'center', fontWeight: 'bold' }}>{t('menu1.header_management')}</th>
                   )}
                 </tr>
               </thead>
@@ -525,7 +525,7 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                             <StepBar currentStatus={order.current_status} />
                           </td>
                           <td style={{ borderBottom: expandedRows.has(order.id) ? 'none' : '1px solid var(--border-color)', paddingBottom: '5px', paddingTop: '5px' }}>
-                            <div style={{ fontSize: '0.85rem', fontWeight: 500 }}>{getStandardPort(order.destination_port)}</div>
+                            <div style={{ fontSize: '0.85rem', fontWeight: 500 }}>{order.incoterms ? `${order.incoterms} ` : ''}{getStandardPort(order.destination_port)}</div>
                             {showSchedule && (
                               <>
                                 <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
@@ -624,7 +624,7 @@ export default function AdminDashboard({ isMobileView, currentRole }) {
                                   paddingLeft: '16px',
                                   borderLeft: '3px solid var(--wia-blue)',
                                 }}>
-                                  <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>Incoterms:</span> {order.incoterms || '-'}</div>
+                                  <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>Date of Request:</span> {order.delivery_request_date || '-'}</div>
                                   <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>ETD / ETA:</span> {showSchedule ? `${order.etd ? new Date(order.etd).toLocaleDateString() : '-'} / ${order.eta ? new Date(order.eta).toLocaleDateString() : '-'}` : ' - '}</div>
                                   <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>VESSEL:</span> {order.vessel || '-'}</div>
                                   <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>REMARK:</span> {order.remark || '-'}</div>

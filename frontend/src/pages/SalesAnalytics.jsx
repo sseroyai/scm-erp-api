@@ -120,7 +120,7 @@ export default function SalesAnalytics({ isMobileView, isDesktopOptimized }) {
         <div style={{ paddingTop: '4px', paddingLeft: '28px' }}>
           <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>관리자용 영업 통계 및 분석 (Sales Analytics)</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-            유럽 현지 판매 법인의 SCM 효율화 및 실적, 목표 달성률을 종합적으로 모니터링합니다. (V8)
+            유럽법인의 영업통계 정보를 종합적으로 모니터링합니다.
           </p>
         </div>
         <div>

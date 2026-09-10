@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "title": "WIA 공작기계 유럽 SCM",
+    "title": "WIA 공작기계 유럽 배송 & 재고관리 시스템",
     "version": "v6.0 Final (WIA CI)",
     "init_seed_btn": "시드 데이터 초기화",
     "init_seed_loading": "데이터 생성 중...",
@@ -53,7 +53,7 @@
     }
   },
   "dashboard": {
-    "title": "SCM 포털 대시보드",
+    "title": "WME 포털 대시보드",
     "subtitle": "모든 주문장비의 진행 및 운송상태를 모니터링하고 관리합니다.",
     "timeline_title": "주문 배송 타임라인",
     "timeline_desc": "5단계 진행 타임라인: 진행상태를 다음 단계로 변경하거나, 수정을 위해 이전 단계로 롤백할 수 있습니다.",
@@ -107,7 +107,7 @@
   },
   "menu2": {
     "page_title": "WIA 재고리스트",
-    "page_desc": "WIA 유럽법인의 가용 재고(ATP) 현황을 파악 할 수 있습니다.",
+    "page_desc": "WIA 유럽법인의 가용 재고 현황을 파악 할 수 있습니다.",
     "header_no": "*",
     "header_model": "모델",
     "header_nc": "NC",

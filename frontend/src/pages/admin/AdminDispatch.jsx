@@ -130,7 +130,7 @@ export default function AdminDispatch({ isMobileView }) {
         <div>
           <h1 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>WIA 창고</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-            물류 및 SCM 담당자가 입고된 장비의 상태를 관리합니다.
+            물류 및 담당자가 입고된 장비의 상태를 관리합니다.
           </p>
         </div>
       </div>

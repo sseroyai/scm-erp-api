@@ -39,7 +39,7 @@ export default function Navbar({ currentRole, currentUserId, isMobileView, setCu
           <div>
             <h2 className="navbar-title">
               <span style={{ fontFamily: 'SUITE, sans-serif', fontWeight: 800 }}>
-                {isMobileView ? 'WME SCM' : t('navbar.title')}
+                {isMobileView ? 'WME' : t('navbar.title')}
               </span>
             </h2>
           </div>

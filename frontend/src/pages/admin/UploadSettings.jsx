@@ -19,7 +19,8 @@ export default function UploadSettings() {
     nc: '',
     incoterms: '',
     destination_port: '',
-    dealer_order_date: ''
+    dealer_order_date: '',
+    delivery_request_date: ''
   });
   const [creatingOrder, setCreatingOrder] = useState(false);
 
@@ -71,14 +72,15 @@ export default function UploadSettings() {
           nc: newOrderForm.nc,
           incoterms: newOrderForm.incoterms,
           destination_port: newOrderForm.destination_port,
-          dealer_order_date: newOrderForm.dealer_order_date || null
+          dealer_order_date: newOrderForm.dealer_order_date || null,
+          delivery_request_date: newOrderForm.delivery_request_date || null
         })
       });
 
       if (res.ok) {
         alert("신규 발주가 성공적으로 생성되었습니다.");
         setShowCreateModal(false);
-        setNewOrderForm({ reference_no: '', product_model_id: '', dealer_company_id: '', nc: '', incoterms: '', destination_port: '', dealer_order_date: '' });
+        setNewOrderForm({ reference_no: '', product_model_id: '', dealer_company_id: '', nc: '', incoterms: '', destination_port: '', dealer_order_date: '', delivery_request_date: '' });
       } else {
         const err = await res.json();
         alert(`생성 실패: ${err.detail || '알 수 없는 오류'}`);
@@ -205,11 +207,18 @@ export default function UploadSettings() {
           <h2 style={{ fontSize: '1.3rem' }}>{t('management.notification_setup_title', 'Set Up Automated Schedule Notifications and Frequency')}</h2>
         </div>
         <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '20px' }}>
-          <ul style={{ paddingLeft: '20px', lineHeight: 1.6 }}>
+          <p style={{ fontWeight: 'bold', marginBottom: '8px', color: 'var(--text-primary)' }}>[기본 배송망 일정 알림]</p>
+          <ul style={{ paddingLeft: '20px', lineHeight: 1.6, marginBottom: '16px' }}>
             <li>1. <strong>출항(ETD) 직후:</strong> ETD 및 초기 ETA 일정안내 이메일 발송</li>
             <li>2. <strong>해상 운송 중:</strong> 10일 주기로 정기 ETA 정보 통지</li>
             <li>3. <strong>유럽 항구 도착:</strong> 함부르크 항구 도착(HHLA API 연동) 정보 자동 업데이트</li>
             <li>4. <strong>창고 입고:</strong> 입고 완료 시 가용재고 상태전환 알림 발송</li>
+          </ul>
+          <p style={{ fontWeight: 'bold', marginBottom: '8px', color: 'var(--text-primary)' }}>[추가 알림 및 자동화 기능 (TO-BE 고도화)]</p>
+          <ul style={{ paddingLeft: '20px', lineHeight: 1.6 }}>
+            <li>5. <strong>배송요청일(D-Day):</strong> 배송요청일 해당 월 마지막 주차 진입 시 담당자에게 지연 방지 알림</li>
+            <li>6. <strong>프로모션 예약 만료:</strong> 예약 만료일 도래 시 알림 발송 및 미조치 시 판매가능 상태로 자동 취소(Roll-back)</li>
+            <li>7. <strong>임대(Rental) 만료:</strong> 임대 일정 만료 도래 시 연장/반납 사전 공지 이메일 자동 발송</li>
           </ul>
         </div>
 
@@ -368,6 +377,17 @@ export default function UploadSettings() {
                   type="date"
                   value={newOrderForm.dealer_order_date}
                   onChange={e => setNewOrderForm({ ...newOrderForm, dealer_order_date: e.target.value })}
+                  style={{ width: '100%', padding: '10px 14px', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-input)', color: 'var(--text-primary)' }}
+                />
+              </div>
+
+              {/* 4.6. Delivery Request Date */}
+              <div>
+                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>배송요청일 (Month/Year)</label>
+                <input
+                  type="month"
+                  value={newOrderForm.delivery_request_date}
+                  onChange={e => setNewOrderForm({ ...newOrderForm, delivery_request_date: e.target.value })}
                   style={{ width: '100%', padding: '10px 14px', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-input)', color: 'var(--text-primary)' }}
                 />
               </div>

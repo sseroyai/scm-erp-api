@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "title": "WIA MachineTools Europe SCM",
+    "title": "WIA Machine Tools Europe Shipping & Stock Management",
     "version": "v6.0 Final (WIA CI)",
     "init_seed_btn": "Initialize Seed Data",
     "init_seed_loading": "Generating Data...",
@@ -53,7 +53,7 @@
     }
   },
   "dashboard": {
-    "title": "SCM Portal Dashboard",
+    "title": "WME Portal Dashboard",
     "subtitle": "On this page, you can monitor and manage the progress and shipping status of all machine ordered",
     "timeline_title": "Order and Delivery Timeline",
     "timeline_desc": "5-Step Progress Timeline: You can advance the status to the next stage or\nroll it back to a previous stage for modifications",
