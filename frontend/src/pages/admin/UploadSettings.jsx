@@ -20,7 +20,8 @@ export default function UploadSettings() {
     incoterms: '',
     destination_port: '',
     dealer_order_date: '',
-    delivery_request_date: ''
+    delivery_request_date: '',
+    detail_spec: ''
   });
   const [creatingOrder, setCreatingOrder] = useState(false);
 
@@ -73,14 +74,15 @@ export default function UploadSettings() {
           incoterms: newOrderForm.incoterms,
           destination_port: newOrderForm.destination_port,
           dealer_order_date: newOrderForm.dealer_order_date || null,
-          delivery_request_date: newOrderForm.delivery_request_date || null
+          delivery_request_date: newOrderForm.delivery_request_date || null,
+          detail_spec: newOrderForm.detail_spec || null
         })
       });
 
       if (res.ok) {
         alert("신규 발주가 성공적으로 생성되었습니다.");
         setShowCreateModal(false);
-        setNewOrderForm({ reference_no: '', product_model_id: '', dealer_company_id: '', nc: '', incoterms: '', destination_port: '', dealer_order_date: '', delivery_request_date: '' });
+        setNewOrderForm({ reference_no: '', product_model_id: '', dealer_company_id: '', nc: '', incoterms: '', destination_port: '', dealer_order_date: '', delivery_request_date: '', detail_spec: '' });
       } else {
         const err = await res.json();
         alert(`생성 실패: ${err.detail || '알 수 없는 오류'}`);
@@ -264,9 +266,9 @@ export default function UploadSettings() {
       {/* 발주 생성 모달 */}
       {showCreateModal && (
         <div className="modal-overlay" onClick={() => setShowCreateModal(false)}>
-          <div className="modal-content" onClick={e => e.stopPropagation()} style={{ maxWidth: '500px' }}>
+          <div className="modal-content" onClick={e => e.stopPropagation()} style={{ maxWidth: '700px' }}>
             <div className="modal-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <h2 style={{ fontSize: '1.4rem', margin: 0, color: 'var(--text-primary)' }}>신규 단건 발주 생성</h2>
+              <h2 style={{ fontSize: '1.4rem', margin: 0, color: 'var(--text-primary)' }}>{t('management.modal_title_new_order', '신규 단건 발주 생성')}</h2>
               <button
                 type="button"
                 onClick={() => setShowCreateModal(false)}
@@ -277,15 +279,15 @@ export default function UploadSettings() {
             </div>
 
             <form onSubmit={handleCreateOrder} style={{ display: 'flex', flexDirection: 'column', flex: 1, overflow: 'hidden' }}>
-              <div className="modal-body" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div className="modal-body" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
               {/* 1. MODEL */}
               <div>
-                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>기계 모델 검색 및 선택 *</label>
+                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t('management.modal_label_model', '모델')} *</label>
                 <input
                   type="text"
                   list="model-list"
                   required
-                  placeholder="모델명을 입력하여 검색하세요"
+                  placeholder={t('management.modal_label_model', '모델')}
                   value={newOrderForm.model_search_text || ''}
                   onChange={e => {
                     const text = e.target.value;
@@ -310,12 +312,12 @@ export default function UploadSettings() {
 
               {/* 2. NC */}
               <div>
-                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>NC 검색 및 선택 *</label>
+                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t('management.modal_label_nc', 'NC')} *</label>
                 <input
                   type="text"
                   list="nc-list"
                   required
-                  placeholder="NC 코드를 입력하여 검색하세요"
+                  placeholder={t('management.modal_label_nc', 'NC')}
                   value={newOrderForm.nc}
                   onChange={e => setNewOrderForm({ ...newOrderForm, nc: e.target.value })}
                   style={{ width: '100%', padding: '10px 14px', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-input)', color: 'var(--text-primary)' }}
@@ -329,11 +331,11 @@ export default function UploadSettings() {
 
               {/* 3. P/O */}
               <div>
-                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>발주번호 (P/O No.) *</label>
+                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t('management.modal_label_po', 'P/O')} *</label>
                 <input
                   type="text"
                   required
-                  placeholder="예: REF-20260731-001"
+                  placeholder={t('management.modal_label_po', 'P/O')}
                   value={newOrderForm.reference_no}
                   onChange={e => setNewOrderForm({ ...newOrderForm, reference_no: e.target.value })}
                   style={{ width: '100%', padding: '10px 14px', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-input)', color: 'var(--text-primary)' }}
@@ -342,12 +344,12 @@ export default function UploadSettings() {
 
               {/* 4. DEALER */}
               <div>
-                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>딜러사 검색 및 선택 *</label>
+                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t('management.modal_label_dealer', '딜러')} *</label>
                 <input
                   type="text"
                   list="dealer-list"
                   required
-                  placeholder="딜러사를 입력하여 검색하세요"
+                  placeholder={t('management.modal_label_dealer', '딜러')}
                   value={newOrderForm.dealer_search_text || ''}
                   onChange={e => {
                     const text = e.target.value;
@@ -370,9 +372,9 @@ export default function UploadSettings() {
                 )}
               </div>
 
-              {/* 4.5. Dealer Order Date */}
+              {/* 5. Dealer Order Date */}
               <div>
-                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t('menu4.order_date', '딜러발주 일자')}</label>
+                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t('management.modal_label_order_date', '주문일자')}</label>
                 <input
                   type="date"
                   value={newOrderForm.dealer_order_date}
@@ -381,9 +383,9 @@ export default function UploadSettings() {
                 />
               </div>
 
-              {/* 4.6. Delivery Request Date */}
+              {/* 6. Delivery Request Date */}
               <div>
-                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>배송요청일 (Month/Year)</label>
+                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t('management.modal_label_req_date', '배송요청일')}</label>
                 <input
                   type="month"
                   value={newOrderForm.delivery_request_date}
@@ -392,14 +394,14 @@ export default function UploadSettings() {
                 />
               </div>
 
-              {/* 5. INCOTERMS */}
+              {/* 7. INCOTERMS */}
               <div>
-                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Incoterms 검색 및 선택 *</label>
+                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t('management.modal_label_incoterms', 'Incoterms')} *</label>
                 <input
                   type="text"
                   list="incoterm-list"
                   required
-                  placeholder="Incoterms 코드를 입력하여 검색하세요"
+                  placeholder={t('management.modal_label_incoterms', 'Incoterms')}
                   value={newOrderForm.incoterms}
                   onChange={e => setNewOrderForm({ ...newOrderForm, incoterms: e.target.value })}
                   style={{ width: '100%', padding: '10px 14px', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-input)', color: 'var(--text-primary)' }}
@@ -411,14 +413,14 @@ export default function UploadSettings() {
                 </datalist>
               </div>
 
-              {/* 6. PORT */}
+              {/* 8. PORT */}
               <div>
-                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>도착지 항구 (Port) 검색 및 선택 *</label>
+                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t('management.modal_label_port', '항구')} *</label>
                 <input
                   type="text"
                   list="port-list"
                   required
-                  placeholder="항구 코드를 입력하여 검색하세요"
+                  placeholder={t('management.modal_label_port', '항구')}
                   value={newOrderForm.destination_port}
                   onChange={e => setNewOrderForm({ ...newOrderForm, destination_port: e.target.value })}
                   style={{ width: '100%', padding: '10px 14px', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-input)', color: 'var(--text-primary)' }}
@@ -430,12 +432,24 @@ export default function UploadSettings() {
                 </datalist>
               </div>
 
+              {/* 9. DETAIL SPEC */}
+              <div style={{ gridColumn: '1 / -1' }}>
+                <label style={{ display: 'block', marginBottom: '8px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{t('management.modal_label_spec', '장비옵션')}</label>
+                <input
+                  type="text"
+                  value={newOrderForm.detail_spec}
+                  onChange={e => setNewOrderForm({ ...newOrderForm, detail_spec: e.target.value })}
+                  placeholder={t('management.modal_label_spec', '장비옵션')}
+                  style={{ width: '100%', padding: '10px 14px', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-input)', color: 'var(--text-primary)' }}
+                />
+              </div>
+
               </div>
 
               <div className="modal-footer" style={{ display: 'flex', gap: '12px', justifyContent: 'flex-end' }}>
-                <button type="button" onClick={() => setShowCreateModal(false)} className="btn btn-outline">취소</button>
+                <button type="button" onClick={() => setShowCreateModal(false)} className="btn btn-outline">{t('management.modal_btn_cancel', '취소')}</button>
                 <button type="submit" disabled={creatingOrder} className="btn btn-primary">
-                  {creatingOrder ? '생성 중...' : '발주 생성'}
+                  {creatingOrder ? t('management.modal_btn_creating', '생성 중...') : t('management.modal_btn_create', '발주 생성')}
                 </button>
               </div>
             </form>

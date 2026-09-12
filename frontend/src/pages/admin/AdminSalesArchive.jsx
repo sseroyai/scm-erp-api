@@ -93,7 +93,7 @@ export default function AdminSalesArchive({ isMobileView }) {
 
     const headers = [
       '주문일', '구매 딜러', '모델', 'NC', 'P/O', 'S/N',
-      '판매 가격', '구매가', 'ETA', '출고 예정', '매출 일정'
+      '판매 가격', '구매가(€)', 'ETA', '출고 예정', '매출 일정'
     ];
     const rows = orders.map(order => [
       order.dealer_order_date ? new Date(order.dealer_order_date).toLocaleDateString() : (order.created_at ? new Date(order.created_at).toLocaleDateString() : '-'),
@@ -103,7 +103,7 @@ export default function AdminSalesArchive({ isMobileView }) {
       order.reference_no || '-',
       order.serial_number || '-',
       order.price || '-',
-      '-', // 구매가
+      '-', // 구매가(€)
       order.eta ? new Date(order.eta).toLocaleDateString() : '-',
       '-', // 출고 예정
       '-'  // 매출 일정
@@ -354,7 +354,7 @@ export default function AdminSalesArchive({ isMobileView }) {
                               }}>
                                 <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>주문일:</span> {order.dealer_order_date ? new Date(order.dealer_order_date).toLocaleDateString() : (order.created_at ? new Date(order.created_at).toLocaleDateString() : '-')}</div>
                                 <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>ETA:</span> {order.eta ? new Date(order.eta).toLocaleDateString() : '-'}</div>
-                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>구매가:</span> -</div>
+                                <div><span style={{ fontWeight: 600, color: 'var(--text-primary)', display: 'inline-block', width: '100px' }}>구매가(€):</span> -</div>
                               </div>
                               <div style={{
                                 fontSize: '12px', color: 'var(--text-secondary)', lineHeight: '1.8', textAlign: 'left',
@@ -456,7 +456,7 @@ export default function AdminSalesArchive({ isMobileView }) {
                 {/* Row 4 */}
                 <div>
                   <label style={{ display: 'block', marginBottom: '6px', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Buying</label>
-                  <input type="text" value={editForm.price} onChange={e => setEditForm({ ...editForm, price: e.target.value })} placeholder="구매가" style={{ width: '100%', padding: '8px 12px', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-input)', color: 'var(--text-primary)' }} />
+                  <input type="text" value={editForm.price} onChange={e => setEditForm({ ...editForm, price: e.target.value })} placeholder="구매가(€)" style={{ width: '100%', padding: '8px 12px', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-input)', color: 'var(--text-primary)' }} />
                 </div>
                 <div>
                   <label style={{ display: 'block', marginBottom: '6px', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Port</label>
